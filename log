@@ -1,0 +1,17 @@
+Starting Mila_accept
+listen
+accept
+listen
+Fri May 26 13:20:51 2017
+
+8e748700::<-250 Ok
+8e748700::<-250 Recipient ok.
+dot
+smtp time befor mila: 0.000821
+
+Milac
+682=
+38
+https://www.mila.com/friendacceptfrommail/68238
+mila time_processing : 0.000189
+mila time_accept : 0.085953

@@ -1,0 +1,548 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+                              /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o (__libc_csu_init)
+
+As-needed library included to satisfy reference by file (symbol)
+
+libcurl-gnutls.so.4           CMakeFiles/mila_accept.dir/src/mila.c.o (curl_easy_init@@CURL_GNUTLS_3)
+libpthread.so.0               CMakeFiles/mila_accept.dir/src/mila_tread.c.o (write@@GLIBC_2.2.5)
+
+Allocating common symbols
+Common symbol       size              file
+
+run                 0x4               CMakeFiles/mila_accept.dir/src/main.c.o
+sfd                 0x4               CMakeFiles/mila_accept.dir/src/main.c.o
+time_processing     0x8               CMakeFiles/mila_accept.dir/src/mila.c.o
+time_accept         0x8               CMakeFiles/mila_accept.dir/src/mila.c.o
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/mila_accept.dir/src/main.c.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/mila_accept.dir/src/mila.c.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/mila_accept.dir/src/str_replace.c.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+LOAD CMakeFiles/mila_accept.dir/src/main.c.o
+LOAD CMakeFiles/mila_accept.dir/src/mila.c.o
+LOAD CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+LOAD CMakeFiles/mila_accept.dir/src/str_replace.c.o
+LOAD /usr/lib/x86_64-linux-gnu/libglib-2.0.so
+LOAD /usr/lib/x86_64-linux-gnu/libcurl.so
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/libpthread.so
+START GROUP
+LOAD /lib/x86_64-linux-gnu/libpthread.so.0
+LOAD /usr/lib/x86_64-linux-gnu/libpthread_nonshared.a
+END GROUP
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/libgcc.a
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/libgcc_s.so
+START GROUP
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/libgcc_s.so.1
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/libgcc.a
+END GROUP
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/libc.so
+START GROUP
+LOAD /lib/x86_64-linux-gnu/libc.so.6
+LOAD /usr/lib/x86_64-linux-gnu/libc_nonshared.a
+LOAD /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+END GROUP
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/libgcc.a
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/libgcc_s.so
+START GROUP
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/libgcc_s.so.1
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/libgcc.a
+END GROUP
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o
+LOAD /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+                [!provide]                        PROVIDE (__executable_start, 0x0)
+                0x0000000000000238                . = (0x0 + SIZEOF_HEADERS)
+
+.interp         0x0000000000000238       0x1c
+ *(.interp)
+ .interp        0x0000000000000238       0x1c /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.note.ABI-tag   0x0000000000000254       0x20
+ .note.ABI-tag  0x0000000000000254       0x20 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.note.gnu.build-id
+                0x0000000000000274       0x24
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x0000000000000274       0x24 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.hash
+ *(.hash)
+
+.gnu.hash       0x0000000000000298       0x40
+ *(.gnu.hash)
+ .gnu.hash      0x0000000000000298       0x40 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.dynsym         0x00000000000002d8      0x588
+ *(.dynsym)
+ .dynsym        0x00000000000002d8      0x588 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.dynstr         0x0000000000000860      0x2f4
+ *(.dynstr)
+ .dynstr        0x0000000000000860      0x2f4 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.gnu.version    0x0000000000000b54       0x76
+ *(.gnu.version)
+ .gnu.version   0x0000000000000b54       0x76 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.gnu.version_d  0x0000000000000bd0        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x0000000000000bd0        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.gnu.version_r  0x0000000000000bd0       0xa0
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x0000000000000bd0       0xa0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.rela.dyn       0x0000000000000c70      0x5a0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ .rela.text     0x0000000000000c70        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.startup
+                0x0000000000000c70        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ .rela.data.rel.local
+                0x0000000000000c70       0x18 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.data.rel.ro.local
+                0x0000000000000c88       0x60 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ .rela.got      0x0000000000000ce8      0x4c8 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ .rela.bss      0x00000000000011b0       0x30 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ *(.rela.ldata .rela.ldata.* .rela.gnu.linkonce.l.*)
+ *(.rela.lbss .rela.lbss.* .rela.gnu.linkonce.lb.*)
+ *(.rela.lrodata .rela.lrodata.* .rela.gnu.linkonce.lr.*)
+ *(.rela.ifunc)
+ .rela.fini_array
+                0x00000000000011e0       0x18 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.init_array
+                0x00000000000011f8       0x18 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.rela.plt       0x0000000000001210        0x0
+ *(.rela.plt)
+ .rela.plt      0x0000000000001210        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+                [!provide]                        PROVIDE (__rela_iplt_start, .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end, .)
+
+.init           0x0000000000001210       0x17
+ *(SORT(.init))
+ .init          0x0000000000001210       0x12 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o
+                0x0000000000001210                _init
+ .init          0x0000000000001222        0x5 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+
+.plt            0x0000000000001230       0x10
+ *(.plt)
+ .plt           0x0000000000001230       0x10 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ *(.iplt)
+
+.plt.got        0x0000000000001240      0x170
+ *(.plt.got)
+ .plt.got       0x0000000000001240      0x170 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+
+.plt.bnd
+ *(.plt.bnd)
+
+.text           0x00000000000013b0     0x1c62
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ .text.startup  0x00000000000013b0      0x21f CMakeFiles/mila_accept.dir/src/main.c.o
+                0x00000000000013b0                main
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ *fill*         0x00000000000015cf        0x1 
+ .text          0x00000000000015d0       0x2b /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+                0x00000000000015d0                _start
+ .text          0x00000000000015fb        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o
+ *fill*         0x00000000000015fb        0x5 
+ .text          0x0000000000001600      0x100 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+ .text          0x0000000000001700      0x103 CMakeFiles/mila_accept.dir/src/main.c.o
+                0x0000000000001700                sig_handler
+                0x0000000000001740                main2
+ *fill*         0x0000000000001803        0xd 
+ .text          0x0000000000001810      0xe30 CMakeFiles/mila_accept.dir/src/mila.c.o
+                0x0000000000001810                write_callback
+                0x0000000000001890                isemailexist
+                0x00000000000018c0                getfromemail
+                0x00000000000018f0                quoat_decode
+                0x0000000000001b20                get_accept_url
+                0x0000000000001be0                header_callback
+                0x0000000000001bf0                mila
+ .text          0x0000000000002640      0x7a0 CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+                0x0000000000002640                doSomeThing
+                0x0000000000002d80                strlwr
+                0x0000000000002dc0                mila_parce
+ .text          0x0000000000002de0      0x1b6 CMakeFiles/mila_accept.dir/src/str_replace.c.o
+                0x0000000000002de0                str_replace
+ *fill*         0x0000000000002f96        0xa 
+ .text          0x0000000000002fa0       0x72 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+                0x0000000000002fa0                __libc_csu_init
+                0x0000000000003010                __libc_csu_fini
+ .text          0x0000000000003012        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o
+ .text          0x0000000000003012        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+ *(.gnu.warning)
+
+.fini           0x0000000000003014        0x9
+ *(SORT(.fini))
+ .fini          0x0000000000003014        0x4 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o
+                0x0000000000003014                _fini
+ .fini          0x0000000000003018        0x5 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+                [!provide]                        PROVIDE (__etext, .)
+                [!provide]                        PROVIDE (_etext, .)
+                [!provide]                        PROVIDE (etext, .)
+
+.rodata         0x0000000000003020      0x834
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.cst4   0x0000000000003020        0x4 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+                0x0000000000003020                _IO_stdin_used
+ .rodata.str1.1
+                0x0000000000003024       0x87 CMakeFiles/mila_accept.dir/src/main.c.o
+                                         0x9c (size before relaxing)
+ *fill*         0x00000000000030ab        0x5 
+ .rodata.str1.8
+                0x00000000000030b0       0x20 CMakeFiles/mila_accept.dir/src/main.c.o
+ .rodata.cst8   0x00000000000030d0        0x8 CMakeFiles/mila_accept.dir/src/main.c.o
+ .rodata.str1.1
+                0x00000000000030d8      0x123 CMakeFiles/mila_accept.dir/src/mila.c.o
+                                        0x124 (size before relaxing)
+ *fill*         0x00000000000031fb        0x5 
+ .rodata.str1.8
+                0x0000000000003200      0x429 CMakeFiles/mila_accept.dir/src/mila.c.o
+ .rodata.cst8   0x0000000000003629        0x8 CMakeFiles/mila_accept.dir/src/mila.c.o
+ .rodata.str1.1
+                0x0000000000003629      0x10c CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+ *fill*         0x0000000000003735        0x3 
+ .rodata.str1.8
+                0x0000000000003738       0x60 CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+                                         0xa0 (size before relaxing)
+ *fill*         0x0000000000003798        0x8 
+ .rodata        0x00000000000037a0       0xb4 CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+ .rodata.cst8   0x0000000000003854        0x8 CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr   0x0000000000003854       0x9c
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x0000000000003854       0x9c /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+                0x0000000000003854                __GNU_EH_FRAME_HDR
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame       0x00000000000038f0      0x3a4
+ *(.eh_frame)
+ .eh_frame      0x00000000000038f0       0x30 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ .eh_frame      0x0000000000003920       0x40 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ .eh_frame      0x0000000000003960       0x88 CMakeFiles/mila_accept.dir/src/main.c.o
+                                         0xa0 (size before relaxing)
+ .eh_frame      0x00000000000039e8      0x150 CMakeFiles/mila_accept.dir/src/mila.c.o
+ .eh_frame      0x0000000000003b38       0x90 CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+                                         0xa8 (size before relaxing)
+ .eh_frame      0x0000000000003bc8       0x68 CMakeFiles/mila_accept.dir/src/str_replace.c.o
+                                         0x80 (size before relaxing)
+ .eh_frame      0x0000000000003c30       0x60 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+                                         0x78 (size before relaxing)
+ .eh_frame      0x0000000000003c90        0x4 /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x0000000000204c28                . = DATA_SEGMENT_ALIGN (0x200000, 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000000204c28        0x0
+                [!provide]                        PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end, .)
+
+.init_array     0x0000000000204c28        0x8
+                0x0000000000204c28                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*) SORT(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+ .init_array    0x0000000000204c28        0x8 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+                0x0000000000204c30                PROVIDE (__init_array_end, .)
+
+.fini_array     0x0000000000204c30        0x8
+                [!provide]                        PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*) SORT(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+ .fini_array    0x0000000000204c30        0x8 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+                [!provide]                        PROVIDE (__fini_array_end, .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr            0x0000000000204c38        0x8
+ *(.jcr)
+ .jcr           0x0000000000204c38        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+ .jcr           0x0000000000204c38        0x8 /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o
+
+.data.rel.ro    0x0000000000204c40       0x20
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ .data.rel.ro.local
+                0x0000000000204c40       0x20 CMakeFiles/mila_accept.dir/src/mila.c.o
+                0x0000000000204c40                mila_profile
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x0000000000204c60      0x1f0
+ *(.dynamic)
+ .dynamic       0x0000000000204c60      0x1f0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+                0x0000000000204c60                _DYNAMIC
+
+.got            0x0000000000204e50      0x1b0
+ *(.got.plt)
+ .got.plt       0x0000000000204e50       0x18 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+                0x0000000000204e50                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+ *(.got)
+ .got           0x0000000000204e68      0x198 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ *(.igot)
+                0x0000000000205000                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.data           0x0000000000205000       0x10
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000000205000        0x4 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+                0x0000000000205000                data_start
+                0x0000000000205000                __data_start
+ .data          0x0000000000205004        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o
+ .data          0x0000000000205004        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+ *fill*         0x0000000000205004        0x4 
+ .data.rel.local
+                0x0000000000205008        0x8 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+                0x0000000000205008                __dso_handle
+ .data          0x0000000000205010        0x0 CMakeFiles/mila_accept.dir/src/main.c.o
+ .data          0x0000000000205010        0x0 CMakeFiles/mila_accept.dir/src/mila.c.o
+ .data          0x0000000000205010        0x0 CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+ .data          0x0000000000205010        0x0 CMakeFiles/mila_accept.dir/src/str_replace.c.o
+ .data          0x0000000000205010        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+ .data          0x0000000000205010        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o
+ .data          0x0000000000205010        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+
+.tm_clone_table
+                0x0000000000205010        0x0
+ .tm_clone_table
+                0x0000000000205010        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+ .tm_clone_table
+                0x0000000000205010        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o
+
+.data1
+ *(.data1)
+                0x0000000000205010                _edata = .
+                [!provide]                        PROVIDE (edata, .)
+                0x0000000000205010                . = .
+                0x0000000000205010                __bss_start = .
+
+.bss            0x0000000000205020   0x100058
+ *(.dynbss)
+ .dynbss        0x0000000000205020       0x28 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+                0x0000000000205020                stdin@@GLIBC_2.2.5
+                0x0000000000205040                stderr@@GLIBC_2.2.5
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000000205048        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o
+ .bss           0x0000000000205048        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o
+ .bss           0x0000000000205048        0x1 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+ .bss           0x0000000000205049        0x0 CMakeFiles/mila_accept.dir/src/main.c.o
+ *fill*         0x0000000000205049       0x17 
+ .bss           0x0000000000205060   0x100000 CMakeFiles/mila_accept.dir/src/mila.c.o
+                0x0000000000205060                retbuf
+ .bss           0x0000000000305060        0x0 CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+ .bss           0x0000000000305060        0x0 CMakeFiles/mila_accept.dir/src/str_replace.c.o
+ .bss           0x0000000000305060        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+ .bss           0x0000000000305060        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o
+ .bss           0x0000000000305060        0x0 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+ *(COMMON)
+ COMMON         0x0000000000305060        0x8 CMakeFiles/mila_accept.dir/src/main.c.o
+                0x0000000000305060                run
+                0x0000000000305064                sfd
+ COMMON         0x0000000000305068       0x10 CMakeFiles/mila_accept.dir/src/mila.c.o
+                0x0000000000305068                time_processing
+                0x0000000000305070                time_accept
+                0x0000000000305078                . = ALIGN ((. != 0x0)?0x8:0x1)
+
+.lbss
+ *(.dynlbss)
+ *(.lbss .lbss.* .gnu.linkonce.lb.*)
+ *(LARGE_COMMON)
+                0x0000000000305078                . = ALIGN (0x8)
+                0x0000000000305078                . = SEGMENT_START ("ldata-segment", .)
+
+.lrodata
+ *(.lrodata .lrodata.* .gnu.linkonce.lr.*)
+
+.ldata          0x0000000000705078        0x0
+ *(.ldata .ldata.* .gnu.linkonce.l.*)
+                0x0000000000705078                . = ALIGN ((. != 0x0)?0x8:0x1)
+                0x0000000000705078                . = ALIGN (0x8)
+                0x0000000000705078                _end = .
+                [!provide]                        PROVIDE (end, .)
+                0x0000000000705078                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x2d
+ *(.comment)
+ .comment       0x0000000000000000       0x2d /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o
+                                         0x2e (size before relaxing)
+ .comment       0x000000000000002d       0x2e CMakeFiles/mila_accept.dir/src/main.c.o
+ .comment       0x000000000000002d       0x2e CMakeFiles/mila_accept.dir/src/mila.c.o
+ .comment       0x000000000000002d       0x2e CMakeFiles/mila_accept.dir/src/mila_tread.c.o
+ .comment       0x000000000000002d       0x2e CMakeFiles/mila_accept.dir/src/str_replace.c.o
+ .comment       0x000000000000002d       0x2e /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line .debug_line.* .debug_line_end)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(bin/mila_accept elf64-x86-64)
