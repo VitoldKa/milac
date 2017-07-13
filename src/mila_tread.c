@@ -125,7 +125,9 @@ void* doSomeThing(void *arg)
 					clock_t end = clock();
 					double time_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
 					printf("smtp time befor mila: %f\n\n", time_smtp);
+
 					mila(data, data_pointer-data, to);
+
 					end = clock();
 					time_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
 					printf("smtp time after mila: %f\n\n", time_smtp);
@@ -183,16 +185,7 @@ void* doSomeThing(void *arg)
 			//printf("%x::->%s\n", (unsigned int)lmila->tid, buffer);
 			if(state = STATE_WAIT_FOR_RCPT)
 			{
-				if( ( strcmp(buffer+8, "<xxx@xxx.com>\r\n")==0) ||
-					( strcmp(buffer+8, "<xxx@xxx.com>\r\n")==0) ||
-					( strcmp(buffer+8, "<xxx@xxx.com>\r\n")==0) ||
-					( strcmp(buffer+8, "<xxx@xxx.com>\r\n")==0) ||
-					( strcmp(buffer+8, "<xxx@xxx.com>\r\n")==0) ||
-					( strcmp(buffer+8, "<xxx@xxx.com>\r\n")==0) ||
-					( strcmp(buffer+8, "<vitold.ka@mila-i1.com>\r\n")==0)
-					
-					
-					)
+				if( ( isemailexist(buffer+8))) // TODO: remove "\r\n"
 				{
 					strcpy(to, buffer+8);
 					static const char loutbuf[] = "250 Recipient ok.\r\n";

@@ -69,7 +69,7 @@ int main2 (int argc, char *argv[])
     }
 
 	clock_t begin = clock();
-	mila(buf, size, "<xxx@xxx..com>\r\n");
+	mila(buf, size, "<xxx@xxx.com>\r\n");
 		clock_t end = clock();
 	double mila_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
 	printf("mila time: %f\n\n", mila_smtp);
