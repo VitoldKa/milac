@@ -1,9 +1,0 @@
-/home/ubuntu/milac/CMakeFiles/edit_cache.dir
-/home/ubuntu/milac/CMakeFiles/package_source.dir
-/home/ubuntu/milac/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/milac/CMakeFiles/package.dir
-/home/ubuntu/milac/CMakeFiles/mila_accept.dir
-/home/ubuntu/milac/CMakeFiles/install/strip.dir
-/home/ubuntu/milac/CMakeFiles/install/local.dir
-/home/ubuntu/milac/CMakeFiles/list_install_components.dir
-/home/ubuntu/milac/CMakeFiles/install.dir
