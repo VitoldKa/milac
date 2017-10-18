@@ -8,6 +8,7 @@
 #include <string.h>
 #include <syslog.h>
 #include <sys/time.h>
+#include <pthread.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -30,6 +31,7 @@
 
 // adresse OVH
 //#define INADDRESS "147.135.182.245"
+//#define INADDRESS "178.33.43.38"
 // adresse amazon AWS
 #define INADDRESS "172.31.40.44"
 
@@ -83,6 +85,8 @@ int main (int argc, char *argv[])
 {
 	signal(SIGINT, sig_handler);
 	printf("Starting Mila_accept\n");
+	
+	pthread_mutex_init(&mutex, NULL);
 	
 	/*	struct addrinfo hints;
 		struct addrinfo *result, *rp;
@@ -145,5 +149,6 @@ int main (int argc, char *argv[])
 //	unlink(sfd);
 //	unlink(sfd);
 	close(sfd);
+	
 	return 0;
 }
