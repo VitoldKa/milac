@@ -97,7 +97,10 @@ void* doSomeThing(void *arg)
 		// parce the buffer
 
 		if(state != STATE_WAIT_FOR_DOT)
+		{
 			strlwr(buffer);
+			printf("->%s\n", buffer);
+		}
 
 		if(state == STATE_WAIT_FOR_DOT)
 		{
@@ -121,7 +124,7 @@ void* doSomeThing(void *arg)
 	
 				if(strstr(buffer, "\r\n.\r\n"))
 				{
-//					printf("dot\n");
+ 					printf("end of body\n");
 					clock_t end = clock();
 					double time_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
 					printf("smtp time befor mila: %f\n\n", time_smtp);
@@ -138,116 +141,121 @@ void* doSomeThing(void *arg)
 				}
 		}
 
-		else {
-		if(strcmp(buffer, "") != 0)
+		else
 		{
-//				//printf("%d\n", n);
-				//printf("%x::->%s", (unsigned int)lmila->tid, buffer);
-		}		
-		if(strncmp(buffer, "ehlo", 4)==0)
-		{
-//			//printf("->EHLO\n");
-//			if(state = STATE_WAIT_FOR_HELO)
-//			{
-				const char loutbuf[] = "250-mila7.xxx.com\r\n250-8BITMIME\r\n250 SIZE 157286400\r\n";
-				//printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
-				ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);
-
-/*				char loutbuf2[] = "250-8BITMIME\r\n";
-				//printf("<-%s", loutbuf2);
-				ret = write(lmila->socket, loutbuf2, sizeof(loutbuf2));
-
-				char loutbuf3[] = "250-SIZE 157286400\r\n";
-				//printf("<-%s", loutbuf3);
-				
-//				250-PIPELINING
-//				250 SMTPUTF8
-				ret = write(lmila->socket, loutbuf3, sizeof(loutbuf3));
-*/
-				state = STATE_WAIT_FOR_MAIL;
-//			}
-		}
-
-		if( ( strncmp(buffer, "mail from:", 10)==0 ))
-		{
-//			if(state = STATE_WAIT_FOR_MAIL)
-//			{
-				const char loutbuf[] = "250 Ok\r\n";
-//				printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
-				strcpy(from, buffer+10);
-				ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);
-				state = STATE_WAIT_FOR_RCPT;
-//			}
-		}
-
-		if(strncmp(buffer, "rcpt to:", 8)==0)
-		{
-			//printf("%x::->%s\n", (unsigned int)lmila->tid, buffer);
-			if(state = STATE_WAIT_FOR_RCPT)
+			if(strcmp(buffer, "") != 0)
 			{
-				if( ( isemailexist(buffer+8))) // TODO: remove "\r\n"
-				{
-					strcpy(to, buffer+8);
-					static const char loutbuf[] = "250 Recipient ok.\r\n";
-//					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
-					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);				
-					state = STATE_WAIT_FOR_DATA;
-				}
-				else
-				{
-					static const char loutbuf[] = "554 5.7.1 Relay access denied\r\n";
+	//				//printf("%d\n", n);
+					//printf("%x::->%s", (unsigned int)lmila->tid, buffer);
+			}		
+			if(strncmp(buffer, "ehlo", 4)==0)
+			{
+	// 			printf("->EHLO\n");
+	//			if(state = STATE_WAIT_FOR_HELO)
+	//			{
+					const char loutbuf[] = "250-mila7.xxx.com\r\n250-8BITMIME\r\n250 SIZE 157286400\r\n";
 					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
-					printf("%x::%s", (unsigned int)lmila->tid, buffer+8);
-					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);										
-					state = STATE_QUIT;
+					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);
+
+	/*				char loutbuf2[] = "250-8BITMIME\r\n";
+					//printf("<-%s", loutbuf2);
+					ret = write(lmila->socket, loutbuf2, sizeof(loutbuf2));
+
+					char loutbuf3[] = "250-SIZE 157286400\r\n";
+					//printf("<-%s", loutbuf3);
+				
+	//				250-PIPELINING
+	//				250 SMTPUTF8
+					ret = write(lmila->socket, loutbuf3, sizeof(loutbuf3));
+	*/
+					state = STATE_WAIT_FOR_MAIL;
+	//			}
+			}
+
+			if( ( strncmp(buffer, "mail from:", 10)==0 ))
+			{
+	// 			printf("mail from:\n");
+	//			if(state = STATE_WAIT_FOR_MAIL)
+	//			{
+					const char loutbuf[] = "250 Ok\r\n";
+					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+					strcpy(from, buffer+10);
+					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);
+					state = STATE_WAIT_FOR_RCPT;
+	//			}
+			}
+
+			if(strncmp(buffer, "rcpt to:", 8)==0)
+			{
+	// 			printf("->%s\n", buffer);
+				//printf("%x::->%s\n", (unsigned int)lmila->tid, buffer);
+				if(state = STATE_WAIT_FOR_RCPT)
+				{
+					if( ( isemailexist(buffer+8))) // TODO: remove "\r\n"
+					{
+						strcpy(to, buffer+8);
+						static const char loutbuf[] = "250 Recipient ok.\r\n";
+						printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+						ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);				
+						state = STATE_WAIT_FOR_DATA;
+					}
+					else
+					{
+						static const char loutbuf[] = "554 5.7.1 Relay access denied\r\n";
+						printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+						printf("%x::%s", (unsigned int)lmila->tid, buffer+8);
+						ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);										
+						state = STATE_QUIT;
+					}
 				}
 			}
-		}
 
 
 
 
-		if(strcmp(buffer, "data\r\n")==0)
-		{
-//			if(state = STATE_WAIT_FOR_DATA)
-//			{
-				static const char loutbuf[] = "354 Enter mail, end with \".\" on a line by itself\r\n";
-				//printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
-				ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
-				state = STATE_WAIT_FOR_DOT;
-				// check for the dot
-//			}
-		}
-
-
-		if(strcmp(buffer, ".\r\n")==0)
-		{
-//			if(state = STATE_WAIT_FOR_DOT)
+			if(strcmp(buffer, "data\r\n")==0)
 			{
-				static const char loutbuf[] = "250 Ok\r\n";
-				//printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
-				ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
-				state = STATE_WAIT_FOR_QUIT;
-
-
-
+	// 			printf("->%s\n", buffer);
+	//			if(state = STATE_WAIT_FOR_DATA)
+	//			{
+					static const char loutbuf[] = "354 Enter mail, end with \".\" on a line by itself\r\n";
+					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
+					state = STATE_WAIT_FOR_DOT;
+					// check for the dot
+	//			}
 			}
-		}
 
-		if(strcmp(buffer, "quit\r\n")==0)
-		{
-//			printf("->%s\n", buffer);
-			static const char loutbuf[] = "221 Closing connection\r\n";
-//			printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
-			ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
-			close(lmila->socket);
-			run = 0;
-			state = STATE_QUIT;
-		}
+
+			if(strcmp(buffer, ".\r\n")==0)
+			{
+	// 			printf("->%s\n", buffer);
+	//			if(state = STATE_WAIT_FOR_DOT)
+				{
+					static const char loutbuf[] = "250 Ok\r\n";
+					//printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
+					state = STATE_WAIT_FOR_QUIT;
+
+
+
+				}
+			}
+
+			if(strcmp(buffer, "quit\r\n")==0)
+			{
+	// 			printf("->%s\n", buffer);
+				static const char loutbuf[] = "221 Closing connection\r\n";
+				printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+				ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
+				close(lmila->socket);
+				run = 0;
+				state = STATE_QUIT;
+			}
 		}
 
 	}
-	//printf("%x::stop thread\n", (unsigned int)lmila->tid);
+	printf("%x::stop thread\n", (unsigned int)lmila->tid);
 	close(lmila->socket);
 	
 	clock_t end = clock();
