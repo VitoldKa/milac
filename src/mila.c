@@ -204,7 +204,7 @@ size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
 	int offset = strlen(retbuf);
 	memcpy(retbuf+offset, ptr, size*nmemb);
 	retbuf[size*nmemb+offset] = 0;
-	printf("write_callbacks: %s\n", retbuf);
+//	printf("write_callbacks: %s\n", retbuf);
 	return nmemb * size;
 }
 
@@ -240,6 +240,7 @@ int mila_accept(char *buf, int lprofile)
 		CURLcode res;
 		curl = curl_easy_init();
 
+		curl_easy_setopt(curl, CURLOPT_POST, 1L);
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
 		curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 		// curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
@@ -361,7 +362,7 @@ int mila (char *buf, int buf_size, char *to)
 				char *lpchar = retbuf;
 //				while (lpchar = strstr(lpchar, "<form name=\"userForm\" action=\"/friendaccept/"))
 //				{
-					printf("%s\n", lpchar);
+//					printf("%s\n", lpchar);
 					if(!mila_accept(lpchar, profile))
 						error=0;
 //				}
