@@ -73,7 +73,9 @@ elseif(${CMAKE_BUILD_TYPE} STREQUAL Release)
 #endforeach(var)
 ENDIF()
 
+IF(NOT(APPLE))
 SET(GCC_COVERAGE_LINK_FLAGS    "-Wl,-Map,output.map")
+ENDIF(NOT(APPLE))
 SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}" )
 
 link_directories( /lib64 /opt/local/lib/mysql57/mysql /opt/local/lib/ /opt/local/include)
@@ -166,29 +168,10 @@ IF($ENV{TEST_ENABLE})
     endfunction(TEST)
 
 
-    TEST(readConfigFile_ok)
-    TEST(readConfigFile_ndef_cfgfile)
-    TEST(readConfigFile_empty_cfgfile)
-    TEST(readConfigFile_nexist_cfgfile)
-    TEST(readConfigFile_ndef_lsettings)
-
-    TEST(getSetting_ok)
-    TEST(getSetting_ndef_lsettings)
-    TEST(getSetting_ndef_buf)
-    TEST(getSetting_ndef_section)
-    TEST(getSetting_ndef_key)
-    TEST(getSetting_empty_section)
-    TEST(getSetting_empty_key)
-
-    TEST(free_setting_ok)
-    TEST(free_setting_ndef_buf)
-
-    TEST(microhttpd_utils_get_file_size_ok)
-    TEST(microhttpd_utils_get_file_size_empty_filename)
-    TEST(microhttpd_utils_get_file_size_ndef_filename)
-    TEST(microhttpd_utils_load_file_ok)
-    TEST(microhttpd_utils_load_file_ndef_filename)
-    TEST(microhttpd_utils_get_file_size_empty_file)
+    TEST(getfromemail_ok)
+    TEST(getfromemail_nok)
+    TEST(mila_accept_ok)
+    TEST(mila_ok)
 
 ENDIF($ENV{TEST_ENABLE})
 

@@ -10,6 +10,7 @@
 #include <pthread.h>
 
 #include <curl/curl.h>
+#include <glib.h>
 
 #include "base64.h"
 
@@ -73,14 +74,16 @@ int isemailexist(char *email)
 }
 int getfromemail(char *email, int *profile)
 {
+	if(email == NULL)
+		return 15;
 	int size = sizeof(mila_profile)/sizeof(s_mila_profile);
 //	printf("sizeof mila_profile: %d\n", size);
 	for(int c = 0; c < size; c++)
 	{
 		int len = strlen(mila_profile[c].email);
-//		printf("email  : %s ? %s\n", email+1, mila_profile[c].email);
+//		printf("email  : %s ? %s\n", email, mila_profile[c].email);
 //		printf("email len : %d\n", len);
-		if(strncmp(mila_profile[c].email, email+1, len)==0)
+		if(strncmp(mila_profile[c].email, email, len)==0)
 		{
 			printf("credential found\n");
 			*profile = c;
@@ -158,22 +161,30 @@ int get_accept_url(char *buf, int len, char *lbuf)
 	strcpy(lsearch[1], "Accepter\r\n<");
 */
 
-	const char lsearch[]= "friendservicecalls#";
+	const char lsearch[]= "https://www.mila.com/loginWithPW/";
+	const char lsearch2[] = "?next=3Dfriendservicecalls/";
 	char *lpbuf;
 	
 	lpbuf = strstr(buf, lsearch);
 	if(lpbuf)
 	{
-//		printf("Accept found:\n");
-			lpbuf += sizeof(lsearch)-1;
-			
-		char *end = strchr(lpbuf, '>');
-		if(end)
-		{
-		strncpy(lbuf, lpbuf, end-lpbuf);
-		printf("%s\n", lbuf);
-		return 0;
-	}
+		printf("Accept found:\n");
+		lpbuf += sizeof(lsearch)-1;
+
+			lpbuf += sizeof(lsearch2)-1;
+			char *end = strstr(lpbuf, "=\r\n>");
+			if(end-lpbuf > 200)
+			{	
+				printf("overflow %d\n", end-lpbuf);
+				return 4;
+			}
+			if(end)
+			{
+				strncpy(lbuf, lpbuf, end-lpbuf);
+				printf("%s\n", lbuf);
+				return 0;
+			}
+			return 2;
 	}
 	printf("Accept not found\n");
 	return 1;
@@ -181,7 +192,7 @@ int get_accept_url(char *buf, int len, char *lbuf)
 
 size_t header_callback(char *buffer,   size_t size,   size_t nitems,   void *userdata)
 {
-//	printf("%s\n", buffer);
+	printf("header: %s\n", buffer);
 	return nitems * size;
 }
 
@@ -193,16 +204,92 @@ size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
 	int offset = strlen(retbuf);
 	memcpy(retbuf+offset, ptr, size*nmemb);
 	retbuf[size*nmemb+offset] = 0;
-//	printf("write_callbacks: %s\n", retbuf);
+	printf("write_callbacks: %s\n", retbuf);
 	return nmemb * size;
 }
 
 
+int mila_accept(char *buf, int lprofile)
+{
+	GError *err = NULL;
+	GMatchInfo *matchInfo;
+	GRegex *regex;
 
+	int error = 1;
+	str_replace(buf, strlen(buf), "\n", "");
+	str_replace(buf, strlen(buf), "\r", "");
+
+	// search for _csrf=
+	regex = g_regex_new ("<form.*action=\"(.*)\".*name=\"_csrf\".*value=\"(.*)\".*Accepter.*<\\/form>", G_REGEX_UNGREEDY, 0, &err);   
+//	regex = g_regex_new ("<form.*name=\"_csrf\".*value=\"(.*)\"", G_REGEX_MULTILINE|G_REGEX_UNGREEDY, 0, &err);   
+	if(regex == NULL)
+	{
+		printf("regex error\n");
+		return 15;
+	}
+	else
+	{
+		if(err)
+		{
+			printf("gerror : %s\n", err->message);
+		}
+
+		g_regex_match (regex, buf, 0, &matchInfo);
+
+		CURL *curl;
+		CURLcode res;
+		curl = curl_easy_init();
+
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+		curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
+		// curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
+		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+
+printf("profile: %d\n", lprofile);
+		printf("mila credentials : %s\n", mila_profile[lprofile].credentials);
+		curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[lprofile].credentials);
+
+		while (g_match_info_matches (matchInfo)) {
+			gchar *orderid = g_match_info_fetch (matchInfo, 1);
+			gchar *csrf = g_match_info_fetch (matchInfo, 2);
+		 
+			g_print ("orderid: %s\n\n", orderid);
+			g_print ("csrf: %s\n\n", csrf);
+
+
+
+
+			char post[200] = "_csrf=";
+			strcat(post, csrf);
+			strcat(post, "");
+			curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post);
+			curl_easy_setopt(curl, CURLOPT_REFERER, "https://www.mila.com/friendservicecalls");
+
+			printf("post: %s\n", post);
+		printf("postlen: %d\n", strlen(post));
+
+			char accepturl[255] = "https://www.mila.com";
+			strcat(accepturl, orderid);
+			printf("%s\n", accepturl);
+			curl_easy_setopt(curl, CURLOPT_URL, accepturl);
+				res = curl_easy_perform(curl);
+
+
+			g_match_info_next (matchInfo, &err);
+			g_free (orderid);
+			g_free (csrf);
+			error = 0;
+		}
+		curl_easy_cleanup(curl);
+
+	}
+	return error;
+}
 
 int mila (char *buf, int buf_size, char *to)
 {
-	clock_t begin = clock();	
+	int error = 1;
+	clock_t begin = clock();
 //	printf("Milac\n");
 	
 //	memset(retbuf, 0, 1024*1024);
@@ -215,25 +302,17 @@ int mila (char *buf, int buf_size, char *to)
 
 	char newbuf[size];
 	int newbuf_lenght;
+
+
+
+
+
+
 //		printf("bytesread: %d\n", size);	
 //	char urlstr[200] ="https://www.mila.com/friendacceptfrommail/";
-	char urlstr[200] ="https://www.mila.com/loginWithPW/4f25f000?next=friendservicecalls#";
-	char orderid[20] = "";
-  	if((get_accept_url(buf, size, orderid)==0))
-	{
- //		quoat_decode(urlstr,size,newbuf,&newbuf_lenght);
-		str_replace(orderid, 20, "=\r\n", "");
-		str_replace(orderid, 20, "=\n", "");
-	
-		// https://www.mila.com/friendacceptfrommail/65696
-//		strcpy(urlstr, "");
-		strcat(urlstr, orderid);
-		printf("%s\n", urlstr);
-	
-	//	printf("%s\n", urlstr);
-		// test for https://www.mila.com/
-//		if(strstr(urlstr, "https://www.mila.com/"))
-//		{
+	const char urlstr[200] ="https://www.mila.com/friendservicecalls";
+
+
 			CURL *curl;
 			CURLcode res;
 			curl = curl_easy_init();
@@ -242,8 +321,8 @@ int mila (char *buf, int buf_size, char *to)
 			{
 				curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
 		//		curl_easy_setopt(curl, CURLOPT_WRITEDATA, llhapns_worker);
-		//		curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
-		//		curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
+				curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
+//				curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
 
 //				struct curl_slist *chunk = NULL;
 //				chunk = curl_slist_append(chunk, "apns-topic: com.10-sor.silentclock.voip");
@@ -259,7 +338,9 @@ int mila (char *buf, int buf_size, char *to)
 				else
 				{
 					printf("using default credential\n");
+					printf("to: %s\n", to);
 					curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[0].credentials);
+					error = 5;
 				}
 
 				curl_easy_setopt(curl, CURLOPT_URL, urlstr);
@@ -269,20 +350,33 @@ int mila (char *buf, int buf_size, char *to)
 
 				// accept here
 //				for(int c = 0; c < 2; c++)
-					res = curl_easy_perform(curl);
+				res = curl_easy_perform(curl);
+
+//				printf("write_callbacks: %s\n", retbuf);
 
 				// todo: retry
 				
+
+				// search for order to accept
+				char *lpchar = retbuf;
+//				while (lpchar = strstr(lpchar, "<form name=\"userForm\" action=\"/friendaccept/"))
+//				{
+					printf("%s\n", lpchar);
+					if(!mila_accept(lpchar, profile))
+						error=0;
+//				}
+
+
 				time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
 				printf("mila time_accept : %f\n", time_accept);
 
 
-				curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "_csrf=rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY=");
+				// curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "_csrf=rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY=");
 
-				char accepturl[255] = "https://www.mila.com/friendaccept/";
-				strcat(accepturl, orderid);
-				printf("%s\n", urlstr);
-				curl_easy_setopt(curl, CURLOPT_URL, accepturl);
+				// char accepturl[255] = "https://www.mila.com/friendaccept/";
+				// strcat(accepturl, "2");
+				// printf("%s\n", urlstr);
+				// curl_easy_setopt(curl, CURLOPT_URL, accepturl);
 //				res = curl_easy_perform(curl);
 
 				//printf("%u\n", res);
@@ -311,14 +405,6 @@ int mila (char *buf, int buf_size, char *to)
 				
 			}
 //		}
-	}
-	else
-	{
-		strcpy(retbuf, "Accept not found");
-		clock_t end = clock();
-		time_processing = (double)(end - begin) / CLOCKS_PER_SEC;
-		printf("mila time : %f\n", time_processing);
-	}
 	
 	
 //	printf("%s\n", buf);
@@ -413,8 +499,11 @@ int mila (char *buf, int buf_size, char *to)
 		if(cmd)
 			free(cmd);
 		else
+		{
 			printf("Error free cmd\n");
+			error = 10;
+		}
 	}
 	printf("Mila end\n");
-	return 0;
+	return error;
 }
