@@ -618,6 +618,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		
 		pthread_mutex_lock(&mutex);
 		int ret_cmd = system(cmd);
+		sleep(1);
 		pthread_mutex_unlock(&mutex);
 
 //		memset(cmd, 0, sizeof(cmd));
