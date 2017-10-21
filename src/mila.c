@@ -575,7 +575,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 	
 	
 	// email
-	char *cmd = malloc(buf_size+sizeof(retbuf)+sizeof(buf)+10000);
+	char *cmd = malloc(buf_size+sizeof(retbuf)+sizeof(buf)+5000000);
 //	printf("buf size: %d\n", buf_size);
 	if(cmd)
 	{
@@ -600,8 +600,9 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		strcat(cmd,"\n");
 		strcat(cmd,"\n");
 		strcat(cmd,"\n");
-		if(buf_size < 2*1024*1024)
-			strcat(cmd,retbuf);
+//		if(buf_size < 10*1024)
+//			strcat(cmd,retbuf);
+{
 		strcat(cmd,"\n\n");
 		strcat(cmd,"--_boundarystring\n");
 		strcat(cmd,"Content-Type: application/octet-stream name=\"message.eml\"\n");
@@ -613,12 +614,64 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		strcat(cmd,newbuf);
 		strcat(cmd,"\n\n");
 		strcat(cmd,"--_boundarystring--\n");
+		free(newbuf);
+}
+{
+                strcat(cmd,"\n\n");
+                strcat(cmd,"--_boundarystring\n");
+                strcat(cmd,"Content-Type: application/octet-stream name=\"return.eml\"\n");
+                strcat(cmd,"Content-Transfer-Encoding: Base64\n");
+                strcat(cmd,"Content-Disposition: attachment; filename=\"return.eml\"\n");
+                strcat(cmd,"\n");
+                char *newbuf = malloc(Base64encode_len(strlen(retbuf)+1000));
+                Base64encode(newbuf, retbuf, strlen(retbuf));
+		printf("cmd size: %d\n", strlen(cmd));
+                strcat(cmd,newbuf);
+                printf("cmd size: %d\n", strlen(cmd));
+                 strcat(cmd,"\n\n");
+                strcat(cmd,"--_boundarystring--\n");
+		free(newbuf);
+}
+
+
+
+
+  CURL *curl;
+  CURLcode res = CURLE_OK;
+  struct curl_slist *recipients = NULL;
+//  struct upload_status upload_ctx;
+ 
+//  upload_ctx.lines_read = 0;
+ 
+  curl = curl_easy_init();
+  if(curl) {
+
+curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+ curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.xxx.com");
+curl_easy_setopt(curl, CURLOPT_MAIL_FROM, "xxx@xxx.com");
+recipients = curl_slist_append(recipients, "xxx@xxx.com");
+curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
+//  curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
+curl_easy_setopt(curl, CURLOPT_READDATA, &cmd);
+
+res = curl_easy_perform(curl);
+
+if(res != CURLE_OK)
+      printf("curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+
+  curl_slist_free_all(recipients);
+curl_easy_cleanup(curl);
+}
+
+
 		strcat(cmd,"EOF");
 		printf("Sending Mila report\n");
 		
 		pthread_mutex_lock(&mutex);
 		int ret_cmd = system(cmd);
-		sleep(1);
+		printf("system returned : %d\n", ret_cmd);
+		sleep(5);
 		pthread_mutex_unlock(&mutex);
 
 //		memset(cmd, 0, sizeof(cmd));
@@ -630,6 +683,8 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 
 		pthread_mutex_lock(&mutex);
 		ret_cmd = system(cmd);
+		printf("system returned : %d\n", ret_cmd);
+		sleep(5);
 		pthread_mutex_unlock(&mutex);
 
 		if(cmd)
