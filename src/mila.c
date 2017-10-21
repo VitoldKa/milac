@@ -18,7 +18,7 @@
 #include "str_replace.h"
 
 
-#define MAX_BUF 1024*1024
+#define MAX_BUF 1024*1024*5
 
 const s_mila_profile mila_profile[] = {
 	{ "xxx@xxx.com.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
@@ -600,7 +600,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		strcat(cmd,"\n");
 		strcat(cmd,"\n");
 		strcat(cmd,"\n");
-		if(buf_size < 500*1024)
+		if(buf_size < 2*1024*1024)
 			strcat(cmd,retbuf);
 		strcat(cmd,"\n\n");
 		strcat(cmd,"--_boundarystring\n");
