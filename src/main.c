@@ -52,7 +52,7 @@ int main2 (int argc, char *argv[])
 {
 	int fd;
     char *input = "/dev/stdin";
-   char buf[1024*1024];
+	char buf[1024*1024+1];
 
 //			printf("size: %d\n", size);
  	int bytesread, offset=0;
@@ -136,7 +136,7 @@ int main (int argc, char *argv[])
 	{
 		usleep(10);
 //		printf("listen\n");
-		if(newsockfd = accept(sfd, (struct sockaddr *) &cli_addr, &clilen))
+		if((newsockfd = accept(sfd, (struct sockaddr *) &cli_addr, (socklen_t*)&clilen)))
 		{
 			// create thread
 			smila *lsmila = malloc(sizeof(smila));
