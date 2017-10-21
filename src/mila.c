@@ -176,7 +176,7 @@ int get_accept_url(char *buf, int len, char *lbuf)
 			char *end = strstr(lpbuf, "=\r\n>");
 			if(end-lpbuf > 200)
 			{	
-				printf("overflow %d\n", end-lpbuf);
+				printf("overflow %ld\n", (long)(end-lpbuf));
 				return 4;
 			}
 			if(end)
@@ -305,9 +305,9 @@ int mila_accept(char *buf, int lprofile)
 	char *start = strstr(buf, "Nouvelles demandes");
 
 	char *end = strstr(buf, "Commandes en cours");
-	printf("%d\n", start);
-	printf("%d\n", end);
-	printf("%d\n", end-start);
+	printf("%ld\n", (long)start);
+	printf("%ld\n", (long)end);
+	printf("%ld\n", (long)(end-start));
 	if(start && end)
 	{
 		char *newbuf = malloc(end-start+1);
@@ -353,15 +353,6 @@ int mila_accept(char *buf, int lprofile)
 
 // list = curl_slist_append(list, "Cookie: optimizelyEndUserId=oeu1486559193069r0.2422451363507594; optimizelySegments=%7B%22700475046%22%3A%22gc%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; logintoken=a5da1827573d0e4bcf6966c9954a7aa2335caf259b048a4dacc696326078ba4df20b7635; connect1.sid=s%3AzuHy12n0PP0pvG1FNB5V6owfRbF_Meb2.qs5XxiVgaJphR1nvGErxu%2FpSe8Ux0i3%2BveMulspgm88; _dc_gtm_UA-29191003-1=1; _ga=GA1.2.881151050.1486559200; _gid=GA1.2.1734846664.1508526208; _gat_UA-29191003-1=1");
 
-
-
-
-
-
-
-
-
-
 			curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
 			curl_easy_setopt(curl, CURLOPT_POST, 1L);
 			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
@@ -375,14 +366,13 @@ int mila_accept(char *buf, int lprofile)
 			// printf("mila credentials : %s\n", mila_profile[lprofile].credentials);
 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[lprofile].credentials);
 
-			while (g_match_info_matches (matchInfo)) {
+			while (g_match_info_matches (matchInfo))
+			{
 				gchar *orderid = g_match_info_fetch (matchInfo, 1);
 				gchar *csrf = g_match_info_fetch (matchInfo, 2);
 			 
 				g_print ("orderid: %s\n\n", orderid);
 				g_print ("csrf: %s\n\n", csrf);
-
-
 
 
 				char post[200] = "_csrf=";
@@ -393,7 +383,7 @@ int mila_accept(char *buf, int lprofile)
 				curl_easy_setopt(curl, CURLOPT_REFERER, "https://www.mila.com/friendservicecalls");
 
 				printf("post: %s\n", csrf_enc);
-				printf("postlen: %d\n", strlen(post));
+				printf("postlen: %lu\n", strlen(post));
 
 				char accepturl[255] = "https://www.mila.com";
 				strcat(accepturl, orderid);
@@ -497,8 +487,8 @@ int mila (char *buf, int buf_size, char *to)
 //				while (lpchar = strstr(lpchar, "<form name=\"userForm\" action=\"/friendaccept/"))
 //				{
 //					printf("%s\n", lpchar);
-			if(!mila_accept(lpchar, profile))
-				error=0;
+		if(!mila_accept(lpchar, profile))
+			error=0;
 //				}
 
 
@@ -600,69 +590,72 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		strcat(cmd,"\n");
 		strcat(cmd,"\n");
 		strcat(cmd,"\n");
+
+
 //		if(buf_size < 10*1024)
 //			strcat(cmd,retbuf);
-{
-		strcat(cmd,"\n\n");
-		strcat(cmd,"--_boundarystring\n");
-		strcat(cmd,"Content-Type: application/octet-stream name=\"message.eml\"\n");
-		strcat(cmd,"Content-Transfer-Encoding: Base64\n");
-		strcat(cmd,"Content-Disposition: attachment; filename=\"message.eml\"\n");
-		strcat(cmd,"\n");
-		char *newbuf = malloc(Base64encode_len(strlen(buf)));
-		Base64encode(newbuf, buf, strlen(buf));
-		strcat(cmd,newbuf);
-		strcat(cmd,"\n\n");
-		strcat(cmd,"--_boundarystring--\n");
-		free(newbuf);
-}
-{
-                strcat(cmd,"\n\n");
-                strcat(cmd,"--_boundarystring\n");
-                strcat(cmd,"Content-Type: application/octet-stream name=\"return.eml\"\n");
-                strcat(cmd,"Content-Transfer-Encoding: Base64\n");
-                strcat(cmd,"Content-Disposition: attachment; filename=\"return.eml\"\n");
-                strcat(cmd,"\n");
-                char *newbuf = malloc(Base64encode_len(strlen(retbuf)+1000));
-                Base64encode(newbuf, retbuf, strlen(retbuf));
-		printf("cmd size: %d\n", strlen(cmd));
-                strcat(cmd,newbuf);
-                printf("cmd size: %d\n", strlen(cmd));
-                 strcat(cmd,"\n\n");
-                strcat(cmd,"--_boundarystring--\n");
-		free(newbuf);
-}
+		{
+			strcat(cmd,"\n\n");
+			strcat(cmd,"--_boundarystring\n");
+			strcat(cmd,"Content-Type: application/octet-stream name=\"message.eml\"\n");
+			strcat(cmd,"Content-Transfer-Encoding: Base64\n");
+			strcat(cmd,"Content-Disposition: attachment; filename=\"message.eml\"\n");
+			strcat(cmd,"\n");
+			char *newbuf = malloc(Base64encode_len(strlen(buf)));
+			Base64encode(newbuf, buf, strlen(buf));
+			strcat(cmd,newbuf);
+			strcat(cmd,"\n\n");
+			strcat(cmd,"--_boundarystring--\n");
+			free(newbuf);
+		}
+		{
+			strcat(cmd,"\n\n");
+			strcat(cmd,"--_boundarystring\n");
+			strcat(cmd,"Content-Type: application/octet-stream name=\"return.eml\"\n");
+			strcat(cmd,"Content-Transfer-Encoding: Base64\n");
+			strcat(cmd,"Content-Disposition: attachment; filename=\"return.eml\"\n");
+			strcat(cmd,"\n");
+			char *newbuf = malloc(Base64encode_len(strlen(retbuf)+1000));
+			Base64encode(newbuf, retbuf, strlen(retbuf));
+			printf("cmd size: %lu\n", strlen(cmd));
+			strcat(cmd,newbuf);
+			printf("cmd size: %lu\n", strlen(cmd));
+			strcat(cmd,"\n\n");
+			strcat(cmd,"--_boundarystring--\n");
+			free(newbuf);
+		}
 
 
 
 
-  CURL *curl;
-  CURLcode res = CURLE_OK;
-  struct curl_slist *recipients = NULL;
-//  struct upload_status upload_ctx;
- 
-//  upload_ctx.lines_read = 0;
- 
-  curl = curl_easy_init();
-  if(curl) {
+		CURL *curl;
+		CURLcode res = CURLE_OK;
+		struct curl_slist *recipients = NULL;
+		//  struct upload_status upload_ctx;
+		 
+		//  upload_ctx.lines_read = 0;
+		 
+		curl = curl_easy_init();
+		if(curl)
+		{
 
-curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
- curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.xxx.com");
-curl_easy_setopt(curl, CURLOPT_MAIL_FROM, "xxx@xxx.com");
-recipients = curl_slist_append(recipients, "xxx@xxx.com");
-curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
-//  curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
-curl_easy_setopt(curl, CURLOPT_READDATA, &cmd);
+			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+			curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.xxx.com");
+			curl_easy_setopt(curl, CURLOPT_MAIL_FROM, "xxx@xxx.com");
+			recipients = curl_slist_append(recipients, "xxx@xxx.com");
+			curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
+			//  curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
+			curl_easy_setopt(curl, CURLOPT_READDATA, cmd);
 
-res = curl_easy_perform(curl);
+			res = curl_easy_perform(curl);
 
-if(res != CURLE_OK)
-      printf("curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
+			if(res != CURLE_OK)
+				printf("curl_easy_perform() failed: %s\n",
+			curl_easy_strerror(res));
 
-  curl_slist_free_all(recipients);
-curl_easy_cleanup(curl);
-}
+			curl_slist_free_all(recipients);
+			curl_easy_cleanup(curl);
+		}
 
 
 		strcat(cmd,"EOF");
@@ -671,6 +664,7 @@ curl_easy_cleanup(curl);
 		pthread_mutex_lock(&mutex);
 		int ret_cmd = system(cmd);
 		printf("system returned : %d\n", ret_cmd);
+
 		sleep(5);
 		pthread_mutex_unlock(&mutex);
 

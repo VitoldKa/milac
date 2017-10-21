@@ -268,6 +268,7 @@ void* doSomeThing(void *arg)
 		free(buffer);
 	if(lmila)
 		free(lmila);
+	return NULL;
 }
 
 
