@@ -100,11 +100,11 @@ INSTALL(TARGETS ${CMAKE_PROJECT_NAME}
 
 ############################################################
 ## Library
-FIND_PACKAGE(Threads)
-IF(Threads_FOUND)
+#FIND_PACKAGE(Threads)
+#IF(Threads_FOUND)
 #    INCLUDE_DIRECTORIES(${THREADS_INCLUDE_DIRS})
 #    TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${THREADS_LIBRARIES})
-ENDIF(Threads_FOUND)
+#ENDIF(Threads_FOUND)
 
 message("${CMAKE_THREAD_LIBS_INIT}")
 
@@ -162,7 +162,7 @@ IF($ENV{TEST_ENABLE})
 
     function(TEST name)
         add_executable(${name} test/${name}.c)
-        target_link_libraries(${name} ${CURL_LIBRARIES} ${EXTRA_LIBS} ${CMAKE_THREAD_LIBS_INIT} testlib ${GLIB_LIBRARIES})
+        target_link_libraries(${name} testlib ${CURL_LIBRARIES} ${EXTRA_LIBS} ${CMAKE_THREAD_LIBS_INIT}  ${GLIB_LIBRARIES})
         target_link_libraries(${name} "-e_${name}")
         add_test(${name} bin/${name}  ${ARGN})
     endfunction(TEST)
