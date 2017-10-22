@@ -35,7 +35,7 @@ const s_mila_profile mila_profile[] = {
 	
 	
 	
-		{ "vitold.ka@mila1-i1.xxx.com" , "logintoken=d140404678b19eeb9887bbfc3da57f12a501896564092f0f39706f9e6c3c528f71f6f9b3; connect1.sid=s%3AbTDzU3D9FoqI2RNB-S3PsA8AvnEzjg81.jF%2F9McapKItN19M5F0kVdvCQvIpHJsxy6v6ZF4K0LCo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+		{ "vitold.ka@mila1-i1.xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
 		
 	{ "xxx@xxx.com.com" , "logintoken=535485576fb0fbb3c346da77903fb5f9cd0f0f12ac2bd96044321f7f5a9b07b101b2cbb8; connect1.sid=s%3AcUIHLolfcbFkh8PKQR3uBWfa2AvkxYME.WBDOwmu9KnhdgM5PzIptCANKj%2FWVzkkj13KVU3mTvdE; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
 		
@@ -335,6 +335,10 @@ int mila_accept(char *buf, int lprofile)
 
 			g_regex_match (regex, newbuf, 0, &matchInfo);
 
+			// worked
+			// curl -X POST --data-urlencode  "_csrf=jHJ1VbdOEqQjUZsyeyr3poW50OSDeQLgr8p8Q=" -b "connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; " -H "Accept-Language: fr-CH" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36" -H "Origin: https://www.mila.com" -L -v --trace-ascii /dev/stdout  https://www.mila.com/friendaccept/109693
+
+
 			CURL *curl;
 			CURLcode res;
 			curl = curl_easy_init();
@@ -376,10 +380,9 @@ int mila_accept(char *buf, int lprofile)
 
 
 				char post[200] = "_csrf=";
-				strcat(post, csrf);
-				strcat(post, "");
 				char *csrf_enc = curl_easy_escape(curl, csrf, strlen(csrf));
-				curl_easy_setopt(curl, CURLOPT_POSTFIELDS, csrf_enc);
+				strcat(post, csrf_enc);
+				curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post);
 				curl_easy_setopt(curl, CURLOPT_REFERER, "https://www.mila.com/friendservicecalls");
 
 				printf("post: %s\n", csrf_enc);
@@ -389,6 +392,7 @@ int mila_accept(char *buf, int lprofile)
 				strcat(accepturl, orderid);
 				printf("%s\n", accepturl);
 				curl_easy_setopt(curl, CURLOPT_URL, accepturl);
+				// curl_easy_setopt(curl, CURLOPT_URL, "https://requestb.in/17vighd1");
 				res = curl_easy_perform(curl);
 
 
@@ -639,38 +643,45 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		curl = curl_easy_init();
 		if(curl)
 		{
-			// curl_mime *mime;
-			// curl_mime *alt;
-			// curl_mimepart *part;
+			curl_mime *mime;
+			curl_mime *alt;
+			curl_mimepart *part;
 			// mime = curl_mime_init(curl);
 			// alt = curl_mime_init(curl);
 
 
 /* Text message. */ 
- //    part = curl_mime_addpart(alt);
- //    curl_mime_data(part, cmd, CURL_ZERO_TERMINATED);
+    part = curl_mime_addpart(mime);
+    curl_mime_type(part, "text/plain");
+     curl_mime_data(part, cmd, CURL_ZERO_TERMINATED);
 
  //    /* Create the inline part. */ 
- //    part = curl_mime_addpart(mime);
- //    curl_mime_subparts(part, alt);
+    part = curl_mime_addpart(mime);
+    // curl_mime_subparts(part, alt);
  //    curl_mime_type(part, "multipart/alternative");
  //    slist = curl_slist_append(NULL, "Content-Disposition: inline");
  //    curl_mime_headers(part, slist, 1);
 
-	// part = curl_mime_addpart(mime);
- //    curl_mime_data(part, buf);
- //    curl_mime_filename(part, "message.eml");
- //    curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
+	part = curl_mime_addpart(mime);
+    curl_mime_data(part, buf, CURL_ZERO_TERMINATED);
+    curl_mime_filename(part, "message.eml");
+
+	part = curl_mime_addpart(mime);
+    curl_mime_data(part, retbuf, CURL_ZERO_TERMINATED);
+    curl_mime_filename(part, "return.eml");
+  
+    curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
 
 
 
-			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-			curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.xxx.com");
+			curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.xxx.com:587");
 			curl_easy_setopt(curl, CURLOPT_MAIL_FROM, "xxx@xxx.com");
 			recipients = curl_slist_append(recipients, "xxx@xxx.com");
 			curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
 			//  curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
-			curl_easy_setopt(curl, CURLOPT_READDATA, cmd);
+			// curl_easy_setopt(curl, CURLOPT_READDATA, cmd);
+			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
+			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
 			res = curl_easy_perform(curl);
 
