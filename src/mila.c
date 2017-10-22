@@ -590,12 +590,13 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		strcat(cmd,"\n");
 		strcat(cmd,"\n");
 		strcat(cmd,"\n");
+		strcat(cmd,"--_boundarystring\n");
 
 
 //		if(buf_size < 10*1024)
 //			strcat(cmd,retbuf);
 		{
-			strcat(cmd,"\n\n");
+			strcat(cmd,"\n");
 			strcat(cmd,"--_boundarystring\n");
 			strcat(cmd,"Content-Type: application/octet-stream name=\"message.eml\"\n");
 			strcat(cmd,"Content-Transfer-Encoding: Base64\n");
@@ -609,7 +610,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 			free(newbuf);
 		}
 		{
-			strcat(cmd,"\n\n\n\n\n");
+			strcat(cmd,"\n");
 			strcat(cmd,"--_boundarystring\n");
 			strcat(cmd,"Content-Type: application/octet-stream name=\"return.eml\"\n");
 			strcat(cmd,"Content-Transfer-Encoding: Base64\n");
@@ -638,6 +639,30 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		curl = curl_easy_init();
 		if(curl)
 		{
+			// curl_mime *mime;
+			// curl_mime *alt;
+			// curl_mimepart *part;
+			// mime = curl_mime_init(curl);
+			// alt = curl_mime_init(curl);
+
+
+/* Text message. */ 
+ //    part = curl_mime_addpart(alt);
+ //    curl_mime_data(part, cmd, CURL_ZERO_TERMINATED);
+
+ //    /* Create the inline part. */ 
+ //    part = curl_mime_addpart(mime);
+ //    curl_mime_subparts(part, alt);
+ //    curl_mime_type(part, "multipart/alternative");
+ //    slist = curl_slist_append(NULL, "Content-Disposition: inline");
+ //    curl_mime_headers(part, slist, 1);
+
+	// part = curl_mime_addpart(mime);
+ //    curl_mime_data(part, buf);
+ //    curl_mime_filename(part, "message.eml");
+ //    curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
+
+
 
 			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 			curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.xxx.com");
