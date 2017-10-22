@@ -609,7 +609,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 			free(newbuf);
 		}
 		{
-			strcat(cmd,"\n\n");
+			strcat(cmd,"\n\n\n\n\n");
 			strcat(cmd,"--_boundarystring\n");
 			strcat(cmd,"Content-Type: application/octet-stream name=\"return.eml\"\n");
 			strcat(cmd,"Content-Transfer-Encoding: Base64\n");
