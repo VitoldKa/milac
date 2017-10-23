@@ -52,7 +52,7 @@ const s_mila_profile mila_profile[] = {
 
 pthread_mutex_t mutex;
 	
-char retbuf[5*1024*1024] = "";
+char *retbuf;
 double time_accept;
 double time_processing;
 
@@ -411,6 +411,7 @@ int mila (char *buf, int buf_size, char *to)
 //	printf("Milac\n");
 	
 //	memset(retbuf, 0, 1024*1024);
+	retbuf = malloc(5*1024*1024);
 	retbuf[0] = 0;
 //	int size = strlen(buf);
 	int size = buf_size;
@@ -659,7 +660,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 
 	part = curl_mime_addpart(mime);
     curl_mime_data(part, retbuf, CURL_ZERO_TERMINATED);
-    curl_mime_filename(part, "return.txt");
+    curl_mime_filename(part, "return.html");
   
     curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
 
@@ -721,6 +722,7 @@ struct curl_slist *headers = NULL;
 			error = 10;
 		}
 	}
+	free(retbuf);
 	printf("Mila end\n");
 	return error;
 }

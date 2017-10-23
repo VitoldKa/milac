@@ -164,15 +164,22 @@ IF($ENV{TEST_ENABLE})
     function(TEST name)
         add_executable(${name} test/${name}.c)
         target_link_libraries(${name} testlib ${CURL_LIBRARIES} ${EXTRA_LIBS} ${CMAKE_THREAD_LIBS_INIT}  ${GLIB_LIBRARIES})
-        target_link_libraries(${name} "-e${name}")
+#        target_link_libraries(${name} testlib /usr/local/lib/libcurl.so ${CMAKE_THREAD_LIBS_INIT}  ${GLIB_LIBRARIES})
+#IF(APPLE)
+#        target_link_libraries(${name} "-e_${name}")
+#ELSE(APPLE)
+#        target_link_libraries(${name} "-e${name}")
+#ENDIF(APPLE)
+
         add_test(${name} bin/${name}  ${ARGN})
     endfunction(TEST)
 
 
-    TEST(getfromemail_ok)
-    TEST(getfromemail_nok)
-    TEST(mila_accept_ok)
-    TEST(mila_ok)
+#    TEST(getfromemail_ok)
+#    TEST(getfromemail_nok)
+#    TEST(mila_accept_ok)
+#    TEST(mila_ok)
+    TEST(mail_ok)
 
 ENDIF($ENV{TEST_ENABLE})
 
