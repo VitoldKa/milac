@@ -82,6 +82,7 @@ int getfromemail(char *email, int *profile)
 			return 0;
 		}
 	}
+	*profile = 0;
 	return 1;
 }
 
@@ -388,15 +389,21 @@ int mila_accept(char *buf, int lprofile)
 
 
 				g_match_info_next (matchInfo, &err);
-				g_free (orderid);
-				g_free (csrf);
-				curl_free(csrf_enc);
-				free(newbuf);
+				if(orderid)
+					g_free (orderid);
+				if(csrf)
+					g_free (csrf);
+					
+				if(csrf_enc)
+					curl_free(csrf_enc);
+				
 				error = 0;
 			}
-			curl_easy_cleanup(curl);
+			if(curl)
+				curl_easy_cleanup(curl);
 
 		}
+		free(newbuf);
 
 	}
 	else
@@ -642,33 +649,34 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 			// alt = curl_mime_init(curl);
 
 
-/* Text message. */ 
-    part = curl_mime_addpart(mime);
-    curl_mime_type(part, "text/plain");
-     curl_mime_data(part, cmd, CURL_ZERO_TERMINATED);
+			/* Text message. */ 
+			part = curl_mime_addpart(mime);
+			curl_mime_type(part, "text/plain");
+			curl_mime_data(part, cmd, CURL_ZERO_TERMINATED);
 
- //    /* Create the inline part. */ 
-    part = curl_mime_addpart(mime);
-    // curl_mime_subparts(part, alt);
- //    curl_mime_type(part, "multipart/alternative");
- //    slist = curl_slist_append(NULL, "Content-Disposition: inline");
- //    curl_mime_headers(part, slist, 1);
+			//    /* Create the inline part. */ 
+			part = curl_mime_addpart(mime);
+			// curl_mime_subparts(part, alt);
+			//    curl_mime_type(part, "multipart/alternative");
+			//    slist = curl_slist_append(NULL, "Content-Disposition: inline");
+			//    curl_mime_headers(part, slist, 1);
 
-	part = curl_mime_addpart(mime);
-    curl_mime_data(part, buf, CURL_ZERO_TERMINATED);
-    curl_mime_filename(part, "message.eml");
+			part = curl_mime_addpart(mime);
+			curl_mime_data(part, buf, CURL_ZERO_TERMINATED);
+			curl_mime_filename(part, "message.eml");
 
-	part = curl_mime_addpart(mime);
-    curl_mime_data(part, retbuf, CURL_ZERO_TERMINATED);
-    curl_mime_filename(part, "return.html");
-  
-    curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
+			part = curl_mime_addpart(mime);
+			curl_mime_data(part, retbuf, CURL_ZERO_TERMINATED);
+			curl_mime_type(part, "text/html; charset=utf-8");
+			curl_mime_filename(part, "return.html");
 
-struct curl_slist *headers = NULL;
-     headers = curl_slist_append(headers, "From: <xxx@xxx.com>");
-     headers = curl_slist_append(headers, "Subject: Mila return");
+			curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
 
-    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+			struct curl_slist *headers = NULL;
+			headers = curl_slist_append(headers, "From: <xxx@xxx.com>");
+			headers = curl_slist_append(headers, "Subject: Mila return");
+
+			curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
  
 
 			curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.xxx.com:587");
@@ -691,15 +699,15 @@ struct curl_slist *headers = NULL;
 		}
 
 
-		strcat(cmd,"EOF");
-		printf("Sending Mila report\n");
-		
-		pthread_mutex_lock(&mutex);
-		int ret_cmd = system(cmd);
-		printf("system returned : %d\n", ret_cmd);
-
-		sleep(5);
-		pthread_mutex_unlock(&mutex);
+// 		strcat(cmd,"EOF");
+// 		printf("Sending Mila report\n");
+// 		
+// 		pthread_mutex_lock(&mutex);
+// 		int ret_cmd = system(cmd);
+// 		printf("system returned : %d\n", ret_cmd);
+// 
+// 		sleep(5);
+// 		pthread_mutex_unlock(&mutex);
 
 //		memset(cmd, 0, sizeof(cmd));
 		cmd[0] = 0;
@@ -709,9 +717,9 @@ struct curl_slist *headers = NULL;
 		printf("Forwarding email\n");
 
 		pthread_mutex_lock(&mutex);
-		ret_cmd = system(cmd);
+		int ret_cmd = system(cmd);
 		printf("system returned : %d\n", ret_cmd);
-		sleep(5);
+// 		sleep(5);
 		pthread_mutex_unlock(&mutex);
 
 		if(cmd)
@@ -722,7 +730,9 @@ struct curl_slist *headers = NULL;
 			error = 10;
 		}
 	}
-	free(retbuf);
+	if(retbuf)
+		free(retbuf);
+
 	printf("Mila end\n");
 	return error;
 }
