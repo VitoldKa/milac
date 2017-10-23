@@ -33,7 +33,7 @@ set(CPACK_PACKAGE_VERSION_PATCH "0")
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
 
 
-SET(CPACK_DEBIAN_PACKAGE_DEPENDS "curl (>= 2.3.1-6), libglib2.0-0 (>= 2.48.1-1), openssl (>= 1.0.2g-1), libjson-glib-1.0-0 (>= 1.1.2-0) ")
+SET(CPACK_DEBIAN_PACKAGE_DEPENDS "curl (>= 7.56.0), libglib2.0-0 (>= 2.48.1-1), openssl (>= 1.0.2g-1), libjson-glib-1.0-0 (>= 1.1.2-0) ")
 
 INCLUDE(CPack)
 ############################################################
@@ -78,7 +78,7 @@ SET(GCC_COVERAGE_LINK_FLAGS    "-Wl,-Map,output.map")
 ENDIF(NOT(APPLE))
 SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}" )
 
-link_directories( /lib64 /opt/local/lib/mysql57/mysql /opt/local/lib/ /opt/local/include)
+link_directories( /usr/local/lib /lib64 /opt/local/lib/mysql57/mysql /opt/local/lib/ /opt/local/include)
 
 file( GLOB_RECURSE
     sources
@@ -100,11 +100,11 @@ INSTALL(TARGETS ${CMAKE_PROJECT_NAME}
 
 ############################################################
 ## Library
-#FIND_PACKAGE(Threads)
-#IF(Threads_FOUND)
-#    INCLUDE_DIRECTORIES(${THREADS_INCLUDE_DIRS})
-#    TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${THREADS_LIBRARIES})
-#ENDIF(Threads_FOUND)
+FIND_PACKAGE(Threads)
+IF(Threads_FOUND)
+    INCLUDE_DIRECTORIES(${THREADS_INCLUDE_DIRS})
+    TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${THREADS_LIBRARIES})
+ENDIF(Threads_FOUND)
 
 message("${CMAKE_THREAD_LIBS_INIT}")
 
@@ -147,6 +147,7 @@ ELSE(APPLE)
         IF(CURL_FOUND)
             INCLUDE_DIRECTORIES(${CURL_INCLUDE_DIR})
         ENDIF(CURL_FOUND)
+        set(CURL_LIBRARIES /usr/local/lib/libcurl.a /usr/lib/x86_64-linux-gnu/libz.a /usr/lib/x86_64-linux-gnu/libssl.so libcrypto.so)
 ENDIF (APPLE)
 
 
@@ -163,7 +164,7 @@ IF($ENV{TEST_ENABLE})
     function(TEST name)
         add_executable(${name} test/${name}.c)
         target_link_libraries(${name} testlib ${CURL_LIBRARIES} ${EXTRA_LIBS} ${CMAKE_THREAD_LIBS_INIT}  ${GLIB_LIBRARIES})
-        target_link_libraries(${name} "-e_${name}")
+        target_link_libraries(${name} "-e${name}")
         add_test(${name} bin/${name}  ${ARGN})
     endfunction(TEST)
 

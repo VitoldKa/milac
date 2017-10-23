@@ -363,8 +363,8 @@ int mila_accept(char *buf, int lprofile)
 			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 			// curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
 			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
-			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-			curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+//			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+//			curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 
 			// printf("profile: %d\n", lprofile);
 			// printf("mila credentials : %s\n", mila_profile[lprofile].credentials);
@@ -450,8 +450,8 @@ int mila (char *buf, int buf_size, char *to)
 //		curl_easy_setopt(curl, CURLOPT_WRITEDATA, llhapns_worker);
 		curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 //				curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
-		curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
-		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+//		curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
+//		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
 //				struct curl_slist *chunk = NULL;
 //				chunk = curl_slist_append(chunk, "apns-topic: com.10-sor.silentclock.voip");
@@ -599,7 +599,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 
 //		if(buf_size < 10*1024)
 //			strcat(cmd,retbuf);
-		{
+/*		{
 			strcat(cmd,"\n");
 			strcat(cmd,"--_boundarystring\n");
 			strcat(cmd,"Content-Type: application/octet-stream name=\"message.eml\"\n");
@@ -630,7 +630,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 			free(newbuf);
 		}
 
-
+*/
 
 
 		CURL *curl;
@@ -644,9 +644,9 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		if(curl)
 		{
 			curl_mime *mime;
-			curl_mime *alt;
+			//curl_mime *alt;
 			curl_mimepart *part;
-			// mime = curl_mime_init(curl);
+			mime = curl_mime_init(curl);
 			// alt = curl_mime_init(curl);
 
 
@@ -668,11 +668,16 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 
 	part = curl_mime_addpart(mime);
     curl_mime_data(part, retbuf, CURL_ZERO_TERMINATED);
-    curl_mime_filename(part, "return.eml");
+    curl_mime_filename(part, "return.txt");
   
     curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
 
+struct curl_slist *headers = NULL;
+     headers = curl_slist_append(headers, "From: <vitold@vitou.com>");
+     headers = curl_slist_append(headers, "Subject: Mila return");
 
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+ 
 
 			curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.vitou.com:587");
 			curl_easy_setopt(curl, CURLOPT_MAIL_FROM, "vitold@vitou.com");
@@ -680,8 +685,8 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 			curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
 			//  curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
 			// curl_easy_setopt(curl, CURLOPT_READDATA, cmd);
-			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
-			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+//			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
+//			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
 			res = curl_easy_perform(curl);
 
