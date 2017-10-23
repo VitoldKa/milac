@@ -660,6 +660,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 
 	part = curl_mime_addpart(mime);
     curl_mime_data(part, retbuf, CURL_ZERO_TERMINATED);
+    curl_mime_type(part, "text/html; charset=utf-8");
     curl_mime_filename(part, "return.html");
   
     curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
