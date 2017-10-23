@@ -21,25 +21,25 @@
 #define MAX_BUF 1024*1024*5
 
 const s_mila_profile mila_profile[] = {
-	{ "xxx@xxx.com.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
 	
-	{ "vitold.ka@mila-i1.xxx.com" ,  "logintoken=a5c67079e196c0e601c047dfb0b0b4b78ae9e90e6cf16f983d06ff99273932ff68500762; connect1.sid=s%3A3fSQILoYmHQFKWkT0yJjzzP17j4sRom6.GpAtjWgfnGWMXbR5Ne2h9tn5MNpW4sSkz9%2FWtqqJJ4I; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com.com" , "logintoken=4f833d252fe5e8b1b412b8cf9a5c15bbf72e50e369025aa2196ed902a770f568aac8b980; connect1.sid=s%3A_XeBOun-gsftcTYb5KvoOda0Ef6IAz3a.igtssQM4L47NuPB6994hczXS%2BZe%2FgXOL%2FcAqMsDLvKc; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com.com" , "logintoken=4f833d252fe5e8b1b412b8cf9a5c15bbf72e50e369025aa2196ed902a770f568aac8b980; connect1.sid=s%3A_XeBOun-gsftcTYb5KvoOda0Ef6IAz3a.igtssQM4L47NuPB6994hczXS%2BZe%2FgXOL%2FcAqMsDLvKc; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" ,  "logintoken=a5c67079e196c0e601c047dfb0b0b4b78ae9e90e6cf16f983d06ff99273932ff68500762; connect1.sid=s%3A3fSQILoYmHQFKWkT0yJjzzP17j4sRom6.GpAtjWgfnGWMXbR5Ne2h9tn5MNpW4sSkz9%2FWtqqJJ4I; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" , "logintoken=4f833d252fe5e8b1b412b8cf9a5c15bbf72e50e369025aa2196ed902a770f568aac8b980; connect1.sid=s%3A_XeBOun-gsftcTYb5KvoOda0Ef6IAz3a.igtssQM4L47NuPB6994hczXS%2BZe%2FgXOL%2FcAqMsDLvKc; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" , "logintoken=4f833d252fe5e8b1b412b8cf9a5c15bbf72e50e369025aa2196ed902a770f568aac8b980; connect1.sid=s%3A_XeBOun-gsftcTYb5KvoOda0Ef6IAz3a.igtssQM4L47NuPB6994hczXS%2BZe%2FgXOL%2FcAqMsDLvKc; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
 
-	{ "xxx@xxx.com.com" , "logintoken=4f833d252fe5e8b1b412b8cf9a5c15bbf72e50e369025aa2196ed902a770f568aac8b980; connect1.sid=s%3A_XeBOun-gsftcTYb5KvoOda0Ef6IAz3a.igtssQM4L47NuPB6994hczXS%2BZe%2FgXOL%2FcAqMsDLvKc; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" , "logintoken=4f833d252fe5e8b1b412b8cf9a5c15bbf72e50e369025aa2196ed902a770f568aac8b980; connect1.sid=s%3A_XeBOun-gsftcTYb5KvoOda0Ef6IAz3a.igtssQM4L47NuPB6994hczXS%2BZe%2FgXOL%2FcAqMsDLvKc; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
 	
 	
 	
 	
-		{ "vitold.ka@mila1-i1.xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+		{ "xxx@xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
 		
-	{ "xxx@xxx.com.com" , "logintoken=535485576fb0fbb3c346da77903fb5f9cd0f0f12ac2bd96044321f7f5a9b07b101b2cbb8; connect1.sid=s%3AcUIHLolfcbFkh8PKQR3uBWfa2AvkxYME.WBDOwmu9KnhdgM5PzIptCANKj%2FWVzkkj13KVU3mTvdE; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" , "logintoken=535485576fb0fbb3c346da77903fb5f9cd0f0f12ac2bd96044321f7f5a9b07b101b2cbb8; connect1.sid=s%3AcUIHLolfcbFkh8PKQR3uBWfa2AvkxYME.WBDOwmu9KnhdgM5PzIptCANKj%2FWVzkkj13KVU3mTvdE; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
 		
-	{ "xxx@xxx.com.com" ,    "logintoken=c42660a8cde05bd85b6df15d1fcbbb4f5ddabbe30b008c552e7b0c8ce0e1798bc581fc13; connect1.sid=s%3AQbfdoYOtg5iyD538d-PDIc7SaGq21INY.sExzYx2VyJLHrRilaYjfsnEoPqPQMPrMge4pJ8zno50; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" }
+	{ "xxx@xxx.com" ,    "logintoken=c42660a8cde05bd85b6df15d1fcbbb4f5ddabbe30b008c552e7b0c8ce0e1798bc581fc13; connect1.sid=s%3AQbfdoYOtg5iyD538d-PDIc7SaGq21INY.sExzYx2VyJLHrRilaYjfsnEoPqPQMPrMge4pJ8zno50; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" }
 		
 		
 		
@@ -51,10 +51,10 @@ const s_mila_profile mila_profile[] = {
 	};
 
 /*const s_mila_profile mila_profile[] = {
-	{ "xxx@xxx.com.com" ,    "logintoken=8f1e6c8e779dee1e2c1c28129a662fd458a72b5de0ba8aa33ece81475b8f02fa581615be; connect1.sid=s%3ASL5CZsCItSodWmwQVW9AWpZterm6nHNk.t%2Bb3pzjSeoJObHciwnRUeEzxqsnmNohO7GW%2B%2BYZZgjQ; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com.com" ,    "logintoken=8f1e6c8e779dee1e2c1c28129a662fd458a72b5de0ba8aa33ece81475b8f02fa581615be; connect1.sid=s%3ASL5CZsCItSodWmwQVW9AWpZterm6nHNk.t%2Bb3pzjSeoJObHciwnRUeEzxqsnmNohO7GW%2B%2BYZZgjQ; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "vitold.ka@mila-i1.xxx.com" ,  "logintoken=8f1e6c8e779dee1e2c1c28129a662fd458a72b5de0ba8aa33ece81475b8f02fa581615be; connect1.sid=s%3ASL5CZsCItSodWmwQVW9AWpZterm6nHNk.t%2Bb3pzjSeoJObHciwnRUeEzxqsnmNohO7GW%2B%2BYZZgjQ; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "vitold.ka@mila1-i1.xxx.com" , "logintoken=8f1e6c8e779dee1e2c1c28129a662fd458a72b5de0ba8aa33ece81475b8f02fa581615be; connect1.sid=s%3ASL5CZsCItSodWmwQVW9AWpZterm6nHNk.t%2Bb3pzjSeoJObHciwnRUeEzxqsnmNohO7GW%2B%2BYZZgjQ; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" }
+	{ "xxx@xxx.com" ,    "logintoken=8f1e6c8e779dee1e2c1c28129a662fd458a72b5de0ba8aa33ece81475b8f02fa581615be; connect1.sid=s%3ASL5CZsCItSodWmwQVW9AWpZterm6nHNk.t%2Bb3pzjSeoJObHciwnRUeEzxqsnmNohO7GW%2B%2BYZZgjQ; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" ,    "logintoken=8f1e6c8e779dee1e2c1c28129a662fd458a72b5de0ba8aa33ece81475b8f02fa581615be; connect1.sid=s%3ASL5CZsCItSodWmwQVW9AWpZterm6nHNk.t%2Bb3pzjSeoJObHciwnRUeEzxqsnmNohO7GW%2B%2BYZZgjQ; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" ,  "logintoken=8f1e6c8e779dee1e2c1c28129a662fd458a72b5de0ba8aa33ece81475b8f02fa581615be; connect1.sid=s%3ASL5CZsCItSodWmwQVW9AWpZterm6nHNk.t%2Bb3pzjSeoJObHciwnRUeEzxqsnmNohO7GW%2B%2BYZZgjQ; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" , "logintoken=8f1e6c8e779dee1e2c1c28129a662fd458a72b5de0ba8aa33ece81475b8f02fa581615be; connect1.sid=s%3ASL5CZsCItSodWmwQVW9AWpZterm6nHNk.t%2Bb3pzjSeoJObHciwnRUeEzxqsnmNohO7GW%2B%2BYZZgjQ; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" }
 	};
 */
 
@@ -363,8 +363,8 @@ int mila_accept(char *buf, int lprofile)
 			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 			// curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
 			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
-			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-			curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+//			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+//			curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 
 			// printf("profile: %d\n", lprofile);
 			// printf("mila credentials : %s\n", mila_profile[lprofile].credentials);
@@ -450,8 +450,8 @@ int mila (char *buf, int buf_size, char *to)
 //		curl_easy_setopt(curl, CURLOPT_WRITEDATA, llhapns_worker);
 		curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 //				curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
-		curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
-		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+//		curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
+//		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
 //				struct curl_slist *chunk = NULL;
 //				chunk = curl_slist_append(chunk, "apns-topic: com.10-sor.silentclock.voip");
@@ -599,7 +599,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 
 //		if(buf_size < 10*1024)
 //			strcat(cmd,retbuf);
-		{
+/*		{
 			strcat(cmd,"\n");
 			strcat(cmd,"--_boundarystring\n");
 			strcat(cmd,"Content-Type: application/octet-stream name=\"message.eml\"\n");
@@ -630,7 +630,7 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 			free(newbuf);
 		}
 
-
+*/
 
 
 		CURL *curl;
@@ -644,9 +644,9 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		if(curl)
 		{
 			curl_mime *mime;
-			curl_mime *alt;
+			//curl_mime *alt;
 			curl_mimepart *part;
-			// mime = curl_mime_init(curl);
+			mime = curl_mime_init(curl);
 			// alt = curl_mime_init(curl);
 
 
@@ -668,11 +668,16 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 
 	part = curl_mime_addpart(mime);
     curl_mime_data(part, retbuf, CURL_ZERO_TERMINATED);
-    curl_mime_filename(part, "return.eml");
+    curl_mime_filename(part, "return.txt");
   
     curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
 
+struct curl_slist *headers = NULL;
+     headers = curl_slist_append(headers, "From: <xxx@xxx.com>");
+     headers = curl_slist_append(headers, "Subject: Mila return");
 
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+ 
 
 			curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.xxx.com:587");
 			curl_easy_setopt(curl, CURLOPT_MAIL_FROM, "xxx@xxx.com");
@@ -680,8 +685,8 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 			curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
 			//  curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
 			// curl_easy_setopt(curl, CURLOPT_READDATA, cmd);
-			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
-			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+//			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
+//			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
 			res = curl_easy_perform(curl);
 
