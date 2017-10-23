@@ -266,9 +266,9 @@ int my_trace(CURL *handle, curl_infotype type,
 size_t header_callback(char *buffer,   size_t size,   size_t nitems,   void *userdata)
 {
 	printf("header: %s\n", buffer);
-	int offset = strlen(retbuf);
+/*	int offset = strlen(retbuf);
 	memcpy(retbuf+offset, buffer, size*nitems);
-	retbuf[size*nitems+offset] = 0;
+	retbuf[size*nitems+offset] = 0;*/
 	return nitems * size;
 }
 
