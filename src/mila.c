@@ -35,19 +35,10 @@ const s_mila_profile mila_profile[] = {
 	
 	
 	
-		{ "xxx@xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-		
-	{ "xxx@xxx.com" , "logintoken=535485576fb0fbb3c346da77903fb5f9cd0f0f12ac2bd96044321f7f5a9b07b101b2cbb8; connect1.sid=s%3AcUIHLolfcbFkh8PKQR3uBWfa2AvkxYME.WBDOwmu9KnhdgM5PzIptCANKj%2FWVzkkj13KVU3mTvdE; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-		
-	{ "xxx@xxx.com" ,    "logintoken=c42660a8cde05bd85b6df15d1fcbbb4f5ddabbe30b008c552e7b0c8ce0e1798bc581fc13; connect1.sid=s%3AQbfdoYOtg5iyD538d-PDIc7SaGq21INY.sExzYx2VyJLHrRilaYjfsnEoPqPQMPrMge4pJ8zno50; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" }
-		
-		
-		
-		
-		
-		
-		
-		
+	{ "xxx@xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },	
+	{ "xxx@xxx.com" , "logintoken=73795cb4038132f0f90c5146ef474d00717a22f552809b0dcc3632a243e1b89ef82e81ea; connect1.sid=s%3AtnIEJHQfijg2cu_Id0bhjFdRxoSSsFhB.8ZcsG1YYYuztddvVNhTAsRP11IIOpDJU7Wu42wXadDU; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },		
+	{ "xxx@xxx.com" ,    "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" }
+
 	};
 
 /*const s_mila_profile mila_profile[] = {
