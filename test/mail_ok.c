@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include <curl/curl.h>
 
@@ -187,7 +188,7 @@ int main(int argc, char *argv[])
 
 /* Text message. */ 
 char buf[255] = "";
-sprintf(buf, "strlen: %d\nstrlen: %ld\n, str: %ld\n\n\n", strlen(str), sizeof(str), (int)str[13986]);
+sprintf(buf, "strlen: %ld\nstrlen: %ld\n, str: %d\n\n\n", strlen(str), sizeof(str), (int)str[13986]);
     part = curl_mime_addpart(mime);
     curl_mime_type(part, "text/plain");
      curl_mime_data(part, buf, CURL_ZERO_TERMINATED);
@@ -201,7 +202,7 @@ sprintf(buf, "strlen: %d\nstrlen: %ld\n, str: %ld\n\n\n", strlen(str), sizeof(st
 
 	part = curl_mime_addpart(mime);
     curl_mime_data(part, str, CURL_ZERO_TERMINATED);
-    curl_mime_filename(part, "message.eml");
+    curl_mime_filename(part, "message.txt");
 
 	part = curl_mime_addpart(mime);
     curl_mime_data(part, str, CURL_ZERO_TERMINATED);

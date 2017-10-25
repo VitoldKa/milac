@@ -33,7 +33,7 @@ set(CPACK_PACKAGE_VERSION_PATCH "0")
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
 
 
-SET(CPACK_DEBIAN_PACKAGE_DEPENDS "curl (>= 7.56.0), libglib2.0-0 (>= 2.48.1-1), openssl (>= 1.0.2g-1), libjson-glib-1.0-0 (>= 1.1.2-0) ")
+SET(CPACK_DEBIAN_PACKAGE_DEPENDS "curl (>= 7.56.1), libglib2.0-0 (>= 2.48.1-1), openssl (>= 1.0.2g-1), libjson-glib-1.0-0 (>= 1.1.2-0) ")
 
 INCLUDE(CPack)
 ############################################################
@@ -175,9 +175,9 @@ IF($ENV{TEST_ENABLE})
     endfunction(TEST)
 
 
-#    TEST(getfromemail_ok)
-#    TEST(getfromemail_nok)
-#    TEST(mila_accept_ok)
+    TEST(getfromemail_ok)
+    TEST(getfromemail_nok)
+    TEST(mila_accept_ok)
 #    TEST(mila_ok)
     TEST(mail_ok)
 
