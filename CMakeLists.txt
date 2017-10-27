@@ -179,7 +179,7 @@ IF($ENV{TEST_ENABLE})
     TEST(getfromemail_nok)
     TEST(mila_accept_ok)
 #    TEST(mila_ok)
-    TEST(mail_ok)
+#    TEST(mail_ok)
 
 ENDIF($ENV{TEST_ENABLE})
 
