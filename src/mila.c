@@ -52,7 +52,6 @@ const s_mila_profile mila_profile[] = {
 
 pthread_mutex_t mutex;
 	
-char *retbuf;
 double time_accept;
 double time_processing;
 
@@ -220,6 +219,7 @@ int my_trace(CURL *handle, curl_infotype type,
              char *data, size_t size,
              void *userp)
 {
+	char *lpbuf = userp;
   const char *text;
   (void)handle; /* prevent compiler warning */
   (void)userp;
@@ -252,13 +252,13 @@ int my_trace(CURL *handle, curl_infotype type,
  
 //  dump(text, stderr, (unsigned char *)data, size);
   printf("%s :: %s\n", text, data);
-  	int offset = strlen(retbuf);
-	memcpy(retbuf+offset, text, strlen(text)+1);
-	retbuf[strlen(text)+offset] = 0;
+  	int offset = strlen(lpbuf);
+	memcpy(lpbuf+offset, text, strlen(text)+1);
+	lpbuf[strlen(text)+offset] = 0;
 
-  	offset = strlen(retbuf);
-	memcpy(retbuf+offset, data, size);
-	retbuf[size+offset] = 0;
+  	offset = strlen(lpbuf);
+	memcpy(lpbuf+offset, data, size);
+	lpbuf[size+offset] = 0;
 
   return 0;
 }
@@ -276,17 +276,18 @@ size_t header_callback(char *buffer,   size_t size,   size_t nitems,   void *use
 
 size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
 {
+	char *lpbuf = userdata;
 	// ptr JSON data ex. {"reason":"BadPath"}
 //	memset(retbuf, 0, sizeof(retbuf));
-	int offset = strlen(retbuf);
-	memcpy(retbuf+offset, ptr, size*nmemb);
-	retbuf[size*nmemb+offset] = 0;
+	int offset = strlen(lpbuf);
+	memcpy(lpbuf+offset, ptr, size*nmemb);
+	lpbuf[size*nmemb+offset] = 0;
 //	printf("write_callbacks: %s\n", retbuf);
 	return nmemb * size;
 }
 
 
-int mila_accept(char *buf, int lprofile)
+int mila_accept(const char *buf, int lprofile, char *retbuf)
 {
 	GError *err = NULL;
 	GMatchInfo *matchInfo;
@@ -297,18 +298,18 @@ int mila_accept(char *buf, int lprofile)
 	char *start = strstr(buf, "Nouvelles demandes");
 
 	char *end = strstr(buf, "Commandes en cours");
-	printf("%ld\n", (long)start);
-	printf("%ld\n", (long)end);
-	printf("%ld\n", (long)(end-start));
+// 	printf("%ld\n", (long)start);
+// 	printf("%ld\n", (long)end);
+// 	printf("%ld\n", (long)(end-start));
 	if(start && end)
 	{
 		char *newbuf = malloc(end-start+1);
 		strncpy(newbuf, start, end-start);
 
-		printf("%s\n", newbuf);
+//		printf("%s\n", newbuf);
 
-		str_replace(newbuf, strlen(buf), "\n", "");
-		str_replace(newbuf, strlen(buf), "\r", "");
+		str_replace(newbuf, strlen(newbuf), "\n", "");
+		str_replace(newbuf, strlen(newbuf), "\r", "");
 
 		// search for _csrf=
 		regex = g_regex_new ("<form.*action=\"(.*)\".*name=\"_csrf\".*value=\"(.*)\".*Accepter.*<\\/form>", G_REGEX_UNGREEDY, 0, &err);   
@@ -355,6 +356,7 @@ int mila_accept(char *buf, int lprofile)
 			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 			// curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
 			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
+			curl_easy_setopt(curl, CURLOPT_DEBUGDATA, retbuf);
 //			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 //			curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 
@@ -385,8 +387,8 @@ int mila_accept(char *buf, int lprofile)
 				printf("%s\n", accepturl);
 				curl_easy_setopt(curl, CURLOPT_URL, accepturl);
 				// curl_easy_setopt(curl, CURLOPT_URL, "https://requestb.in/17vighd1");
-				res = curl_easy_perform(curl);
 
+// 				res = curl_easy_perform(curl);
 
 				g_match_info_next (matchInfo, &err);
 				if(orderid)
@@ -408,20 +410,44 @@ int mila_accept(char *buf, int lprofile)
 	}
 	else
 		return 50;
+
 	return error;
 }
 
 int mila (char *buf, int buf_size, char *to)
 {
 	int error = 1;
+	
+	// write eml to disk
+	char tmpdir[] = "/tmp/milaparser/"	;
+	// write buf to file
+	char filename[255] = "";
+	strcat(filename, tmpdir);
+	struct timeval time;
+	gettimeofday(&time, NULL);
+	long microsec = ((unsigned long long)time.tv_sec * 1000000) + time.tv_usec;
+	char name[255] = "";
+	sprintf(name, "%ld", microsec);
+	strcat(filename, name);
+	FILE *eml = fopen(filename, "w");
+
+	int size = buf_size;
+
+	if(eml!=NULL)
+	{
+		fwrite(buf, 1, size, eml);
+		fclose(eml);
+	//	printf("wrote: %s",filename);
+	}
+
 	clock_t begin = clock();
 //	printf("Milac\n");
 	
 //	memset(retbuf, 0, 1024*1024);
-	retbuf = malloc(5*1024*1024);
+	char *retbuf = malloc(5*1024*1024);
+	char *return_accept = malloc(5*1024*1024);
 	retbuf[0] = 0;
 //	int size = strlen(buf);
-	int size = buf_size;
 
 	long retvalue = 0;
 	int c;
@@ -429,15 +455,9 @@ int mila (char *buf, int buf_size, char *to)
 	char newbuf[size];
 	int newbuf_lenght;
 
-
-
-
-
-
 //		printf("bytesread: %d\n", size);	
 //	char urlstr[200] ="https://www.mila.com/friendacceptfrommail/";
 	const char urlstr[200] ="https://www.mila.com/friendservicecalls";
-
 
 	CURL *curl;
 	CURLcode res;
@@ -446,6 +466,8 @@ int mila (char *buf, int buf_size, char *to)
 	if(curl)
 	{
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)retbuf);
+
 //		curl_easy_setopt(curl, CURLOPT_WRITEDATA, llhapns_worker);
 		curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 //				curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
@@ -490,7 +512,7 @@ int mila (char *buf, int buf_size, char *to)
 //				while (lpchar = strstr(lpchar, "<form name=\"userForm\" action=\"/friendaccept/"))
 //				{
 //					printf("%s\n", lpchar);
-		if(!mila_accept(lpchar, profile))
+		if(!mila_accept(lpchar, profile, return_accept))
 			error=0;
 //				}
 
@@ -498,74 +520,15 @@ int mila (char *buf, int buf_size, char *to)
 		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
 		printf("mila time_accept : %f\n", time_accept);
 
-
-		// curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "_csrf=rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY=");
-
-		// char accepturl[255] = "https://www.mila.com/friendaccept/";
-		// strcat(accepturl, "2");
-		// printf("%s\n", urlstr);
-		// curl_easy_setopt(curl, CURLOPT_URL, accepturl);
-//				res = curl_easy_perform(curl);
-
-		//printf("%u\n", res);
-/*				if(res == CURLE_OK) 
-		{
-			char *url = NULL;
-			curl_easy_getinfo(curl, CURLINFO_REDIRECT_URL, &url);
-	//    if(url)
-	//      printf("Redirect to: %s\n", url);
-		}*/
-		
-		/*
-                    <form name="userForm" action="/friendaccept/107244" method="POST">
-                        <input type="hidden" name="_csrf"
-
-value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
-
-
->
-
-                        <input type="submit" class="btn btn-brand phs" value="Accepter" style="min-width: 145px;" />
-                    </form>				*/
-// <form.*name="_csrf".*value="(.*)".*<\/form>
-
 		curl_easy_cleanup(curl);
 		
 	}
-//		}
-	
-	
-//	printf("%s\n", buf);
 	
 	char str_time_processing[20];
 	sprintf(str_time_processing, "%f", time_processing);
 
 	char str_time_accept[20];
 	sprintf(str_time_accept, "%f", time_accept);
-	
-	// write eml to disk
-	char tmpdir[] = "/tmp/milaparser/"	;
-	// write buf to file
-	char filename[255] = "";
-	strcat(filename, tmpdir);
-	struct timeval time;
-	gettimeofday(&time, NULL);
-	long microsec = ((unsigned long long)time.tv_sec * 1000000) + time.tv_usec;
-
-	char name[255] = "";
-	sprintf(name, "%ld", microsec);
-	strcat(filename, name);
-	FILE *eml = fopen(filename, "w");
-
-	if(eml!=NULL)
-	{
-		fwrite(buf, 1, size, eml);
-		fclose(eml);
-	//	printf("wrote: %s",filename);
-	}
-	
-	
-	
 	
 	// email
 	char *cmd = malloc(buf_size+sizeof(retbuf)+sizeof(buf)+5000000);
@@ -594,42 +557,6 @@ value="rfHkxaSdrgjzAatFqCAEDtUTO8sS7ZcO2a+jY="
 		strcat(cmd,"\n");
 		strcat(cmd,"\n");
 		strcat(cmd,"--_boundarystring\n");
-
-
-//		if(buf_size < 10*1024)
-//			strcat(cmd,retbuf);
-/*		{
-			strcat(cmd,"\n");
-			strcat(cmd,"--_boundarystring\n");
-			strcat(cmd,"Content-Type: application/octet-stream name=\"message.eml\"\n");
-			strcat(cmd,"Content-Transfer-Encoding: Base64\n");
-			strcat(cmd,"Content-Disposition: attachment; filename=\"message.eml\"\n");
-			strcat(cmd,"\n");
-			char *newbuf = malloc(Base64encode_len(strlen(buf)));
-			Base64encode(newbuf, buf, strlen(buf));
-			strcat(cmd,newbuf);
-			strcat(cmd,"\n\n");
-			strcat(cmd,"--_boundarystring--\n");
-			free(newbuf);
-		}
-		{
-			strcat(cmd,"\n");
-			strcat(cmd,"--_boundarystring\n");
-			strcat(cmd,"Content-Type: application/octet-stream name=\"return.eml\"\n");
-			strcat(cmd,"Content-Transfer-Encoding: Base64\n");
-			strcat(cmd,"Content-Disposition: attachment; filename=\"return.eml\"\n");
-			strcat(cmd,"\n");
-			char *newbuf = malloc(Base64encode_len(strlen(retbuf)+1000));
-			Base64encode(newbuf, retbuf, strlen(retbuf));
-			printf("cmd size: %lu\n", strlen(cmd));
-			strcat(cmd,newbuf);
-			printf("cmd size: %lu\n", strlen(cmd));
-			strcat(cmd,"\n\n");
-			strcat(cmd,"--_boundarystring--\n");
-			free(newbuf);
-		}
-
-*/
 
 
 		CURL *curl;
