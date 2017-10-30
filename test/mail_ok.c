@@ -7,21 +7,11 @@
 #include "test.h"
 #include "mila.h"
 
+#include "log.h"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+int DRY_RUN = 1;
 
 
 
@@ -113,6 +103,9 @@ int my_trace(CURL *handle, curl_infotype type,
  
 int main(int argc, char *argv[])
 {
+	logging_SetLogFile("log_ok.log");
+	logging_SetLevel(-1);
+	logging_SetFacilities(-1);
 
 		str = malloc(10*1024*1024);
 		str[0] = 0;
