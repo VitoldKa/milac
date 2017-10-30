@@ -12,6 +12,7 @@
 
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <netdb.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
@@ -22,12 +23,18 @@
 #include "mila.h"
 #include "mila_tread.h"
 
+#include "log.h"
+
 
 #define MAX_PID 8
 
 #define VERSION_MAJOR	0
 #define VERSION_MINOR	0
 #define VERSION_PATCH	0
+
+int DRY_RUN = 0;
+
+
 
 // adresse OVH
 //#define INADDRESS "147.135.182.245"
@@ -41,10 +48,10 @@ int run;
 
 void sig_handler(int signum)
 {
-    printf("\nReceived signal %d\n", signum);
+	GENERAL(LOG_LEVEL_GENERAL, "Received signal %d", signum);
     run = 0;
 	close(sfd);
-	printf("Stoping Mila_accept\n");
+	GENERAL(LOG_LEVEL_GENERAL, "Stoping Mila_accept");
 }
 
 
@@ -74,7 +81,7 @@ int main2 (int argc, char *argv[])
 	mila(buf, size, "<xxx@xxx.com>\r\n");
 		clock_t end = clock();
 	double mila_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
-	printf("mila time: %f\n\n", mila_smtp);
+	GENERAL(LOG_LEVEL_GENERAL, "mila time: %f", mila_smtp);
 //			printf("size: %d\n", size);
 //    fclose(fstdin);
 
@@ -83,9 +90,16 @@ int main2 (int argc, char *argv[])
 
 int main (int argc, char *argv[])
 {
+
+
+	logging_SetLogFile("/var/log/mila_accept.log");
+	logging_SetLevel(-1);
+	logging_SetFacilities(-1);
+
 	signal(SIGINT, sig_handler);
-	printf("Starting Mila_accept\n");
-	
+	GENERAL(LOG_LEVEL_GENERAL, "Starting Mila_accept");
+
+
 	pthread_mutex_init(&mutex, NULL);
 	
 	/*	struct addrinfo hints;
@@ -107,8 +121,7 @@ int main (int argc, char *argv[])
 	if((sfd = socket(AF_INET, SOCK_STREAM, 0))==-1)
 	{
 		//error
-		printf("socket error\n");
-		fprintf(stderr, "socket() failed: %m\n");
+		GENERAL(LOG_LEVEL_GENERAL, "socket() failed: %m");
 		close(sfd);
 	}
 	int option = 1;
@@ -116,28 +129,31 @@ int main (int argc, char *argv[])
 	if (bind(sfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0)
 	{
 		// error
-		printf("bind error\n");
-		fprintf(stderr, "socket() failed: %m\n");
-		perror("socket");
+		GENERAL(LOG_LEVEL_GENERAL, "socket() failed: %m");
 		close(sfd);
 		return 1;
 	}
 
 	if(listen(sfd, 1000)==-1)
 	{
-		printf("listen error\n");
+		GENERAL(LOG_LEVEL_GENERAL, "listen error");
 		close(sfd);
 			// error
 	}
 
 	clilen = sizeof(cli_addr);
 	run = 1;
+
+	GENERAL(LOG_LEVEL_GENERAL, "listening on %s", INADDRESS);
+
 	while(run)
 	{
 		usleep(10);
 //		printf("listen\n");
 		if((newsockfd = accept(sfd, (struct sockaddr *) &cli_addr, (socklen_t*)&clilen)))
 		{
+			GENERAL(LOG_LEVEL_GENERAL, "Connection from %s", inet_ntoa(cli_addr.sin_addr));
+			
 			// create thread
 			smila *lsmila = malloc(sizeof(smila));
 			lsmila->socket = newsockfd;

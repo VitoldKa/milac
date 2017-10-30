@@ -16,6 +16,9 @@
 
 #include "mila.h"
 #include "str_replace.h"
+#include "email.h"
+
+#include "log.h"
 
 
 #define MAX_BUF 1024*1024*5
@@ -76,7 +79,7 @@ int getfromemail(char *email, int *profile)
 //		printf("email len : %d\n", len);
 		if(strncmp(mila_profile[c].email, email, len)==0)
 		{
-			printf("credential found\n");
+			GENERAL(LOG_LEVEL_GENERAL, "credential found");
 			*profile = c;
 			return 0;
 		}
@@ -92,7 +95,7 @@ int quoat_decode(char *inbuf, int lenght, char *outbuf, int *newlenght)
 	char *start, *end = inbuf+lenght;
 	char *outpinter = outbuf;
 	*newlenght = lenght;
-	printf("newlenght: %d\n", lenght);	
+	GENERAL(LOG_LEVEL_GENERAL, "newlenght: %d", lenght);
 //		printf("remaining: %d\n", end-start);
 	// search for =
 
@@ -103,7 +106,7 @@ int quoat_decode(char *inbuf, int lenght, char *outbuf, int *newlenght)
 		start = strstr(inbuf, "quoted-printable\r\n");
 	if(start!=NULL)
 	{
-		printf("quote remove\n");
+		GENERAL(LOG_LEVEL_GENERAL, "quote remove");
 		start += strlen("quoted-printable\n\n");
 		memcpy(outpinter, inbuf, start-inbuf);
 
@@ -160,25 +163,25 @@ int get_accept_url(char *buf, int len, char *lbuf)
 	lpbuf = strstr(buf, lsearch);
 	if(lpbuf)
 	{
-		printf("Accept found:\n");
+		GENERAL(LOG_LEVEL_GENERAL, "Accept found:");
 		lpbuf += sizeof(lsearch)-1;
 
 			lpbuf += sizeof(lsearch2)-1;
 			char *end = strstr(lpbuf, "=\r\n>");
 			if(end-lpbuf > 200)
 			{	
-				printf("overflow %ld\n", (long)(end-lpbuf));
+				GENERAL(LOG_LEVEL_GENERAL, "overflow %ld", (long)(end-lpbuf));
 				return 4;
 			}
 			if(end)
 			{
 				strncpy(lbuf, lpbuf, end-lpbuf);
-				printf("%s\n", lbuf);
+				GENERAL(LOG_LEVEL_GENERAL, "%s", lbuf);
 				return 0;
 			}
 			return 2;
 	}
-	printf("Accept not found\n");
+	GENERAL(LOG_LEVEL_GENERAL, "Accept not found");
 	return 1;
 }
 
@@ -251,7 +254,7 @@ int my_trace(CURL *handle, curl_infotype type,
   }
  
 //  dump(text, stderr, (unsigned char *)data, size);
-  printf("%s :: %s\n", text, data);
+	GENERAL(LOG_LEVEL_GENERAL, "%s :: %s", text, data);
   	int offset = strlen(lpbuf);
 	memcpy(lpbuf+offset, text, strlen(text)+1);
 	lpbuf[strlen(text)+offset] = 0;
@@ -266,7 +269,9 @@ int my_trace(CURL *handle, curl_infotype type,
 
 size_t header_callback(char *buffer,   size_t size,   size_t nitems,   void *userdata)
 {
-	printf("header: %s\n", buffer);
+	GString *lpbuf = userdata;
+	GENERAL(LOG_LEVEL_GENERAL, "header: %s", buffer);
+	g_string_append_len(lpbuf, buffer, size*nitems);
 /*	int offset = strlen(retbuf);
 	memcpy(retbuf+offset, buffer, size*nitems);
 	retbuf[size*nitems+offset] = 0;*/
@@ -276,57 +281,124 @@ size_t header_callback(char *buffer,   size_t size,   size_t nitems,   void *use
 
 size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
 {
-	char *lpbuf = userdata;
+	GString *lpbuf = userdata;
 	// ptr JSON data ex. {"reason":"BadPath"}
 //	memset(retbuf, 0, sizeof(retbuf));
-	int offset = strlen(lpbuf);
-	memcpy(lpbuf+offset, ptr, size*nmemb);
-	lpbuf[size*nmemb+offset] = 0;
+// 	int offset = strlen(lpbuf);
+// 	memcpy(lpbuf+offset, ptr, size*nmemb);
+// 	lpbuf[size*nmemb+offset] = 0;
 //	printf("write_callbacks: %s\n", retbuf);
+	g_string_append_len(lpbuf, ptr, size*nmemb);
 	return nmemb * size;
 }
 
+#define HTTP_METHOD_GET 2^0
+#define HTTP_METHOD_POST 2^1
 
-int mila_accept(const char *buf, int lprofile, char *retbuf)
+int http_get(char *url, char *cookies, int flags, char **retbuf)
+{
+	*retbuf = malloc(5*1024*1024);
+
+	CURL *curl;
+	CURLcode res;
+	curl = curl_easy_init();
+
+	if(curl)
+	{
+		struct curl_slist *list = NULL;
+
+		list = curl_slist_append(list, "Cache-Control: max-age=0");
+		list = curl_slist_append(list, "Origin: https://www.mila.com");
+		list = curl_slist_append(list, "Upgrade-Insecure-Requests: 1");
+		list = curl_slist_append(list, "Content-Type: application/x-www-form-urlencoded");
+		list = curl_slist_append(list, "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36");
+		list = curl_slist_append(list, "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
+		list = curl_slist_append(list, "Referer: https://www.mila.com/friendservicecalls");
+		list = curl_slist_append(list, "Accept-Encoding: gzip, deflate, br");
+		list = curl_slist_append(list, "Accept-Language: fr-CH,fr-FR;q=0.8,fr;q=0.6,en-US;q=0.4,en;q=0.2");
+
+	// list = curl_slist_append(list, "Cookie: optimizelyEndUserId=oeu1486559193069r0.2422451363507594; optimizelySegments=%7B%22700475046%22%3A%22gc%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; logintoken=a5da1827573d0e4bcf6966c9954a7aa2335caf259b048a4dacc696326078ba4df20b7635; connect1.sid=s%3AzuHy12n0PP0pvG1FNB5V6owfRbF_Meb2.qs5XxiVgaJphR1nvGErxu%2FpSe8Ux0i3%2BveMulspgm88; _dc_gtm_UA-29191003-1=1; _ga=GA1.2.881151050.1486559200; _gid=GA1.2.1734846664.1508526208; _gat_UA-29191003-1=1");
+
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
+		if(flags | HTTP_METHOD_POST)
+			curl_easy_setopt(curl, CURLOPT_POST, 1L);
+	
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+	//			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
+		// curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
+		curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
+		curl_easy_setopt(curl, CURLOPT_DEBUGDATA, retbuf);
+	//			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+	//			curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+
+		// printf("profile: %d\n", lprofile);
+		// printf("mila credentials : %s\n", mila_profile[lprofile].credentials);
+		curl_easy_setopt(curl, CURLOPT_COOKIE, cookies);
+
+			curl_easy_setopt(curl, CURLOPT_URL, url);
+
+
+			int try = 5;
+		
+			extern int DRY_RUN;
+
+perform:
+			if(!DRY_RUN)
+				res = curl_easy_perform(curl);
+
+			if(res = CURLE_HTTP_RETURNED_ERROR && try > 0)
+			{
+				sleep(1);
+				try -=1;
+goto perform;
+			}
+
+			curl_easy_cleanup(curl);
+		}
+
+	return 0;
+}
+
+int mila_accept(GString *buf, int lprofile, GString *retbuf)
 {
 	GError *err = NULL;
-	GMatchInfo *matchInfo;
-	GRegex *regex;
+	GMatchInfo *matchInfo = NULL;
+	GRegex *regex = NULL;
 
 	int error = 1;
 
-	char *start = strstr(buf, "Nouvelles demandes");
+	char *start = strstr(buf->str, "Nouvelles demandes");
 
-	char *end = strstr(buf, "Commandes en cours");
+	char *end = strstr(buf->str, "Commandes en cours");
 // 	printf("%ld\n", (long)start);
 // 	printf("%ld\n", (long)end);
 // 	printf("%ld\n", (long)(end-start));
 	if(start && end)
 	{
-		char *newbuf = malloc(end-start+1);
-		strncpy(newbuf, start, end-start);
+		GString *newbuf = g_string_new(NULL);
+		g_string_append_len(newbuf, start, end-start);
 
 //		printf("%s\n", newbuf);
 
-		str_replace(newbuf, strlen(newbuf), "\n", "");
-		str_replace(newbuf, strlen(newbuf), "\r", "");
+		str_replace(newbuf->str, newbuf->len, "\n", "");
+		str_replace(newbuf->str, newbuf->len, "\r", "");
 
 		// search for _csrf=
 		regex = g_regex_new ("<form.*action=\"(.*)\".*name=\"_csrf\".*value=\"(.*)\".*Accepter.*<\\/form>", G_REGEX_UNGREEDY, 0, &err);   
 	//	regex = g_regex_new ("<form.*name=\"_csrf\".*value=\"(.*)\"", G_REGEX_MULTILINE|G_REGEX_UNGREEDY, 0, &err);   
 		if(regex == NULL)
 		{
-			printf("regex error\n");
+			GENERAL(LOG_LEVEL_GENERAL, "regex error");
 			return 15;
 		}
 		else
 		{
 			if(err)
 			{
-				printf("gerror : %s\n", err->message);
+				GENERAL(LOG_LEVEL_GENERAL, "gerror : %s", err->message);
 			}
 
-			g_regex_match (regex, newbuf, 0, &matchInfo);
+			g_regex_match (regex, newbuf->str, 0, &matchInfo);
 
 			// worked
 			// curl -X POST --data-urlencode  "_csrf=jHJ1VbdOEqQjUZsyeyr3poW50OSDeQLgr8p8Q=" -b "connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; " -H "Accept-Language: fr-CH" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36" -H "Origin: https://www.mila.com" -L -v --trace-ascii /dev/stdout  https://www.mila.com/friendaccept/109693
@@ -349,14 +421,16 @@ int mila_accept(const char *buf, int lprofile, char *retbuf)
 			list = curl_slist_append(list, "Accept-Language: fr-CH,fr-FR;q=0.8,fr;q=0.6,en-US;q=0.4,en;q=0.2");
 
 // list = curl_slist_append(list, "Cookie: optimizelyEndUserId=oeu1486559193069r0.2422451363507594; optimizelySegments=%7B%22700475046%22%3A%22gc%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; logintoken=a5da1827573d0e4bcf6966c9954a7aa2335caf259b048a4dacc696326078ba4df20b7635; connect1.sid=s%3AzuHy12n0PP0pvG1FNB5V6owfRbF_Meb2.qs5XxiVgaJphR1nvGErxu%2FpSe8Ux0i3%2BveMulspgm88; _dc_gtm_UA-29191003-1=1; _ga=GA1.2.881151050.1486559200; _gid=GA1.2.1734846664.1508526208; _gat_UA-29191003-1=1");
+			GString *header = g_string_new(NULL);
 
 			curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
 			curl_easy_setopt(curl, CURLOPT_POST, 1L);
 			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+			curl_easy_setopt(curl, CURLOPT_WRITEDATA, retbuf);
 			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
-			// curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
+			curl_easy_setopt(curl, CURLOPT_HEADERDATA, header);
 			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
-			curl_easy_setopt(curl, CURLOPT_DEBUGDATA, retbuf);
+// 			curl_easy_setopt(curl, CURLOPT_DEBUGDATA, retbuf);
 //			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 //			curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 
@@ -364,6 +438,9 @@ int mila_accept(const char *buf, int lprofile, char *retbuf)
 			// printf("mila credentials : %s\n", mila_profile[lprofile].credentials);
 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[lprofile].credentials);
 
+			if(!g_match_info_matches(matchInfo))
+				GENERAL(LOG_LEVEL_GENERAL, "match not found");
+		
 			while (g_match_info_matches (matchInfo))
 			{
 				gchar *orderid = g_match_info_fetch (matchInfo, 1);
@@ -372,6 +449,9 @@ int mila_accept(const char *buf, int lprofile, char *retbuf)
 				g_print ("orderid: %s\n\n", orderid);
 				g_print ("csrf: %s\n\n", csrf);
 
+				GENERAL(LOG_LEVEL_GENERAL, "orderid: %s", orderid);
+				GENERAL(LOG_LEVEL_GENERAL, "csrf: %s", csrf);
+
 
 				char post[200] = "_csrf=";
 				char *csrf_enc = curl_easy_escape(curl, csrf, strlen(csrf));
@@ -379,16 +459,33 @@ int mila_accept(const char *buf, int lprofile, char *retbuf)
 				curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post);
 				curl_easy_setopt(curl, CURLOPT_REFERER, "https://www.mila.com/friendservicecalls");
 
-				printf("post: %s\n", csrf_enc);
-				printf("postlen: %lu\n", strlen(post));
+				GENERAL(LOG_LEVEL_GENERAL, "post: %s", csrf_enc);
+				GENERAL(LOG_LEVEL_GENERAL, "postlen: %lu", strlen(post));
 
 				char accepturl[255] = "https://www.mila.com";
 				strcat(accepturl, orderid);
 				printf("%s\n", accepturl);
+				GENERAL(LOG_LEVEL_GENERAL, "%s", accepturl);
 				curl_easy_setopt(curl, CURLOPT_URL, accepturl);
 				// curl_easy_setopt(curl, CURLOPT_URL, "https://requestb.in/17vighd1");
 
-// 				res = curl_easy_perform(curl);
+				extern int DRY_RUN;
+				if(!DRY_RUN)
+				{
+					int try = 5;
+					start:
+					res = curl_easy_perform(curl);
+					if(strstr(header->str, "HTTP/1.1 500 Internal Server Error") && try > 0)
+					{
+						GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 500 Internal Server Error");
+						GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
+						try -= 1;
+						usleep(500000);
+						goto start;
+					}
+				}
+
+				email_send("mila_accept return", 1, retbuf->str, "mila_accept.html", "text/html; charset=utf-8");
 
 				g_match_info_next (matchInfo, &err);
 				if(orderid)
@@ -401,16 +498,28 @@ int mila_accept(const char *buf, int lprofile, char *retbuf)
 				
 				error = 0;
 			}
+			curl_slist_free_all(list);
+			g_string_free(header, TRUE);
+			g_free(matchInfo);
 			if(curl)
 				curl_easy_cleanup(curl);
 
 		}
-		free(newbuf);
+		g_regex_unref(regex);
+		g_string_free(newbuf, TRUE);
 
 	}
 	else
-		return 50;
+	{
+		if(!start && end)
+			GENERAL(LOG_LEVEL_GENERAL, "mila_accept() start not found");
+		if(!end && start)
+			GENERAL(LOG_LEVEL_GENERAL, "mila_accept() end not found");
 
+		GENERAL(LOG_LEVEL_GENERAL, "No new order pending");
+		return 50;
+	}
+	GENERAL(LOG_LEVEL_GENERAL, "mila_accept() error");
 	return error;
 }
 
@@ -444,16 +553,16 @@ int mila (char *buf, int buf_size, char *to)
 //	printf("Milac\n");
 	
 //	memset(retbuf, 0, 1024*1024);
-	char *retbuf = malloc(5*1024*1024);
-	char *return_accept = malloc(5*1024*1024);
-	retbuf[0] = 0;
+	GString *retbuf = g_string_new(NULL);
+	GString *return_accept = g_string_new(NULL);
+//	retbuf[0] = 0;
 //	int size = strlen(buf);
 
 	long retvalue = 0;
 	int c;
 
-	char newbuf[size];
-	int newbuf_lenght;
+// 	GString *newbuf = g_string_new(NULL);
+// 	int newbuf_lenght;
 
 //		printf("bytesread: %d\n", size);	
 //	char urlstr[200] ="https://www.mila.com/friendacceptfrommail/";
@@ -468,7 +577,6 @@ int mila (char *buf, int buf_size, char *to)
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)retbuf);
 
-//		curl_easy_setopt(curl, CURLOPT_WRITEDATA, llhapns_worker);
 		curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 //				curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
 //		curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
@@ -482,13 +590,13 @@ int mila (char *buf, int buf_size, char *to)
 		int profile;
 		if(!getfromemail(to, &profile))
 		{
-			printf("mila credentials : %s\n", mila_profile[profile].credentials);
+			GENERAL(LOG_LEVEL_GENERAL, "mila credentials : %s", mila_profile[profile].credentials);
 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[profile].credentials);
 		}
 		else
 		{
-			printf("using default credential\n");
-			printf("to: %s\n", to);
+			GENERAL(LOG_LEVEL_GENERAL, "using default credential");
+			GENERAL(LOG_LEVEL_GENERAL, "to: %s", to);
 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[0].credentials);
 			error = 5;
 		}
@@ -496,32 +604,25 @@ int mila (char *buf, int buf_size, char *to)
 		curl_easy_setopt(curl, CURLOPT_URL, urlstr);
 		clock_t end = clock();
 		time_processing = (double)(end - begin) / CLOCKS_PER_SEC;
-		printf("mila time_processing : %f\n", time_processing);
-
-		// accept here
-//				for(int c = 0; c < 2; c++)
-		res = curl_easy_perform(curl);
-
-//				printf("write_callbacks: %s\n", retbuf);
+// 		printf("mila time_processing : %f\n", time_processing);
 
 		// todo: retry
-		
+		extern int DRY_RUN;
+		if(!DRY_RUN)
+			res = curl_easy_perform(curl);
 
-		// search for order to accept
-		char *lpchar = retbuf;
-//				while (lpchar = strstr(lpchar, "<form name=\"userForm\" action=\"/friendaccept/"))
-//				{
-//					printf("%s\n", lpchar);
-		if(!mila_accept(lpchar, profile, return_accept))
+		email_send("mila return", 2, retbuf->str, "mila.html", "text/html; charset=utf-8",
+									 buf, "message.eml", "message/rfc822; charset=utf-8");
+
+		GString *lpchar = retbuf;
+		int r = mila_accept(lpchar, profile, return_accept);
+		if(r == 0 || r== 50)
 			error=0;
-//				}
-
 
 		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
-		printf("mila time_accept : %f\n", time_accept);
+// 		printf("mila time_accept : %f\n", time_accept);
 
 		curl_easy_cleanup(curl);
-		
 	}
 	
 	char str_time_processing[20];
@@ -536,116 +637,14 @@ int mila (char *buf, int buf_size, char *to)
 	if(cmd)
 	{
 		cmd[0] = 0;
-		strcat(cmd,"/usr/sbin/sendmail -t  <<EOF\n");
-		strcat(cmd,"From: \"Mila Parser\" <xxx@xxx.com>\n");
-		strcat(cmd,"To: "" <xxx@xxx.com>\n");
-		strcat(cmd,"Subject: Mila return\n");
-		strcat(cmd,"MIME-Version: 1.0\n");
-		strcat(cmd,"Content-Type: multipart/mixed; boundary=\"_boundarystring\"\n");
-		strcat(cmd,"\n");
-		strcat(cmd,"--_boundarystring\n");
-		strcat(cmd,"Content-Type: text/plain; charset=ISO-8859-1\n");
-		strcat(cmd,"\n");
-		strcat(cmd,urlstr);
-		strcat(cmd,"\n");
-		strcat(cmd,"time to process: ");
-		strcat(cmd,str_time_processing);
-		strcat(cmd,"\n");
-		strcat(cmd,"time to accept: ");
-		strcat(cmd,str_time_accept);
-		strcat(cmd,"\n");
-		strcat(cmd,"\n");
-		strcat(cmd,"\n");
-		strcat(cmd,"--_boundarystring\n");
-
-
-		CURL *curl;
-		CURLcode res = CURLE_OK;
-		struct curl_slist *recipients = NULL;
-		//  struct upload_status upload_ctx;
-		 
-		//  upload_ctx.lines_read = 0;
-		 
-		curl = curl_easy_init();
-		if(curl)
-		{
-			curl_mime *mime;
-			//curl_mime *alt;
-			curl_mimepart *part;
-			mime = curl_mime_init(curl);
-			// alt = curl_mime_init(curl);
-
-
-			/* Text message. */ 
-			part = curl_mime_addpart(mime);
-			curl_mime_type(part, "text/plain");
-			curl_mime_data(part, cmd, CURL_ZERO_TERMINATED);
-
-			//    /* Create the inline part. */ 
-			part = curl_mime_addpart(mime);
-			// curl_mime_subparts(part, alt);
-			//    curl_mime_type(part, "multipart/alternative");
-			//    slist = curl_slist_append(NULL, "Content-Disposition: inline");
-			//    curl_mime_headers(part, slist, 1);
-
-			part = curl_mime_addpart(mime);
-			curl_mime_data(part, buf, CURL_ZERO_TERMINATED);
-			curl_mime_filename(part, "message.eml");
-
-			part = curl_mime_addpart(mime);
-			curl_mime_data(part, retbuf, CURL_ZERO_TERMINATED);
-			curl_mime_type(part, "text/html; charset=utf-8");
-			curl_mime_filename(part, "return.html");
-
-			curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
-
-			struct curl_slist *headers = NULL;
-			headers = curl_slist_append(headers, "From: <xxx@xxx.com>");
-			headers = curl_slist_append(headers, "Subject: Mila return");
-
-			curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
- 
-
-			curl_easy_setopt(curl, CURLOPT_URL, "smtp://mail.xxx.com:587");
-			curl_easy_setopt(curl, CURLOPT_MAIL_FROM, "xxx@xxx.com");
-			recipients = curl_slist_append(recipients, "xxx@xxx.com");
-			curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
-			//  curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
-			// curl_easy_setopt(curl, CURLOPT_READDATA, cmd);
-//			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
-//			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-
-			res = curl_easy_perform(curl);
-
-			if(res != CURLE_OK)
-				printf("curl_easy_perform() failed: %s\n",
-			curl_easy_strerror(res));
-
-			curl_slist_free_all(recipients);
-			curl_easy_cleanup(curl);
-		}
-
-
-// 		strcat(cmd,"EOF");
-// 		printf("Sending Mila report\n");
-// 		
-// 		pthread_mutex_lock(&mutex);
-// 		int ret_cmd = system(cmd);
-// 		printf("system returned : %d\n", ret_cmd);
-// 
-// 		sleep(5);
-// 		pthread_mutex_unlock(&mutex);
-
-//		memset(cmd, 0, sizeof(cmd));
-		cmd[0] = 0;
 		strcat(cmd,"/usr/sbin/sendmail xxx@xxx.com < ");
 		strcat(cmd,filename);
 		strcat(cmd,"\n");
-		printf("Forwarding email\n");
+		GENERAL(LOG_LEVEL_GENERAL, "Forwarding email");
 
 		pthread_mutex_lock(&mutex);
 		int ret_cmd = system(cmd);
-		printf("system returned : %d\n", ret_cmd);
+		GENERAL(LOG_LEVEL_GENERAL, "system returned : %d", ret_cmd);
 // 		sleep(5);
 		pthread_mutex_unlock(&mutex);
 
@@ -653,13 +652,15 @@ int mila (char *buf, int buf_size, char *to)
 			free(cmd);
 		else
 		{
-			printf("Error free cmd\n");
+			GENERAL(LOG_LEVEL_GENERAL, "Error free cmd");
 			error = 10;
 		}
 	}
 	if(retbuf)
-		free(retbuf);
+		g_string_free(retbuf, TRUE);
+	if(return_accept)
+		g_string_free(return_accept, TRUE);
 
-	printf("Mila end\n");
+	GENERAL(LOG_LEVEL_GENERAL, "Mila end");
 	return error;
 }

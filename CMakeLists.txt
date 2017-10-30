@@ -159,26 +159,36 @@ ENDIF (APPLE)
 
 IF($ENV{TEST_ENABLE})
     enable_testing()
-    add_library(testlib ${sources})
+
+	SET(LIB_SOURCES ${sources})
+	message(${LIB_SOURCES})
+	LIST(REMOVE_ITEM LIB_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c")
+	message("${CMAKE_CURRENT_SOURCE_DIR}/src/main.c")
+	message(${LIB_SOURCES})
+ 
+
+    add_library(testlib ${LIB_SOURCES})
 
     function(TEST name)
         add_executable(${name} test/${name}.c)
         target_link_libraries(${name} testlib ${CURL_LIBRARIES} ${EXTRA_LIBS} ${CMAKE_THREAD_LIBS_INIT}  ${GLIB_LIBRARIES})
-#        target_link_libraries(${name} testlib /usr/local/lib/libcurl.so ${CMAKE_THREAD_LIBS_INIT}  ${GLIB_LIBRARIES})
-#IF(APPLE)
-#        target_link_libraries(${name} "-e_${name}")
-#ELSE(APPLE)
-#        target_link_libraries(${name} "-e${name}")
-#ENDIF(APPLE)
+#		target_link_libraries(${name} testlib /usr/local/lib/libcurl.so ${CMAKE_THREAD_LIBS_INIT}  ${GLIB_LIBRARIES})
+#		IF(APPLE)
+#			target_link_libraries(${name} "-e_${name}")
+#		ELSE(APPLE)
+#			target_link_libraries(${name} "-e${name}")
+#		ENDIF(APPLE)
 
         add_test(${name} bin/${name}  ${ARGN})
     endfunction(TEST)
 
+    TEST(log_ok)
+    TEST(email_ok)
 
     TEST(getfromemail_ok)
     TEST(getfromemail_nok)
     TEST(mila_accept_ok)
-#    TEST(mila_ok)
+    TEST(mila_ok)
 #    TEST(mail_ok)
 
 ENDIF($ENV{TEST_ENABLE})

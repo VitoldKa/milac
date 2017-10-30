@@ -18,6 +18,8 @@
 #include "mila.h"
 #include "mila_tread.h"
 
+#include "log.h"
+
 #define STATE_WAIT_FOR_HELO 1
 #define STATE_WAIT_FOR_MAIL 2
 #define STATE_WAIT_FOR_RCPT 3
@@ -46,12 +48,12 @@ void* doSomeThing(void *arg)
 	time_t rawtime; struct tm * timeinfo;
 	time ( &rawtime );
 	timeinfo = localtime ( &rawtime );
-	printf("%s\n", asctime (timeinfo));
+// 	printf("%s\n", asctime (timeinfo));
 	smila *lmila = arg;
 	
 	char *buffer = malloc(EMAIL_SIZE+1);
 		if(!buffer)
-			printf("Error buffer malloc\n");
+			GENERAL(LOG_LEVEL_GENERAL, "Error buffer malloc");
 	
 	int n=0;
 	//printf("->New Connection\n");
@@ -65,7 +67,7 @@ void* doSomeThing(void *arg)
 	char from[256]="", to[256]="";
 	char *data = malloc(EMAIL_SIZE+1);
 		if(!data)
-			printf("Error data malloc\n");
+			GENERAL(LOG_LEVEL_GENERAL, "Error data malloc");
 	data[0]=0;
 	data[EMAIL_SIZE]=0;
 	char *data_pointer = data;
@@ -80,14 +82,14 @@ void* doSomeThing(void *arg)
 		buffer[n] = 0;
 		if(n == -1)
 		{
-			fprintf(stderr, "%x::socket() failed: %m\n", (unsigned int)lmila->tid);
+			GENERAL(LOG_LEVEL_GENERAL, "%x::socket() failed: %m", (unsigned int)lmila->tid);
 			close(lmila->socket);
 			run = 0;
 			break;
 		}
 		else if(n == 0)
 		{
-			printf("%x::Connetion closed by remote\n", (unsigned int)lmila->tid);
+			GENERAL(LOG_LEVEL_GENERAL, "%x::Connetion closed by remote\n", (unsigned int)lmila->tid);
 			close(lmila->socket);
 			run = 0;
 			state = STATE_QUIT;
@@ -99,7 +101,7 @@ void* doSomeThing(void *arg)
 		if(state != STATE_WAIT_FOR_DOT)
 		{
 			strlwr(buffer);
-			printf("->%s\n", buffer);
+// 			printf("->%s\n", buffer);
 		}
 
 		if(state == STATE_WAIT_FOR_DOT)
@@ -124,16 +126,16 @@ void* doSomeThing(void *arg)
 	
 				if(strstr(buffer, "\r\n.\r\n"))
 				{
- 					printf("end of body\n");
+//  					printf("end of body\n");
 					clock_t end = clock();
 					double time_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
-					printf("smtp time befor mila: %f\n\n", time_smtp);
+// 					printf("smtp time befor mila: %f\n\n", time_smtp);
 
 					mila(data, data_pointer-data, to+1);
 
 					end = clock();
 					time_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
-					printf("smtp time after mila: %f\n\n", time_smtp);
+// 					printf("smtp time after mila: %f\n\n", time_smtp);
 					const char loutbuf2[] = "250 Ok\r\n";
 					//printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf2);
 					ret = write(lmila->socket, loutbuf2, sizeof(loutbuf2)-1);															
@@ -154,7 +156,7 @@ void* doSomeThing(void *arg)
 	//			if(state = STATE_WAIT_FOR_HELO)
 	//			{
 					const char loutbuf[] = "250-mila7.xxx.com\r\n250-8BITMIME\r\n250 SIZE 157286400\r\n";
-					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+// 					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);
 
 	/*				char loutbuf2[] = "250-8BITMIME\r\n";
@@ -178,7 +180,7 @@ void* doSomeThing(void *arg)
 	//			if(state = STATE_WAIT_FOR_MAIL)
 	//			{
 					const char loutbuf[] = "250 Ok\r\n";
-					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+					GENERAL(LOG_LEVEL_GENERAL, "%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 					strcpy(from, buffer+10);
 					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);
 					state = STATE_WAIT_FOR_RCPT;
@@ -195,15 +197,15 @@ void* doSomeThing(void *arg)
 					{
 						strcpy(to, buffer+8);
 						static const char loutbuf[] = "250 Recipient ok.\r\n";
-						printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+// 						printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 						ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);				
 						state = STATE_WAIT_FOR_DATA;
 					}
 					else
 					{
 						static const char loutbuf[] = "554 5.7.1 Relay access denied\r\n";
-						printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
-						printf("%x::%s", (unsigned int)lmila->tid, buffer+8);
+						GENERAL(LOG_LEVEL_GENERAL, "%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+						GENERAL(LOG_LEVEL_GENERAL, "%x::%s", (unsigned int)lmila->tid, buffer+8);
 						ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);										
 						state = STATE_QUIT;
 					}
@@ -219,7 +221,7 @@ void* doSomeThing(void *arg)
 	//			if(state = STATE_WAIT_FOR_DATA)
 	//			{
 					static const char loutbuf[] = "354 Enter mail, end with \".\" on a line by itself\r\n";
-					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+// 					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
 					state = STATE_WAIT_FOR_DOT;
 					// check for the dot
@@ -236,9 +238,6 @@ void* doSomeThing(void *arg)
 					//printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
 					state = STATE_WAIT_FOR_QUIT;
-
-
-
 				}
 			}
 
@@ -246,7 +245,7 @@ void* doSomeThing(void *arg)
 			{
 	// 			printf("->%s\n", buffer);
 				static const char loutbuf[] = "221 Closing connection\r\n";
-				printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+				GENERAL(LOG_LEVEL_GENERAL, "%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 				ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
 				close(lmila->socket);
 				run = 0;
@@ -255,7 +254,7 @@ void* doSomeThing(void *arg)
 		}
 
 	}
-	printf("%x::stop thread\n", (unsigned int)lmila->tid);
+// 	printf("%x::stop thread\n", (unsigned int)lmila->tid);
 	close(lmila->socket);
 	
 	clock_t end = clock();
