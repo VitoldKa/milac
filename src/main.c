@@ -146,6 +146,8 @@ int main (int argc, char *argv[])
 
 	GENERAL(LOG_LEVEL_GENERAL, "listening on %s", INADDRESS);
 
+	mila_init();
+
 	while(run)
 	{
 		usleep(10);

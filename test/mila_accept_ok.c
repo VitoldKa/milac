@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include <curl/curl.h>
 #include <glib.h>
 
 #include "test.h"
@@ -11,7 +12,7 @@
 
 int DRY_RUN = 1;
 
-int mila_accept(GString *buf, int lprofile, GString *retbuf);
+int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf);
 
 int main(int argc, char *argv[])
 {
@@ -19,11 +20,27 @@ int main(int argc, char *argv[])
 	logging_SetLevel(-1);
 	logging_SetFacilities(-1);
 
+	GENERAL(LOG_LEVEL_GENERAL, "\nmila_accept_ok");
+
 	int profile;
 //printf("%s", str);
 	GString *buf = g_string_new(NULL);
 	TEST_NEQUAL(buf, 0);
 	
+	
+	
+	CURL *curl;
+	CURLcode res;
+	curl = curl_easy_init();
+
+
+	
+	double time_accept;
+	clock_t begin;
+	
+	time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+	printf("mila time_accept : %f\n", time_accept);
+
 	
 	
 	/////////////////////////////////////////////////////////////////
@@ -34,7 +51,12 @@ int main(int argc, char *argv[])
 	{
 // 		printf("str: %s\n", filebuf);
 		GString *str = g_string_new(filebuf);
-		TEST_NEQUAL(mila_accept(str, 10, buf), 0);
+
+		clock_t begin = clock();
+		TEST_NEQUAL(mila_accept(curl, str, 10, buf), 0);
+		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+		printf("mila time_accept : %f\n", time_accept);
+
 		g_string_free(str, TRUE);
 	}
 	free(filebuf);
@@ -47,7 +69,12 @@ int main(int argc, char *argv[])
 	{
 // 		printf("str: %s\n", filebuf);
 		GString *str = g_string_new(filebuf);
-		TEST_EQUAL(mila_accept(str, 10, buf), 0);
+
+		clock_t begin = clock();
+		TEST_EQUAL(mila_accept(curl, str, 10, buf), 0);
+		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+		printf("mila time_accept : %f\n", time_accept);
+
 		g_string_free(str, TRUE);
 	}
 	free(filebuf);
@@ -60,7 +87,12 @@ int main(int argc, char *argv[])
 	{
 // 		printf("str: %s\n", filebuf);
 		GString *str = g_string_new(filebuf);
-		TEST_EQUAL(mila_accept(str, 10, buf), 0);
+
+		clock_t begin = clock();
+		TEST_EQUAL(mila_accept(curl, str, 10, buf), 0);
+		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+		printf("mila time_accept : %f\n", time_accept);
+
 		g_string_free(str, TRUE);
 	}
 	free(filebuf);
@@ -73,7 +105,12 @@ int main(int argc, char *argv[])
 	{
 // 		printf("str: %s\n", filebuf);
 		GString *str = g_string_new(filebuf);
-		TEST_EQUAL(mila_accept(str, 10, buf), 0);
+
+		clock_t begin = clock();
+		TEST_EQUAL(mila_accept(curl, str, 10, buf), 0);
+		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+		printf("mila time_accept : %f\n", time_accept);
+
 		g_string_free(str, TRUE);
 	}
 	free(filebuf);
@@ -86,7 +123,12 @@ int main(int argc, char *argv[])
 	{
 // 		printf("str: %s\n", filebuf);
 		GString *str = g_string_new(filebuf);
-		TEST_EQUAL(mila_accept(str, 10, buf), 0);
+
+		clock_t begin = clock();
+		TEST_EQUAL(mila_accept(curl, str, 10, buf), 0);
+		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+		printf("mila time_accept : %f\n", time_accept);
+
 		g_string_free(str, TRUE);
 	}
 	free(filebuf);
@@ -99,7 +141,12 @@ int main(int argc, char *argv[])
 	{
 // 		printf("str: %s\n", filebuf);
 		GString *str = g_string_new(filebuf);
-		TEST_EQUAL(mila_accept(str, 10, buf), 0);
+
+		clock_t begin = clock();
+		TEST_EQUAL(mila_accept(curl, str, 10, buf), 0);
+		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+		printf("mila time_accept : %f\n", time_accept);
+
 		g_string_free(str, TRUE);
 	}
 	free(filebuf);
@@ -112,15 +159,18 @@ int main(int argc, char *argv[])
 	{
 // 		printf("str: %s\n", filebuf);
 		GString *str = g_string_new(filebuf);
-		TEST_EQUAL(mila_accept(str, 10, buf), 50);
+
+		clock_t begin = clock();
+		TEST_EQUAL(mila_accept(curl, str, 10, buf), 50);
+		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+		printf("mila time_accept : %f\n", time_accept);
+
 		g_string_free(str, TRUE);
 	}
 	free(filebuf);
 
-
-
-
-
-	free(buf);
+	g_string_free(buf, TRUE);
+	curl_easy_cleanup(curl);
+	
 	TEST_END;		
 }	

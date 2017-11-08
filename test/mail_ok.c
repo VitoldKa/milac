@@ -107,6 +107,8 @@ int main(int argc, char *argv[])
 	logging_SetLevel(-1);
 	logging_SetFacilities(-1);
 
+	GENERAL(LOG_LEVEL_GENERAL, "\nmail_ok");
+
 		str = malloc(10*1024*1024);
 		str[0] = 0;
 

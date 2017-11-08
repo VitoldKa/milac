@@ -37,22 +37,22 @@ int email_send(const char *body, int n, ...)
 		curl_mime_type(part, "text/plain");
 		curl_mime_data(part, body, CURL_ZERO_TERMINATED);
 
-va_list vl;
-va_start(vl,n);
-  for (int i=0;i<n;i++)
-  {
-    char * buf =va_arg(vl,char*);
-   
-  		part = curl_mime_addpart(mime);
-		curl_mime_data(part, buf, CURL_ZERO_TERMINATED);
-		char * name =va_arg(vl,char*);
-		curl_mime_filename(part, name);
-		char * type =va_arg(vl,char*);
-		curl_mime_filename(part, name);
-		curl_mime_type(part, type);
-  
-  }
-  va_end(vl);
+		va_list vl;
+		va_start(vl,n);
+		for (int i=0;i<n;i++)
+		{
+			char * buf =va_arg(vl,char*);
+
+			part = curl_mime_addpart(mime);
+			curl_mime_data(part, buf, CURL_ZERO_TERMINATED);
+			char * name =va_arg(vl,char*);
+			curl_mime_filename(part, name);
+			char * type =va_arg(vl,char*);
+			curl_mime_filename(part, name);
+			curl_mime_type(part, type);
+
+		}
+		va_end(vl);
 
   		curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
 
