@@ -23,7 +23,7 @@
 
 #define MAX_BUF 1024*1024*5
 
-const s_mila_profile mila_profile[] = {
+s_mila_profile mila_profile[] = {
 	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
 	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
 	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
@@ -38,9 +38,9 @@ const s_mila_profile mila_profile[] = {
 	
 	
 	
-	{ "xxx@xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },	
-	{ "xxx@xxx.com" , "logintoken=73795cb4038132f0f90c5146ef474d00717a22f552809b0dcc3632a243e1b89ef82e81ea; connect1.sid=s%3AtnIEJHQfijg2cu_Id0bhjFdRxoSSsFhB.8ZcsG1YYYuztddvVNhTAsRP11IIOpDJU7Wu42wXadDU; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },		
-	{ "xxx@xxx.com" ,    "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" }
+	{ "xxx@xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_1.txt" },	
+	{ "xxx@xxx.com" , "logintoken=5c74ba85e68c51a9b06b71d3359bfd3ab79fd322fb25630ec1be6df549e6267def2d564f; connect1.sid=s%3A4Yuaw7tcX1DtQsO3mXqy4HLlWFl1aBNS.aIAOJes8FNRDIgFnKbF5Fixh9RhHekZGJdb5MT5gmiw; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_4.txt" },		
+	{ "xxx@xxx.com" ,    "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_2.txt" }
 
 	};
 
@@ -287,8 +287,10 @@ size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
 // 	int offset = strlen(lpbuf);
 // 	memcpy(lpbuf+offset, ptr, size*nmemb);
 // 	lpbuf[size*nmemb+offset] = 0;
-//	printf("write_callbacks: %s\n", retbuf);
 	g_string_append_len(lpbuf, ptr, size*nmemb);
+// 	printf("write_callbacks: %ld\n", size*nmemb);
+// 	printf("write_callbacks: %ld\n", lpbuf->len);
+// 	printf("write_callbacks: %s\n", lpbuf->str+1);
 	return nmemb * size;
 }
 
@@ -359,22 +361,35 @@ goto perform;
 	return 0;
 }
 
-int mila_accept(GString *buf, int lprofile, GString *retbuf)
+int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 {
+	GENERAL(LOG_LEVEL_GENERAL, "mila_accept");
 	GError *err = NULL;
 	GMatchInfo *matchInfo = NULL;
 	GRegex *regex = NULL;
 
+	if(!curl)
+	{
+		GENERAL(LOG_LEVEL_GENERAL, "invalid curl pointer");
+		return 1;
+	}
 	int error = 1;
 
-	char *start = strstr(buf->str, "Nouvelles demandes");
+	char *start = strstr(buf->str+15000, "Nouvelles demandes");
 
-	char *end = strstr(buf->str, "Commandes en cours");
+	char *end;
+	if(start)
+	{
+		end = strstr(start, "Commandes en cours");
+		printf("offset: %ld\n", start-buf->str);
+	}	
+		
 // 	printf("%ld\n", (long)start);
 // 	printf("%ld\n", (long)end);
 // 	printf("%ld\n", (long)(end-start));
 	if(start && end)
 	{
+		GENERAL(LOG_LEVEL_GENERAL, "Nouvelles demandes");
 		GString *newbuf = g_string_new(NULL);
 		g_string_append_len(newbuf, start, end-start);
 
@@ -384,7 +399,7 @@ int mila_accept(GString *buf, int lprofile, GString *retbuf)
 		str_replace(newbuf->str, newbuf->len, "\r", "");
 
 		// search for _csrf=
-		regex = g_regex_new ("<form.*action=\"(.*)\".*name=\"_csrf\".*value=\"(.*)\".*Accepter.*<\\/form>", G_REGEX_UNGREEDY, 0, &err);   
+		regex = g_regex_new ("<form.*action=\"\\/friendaccept\\/(.*)\".*name=\"_csrf\".*value=\"(.*)\".*Accepter.*<\\/form>", G_REGEX_UNGREEDY, 0, &err);   
 	//	regex = g_regex_new ("<form.*name=\"_csrf\".*value=\"(.*)\"", G_REGEX_MULTILINE|G_REGEX_UNGREEDY, 0, &err);   
 		if(regex == NULL)
 		{
@@ -403,40 +418,35 @@ int mila_accept(GString *buf, int lprofile, GString *retbuf)
 			// worked
 			// curl -X POST --data-urlencode  "_csrf=jHJ1VbdOEqQjUZsyeyr3poW50OSDeQLgr8p8Q=" -b "connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; " -H "Accept-Language: fr-CH" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36" -H "Origin: https://www.mila.com" -L -v --trace-ascii /dev/stdout  https://www.mila.com/friendaccept/109693
 
+/*
 
-			CURL *curl;
+
+curl -X POST --data-urlencode  "_csrf=jHJ1VbdOEqQjUZsyeyr3poW50OSDeQLgr8p8Q=" -b "connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; " -H "Accept-Language: fr-CH" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36" -H "Origin: https://www.mila.com" -L -v --trace-ascii /dev/stdout  https://www.mila.com/friendaccept/109693
+
+
+
+*/
 			CURLcode res;
-			curl = curl_easy_init();
 
-			struct curl_slist *list = NULL;
-
-			list = curl_slist_append(list, "Cache-Control: max-age=0");
-			list = curl_slist_append(list, "Origin: https://www.mila.com");
-			list = curl_slist_append(list, "Upgrade-Insecure-Requests: 1");
-			list = curl_slist_append(list, "Content-Type: application/x-www-form-urlencoded");
-			list = curl_slist_append(list, "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36");
-			list = curl_slist_append(list, "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
-			list = curl_slist_append(list, "Referer: https://www.mila.com/friendservicecalls");
-			list = curl_slist_append(list, "Accept-Encoding: gzip, deflate, br");
-			list = curl_slist_append(list, "Accept-Language: fr-CH,fr-FR;q=0.8,fr;q=0.6,en-US;q=0.4,en;q=0.2");
 
 // list = curl_slist_append(list, "Cookie: optimizelyEndUserId=oeu1486559193069r0.2422451363507594; optimizelySegments=%7B%22700475046%22%3A%22gc%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; logintoken=a5da1827573d0e4bcf6966c9954a7aa2335caf259b048a4dacc696326078ba4df20b7635; connect1.sid=s%3AzuHy12n0PP0pvG1FNB5V6owfRbF_Meb2.qs5XxiVgaJphR1nvGErxu%2FpSe8Ux0i3%2BveMulspgm88; _dc_gtm_UA-29191003-1=1; _ga=GA1.2.881151050.1486559200; _gid=GA1.2.1734846664.1508526208; _gat_UA-29191003-1=1");
 			GString *header = g_string_new(NULL);
+		GENERAL(LOG_LEVEL_GENERAL, "curl_easy_setopt");
 
-			curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
 			curl_easy_setopt(curl, CURLOPT_POST, 1L);
-			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+// 			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
 			curl_easy_setopt(curl, CURLOPT_WRITEDATA, retbuf);
-			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
+// 			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 			curl_easy_setopt(curl, CURLOPT_HEADERDATA, header);
-			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
+// 			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
 // 			curl_easy_setopt(curl, CURLOPT_DEBUGDATA, retbuf);
 //			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 //			curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+		GENERAL(LOG_LEVEL_GENERAL, "curl_easy_setopt ok");
 
 			// printf("profile: %d\n", lprofile);
 			// printf("mila credentials : %s\n", mila_profile[lprofile].credentials);
-			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[lprofile].credentials);
+// 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[lprofile].credentials);
 
 			if(!g_match_info_matches(matchInfo))
 				GENERAL(LOG_LEVEL_GENERAL, "match not found");
@@ -459,12 +469,11 @@ int mila_accept(GString *buf, int lprofile, GString *retbuf)
 				curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post);
 				curl_easy_setopt(curl, CURLOPT_REFERER, "https://www.mila.com/friendservicecalls");
 
-				GENERAL(LOG_LEVEL_GENERAL, "post: %s", csrf_enc);
+				GENERAL(LOG_LEVEL_GENERAL, "post: %s", post);
 				GENERAL(LOG_LEVEL_GENERAL, "postlen: %lu", strlen(post));
 
-				char accepturl[255] = "https://www.mila.com";
+				char accepturl[255] = "https://www.mila.com/friendaccept/";
 				strcat(accepturl, orderid);
-				printf("%s\n", accepturl);
 				GENERAL(LOG_LEVEL_GENERAL, "%s", accepturl);
 				curl_easy_setopt(curl, CURLOPT_URL, accepturl);
 				// curl_easy_setopt(curl, CURLOPT_URL, "https://requestb.in/17vighd1");
@@ -480,7 +489,31 @@ int mila_accept(GString *buf, int lprofile, GString *retbuf)
 						GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 500 Internal Server Error");
 						GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
 						try -= 1;
-						usleep(500000);
+						usleep(2000000);
+						goto start;
+					}
+					if(strstr(header->str, "HTTP/1.1 502") && try > 0)
+					{
+						GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 502 Bad Gateway");
+						GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
+						try -= 1;
+						usleep(2000000);
+						goto start;
+					}
+					if(strstr(header->str, "HTTP/1.1 503") && try > 0)
+					{
+						GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 503 Service Unavailable");
+						GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
+						try -= 1;
+						usleep(2000000);
+						goto start;
+					}
+					if(strstr(header->str, "HTTP/1.1 504 GATEWAY_TIMEOUT") && try > 0)
+					{
+						GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 504 GATEWAY_TIMEOUT");
+						GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
+						try -= 1;
+						usleep(2000000);
 						goto start;
 					}
 				}
@@ -498,12 +531,9 @@ int mila_accept(GString *buf, int lprofile, GString *retbuf)
 				
 				error = 0;
 			}
-			curl_slist_free_all(list);
 			g_string_free(header, TRUE);
 			g_free(matchInfo);
-			if(curl)
-				curl_easy_cleanup(curl);
-
+			curl_easy_setopt(curl, CURLOPT_POST, 0L);
 		}
 		g_regex_unref(regex);
 		g_string_free(newbuf, TRUE);
@@ -526,6 +556,8 @@ int mila_accept(GString *buf, int lprofile, GString *retbuf)
 int mila (char *buf, int buf_size, char *to)
 {
 	int error = 1;
+
+	clock_t begin = clock();
 	
 	// write eml to disk
 	char tmpdir[] = "/tmp/milaparser/"	;
@@ -549,11 +581,15 @@ int mila (char *buf, int buf_size, char *to)
 	//	printf("wrote: %s",filename);
 	}
 
-	clock_t begin = clock();
+	time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+	printf("mila time_accept : %f\n", time_accept);
+
+
 //	printf("Milac\n");
 	
 //	memset(retbuf, 0, 1024*1024);
 	GString *retbuf = g_string_new(NULL);
+	GString *header = g_string_new(NULL);
 	GString *return_accept = g_string_new(NULL);
 //	retbuf[0] = 0;
 //	int size = strlen(buf);
@@ -566,64 +602,124 @@ int mila (char *buf, int buf_size, char *to)
 
 //		printf("bytesread: %d\n", size);	
 //	char urlstr[200] ="https://www.mila.com/friendacceptfrommail/";
-	const char urlstr[200] ="https://www.mila.com/friendservicecalls";
+// 	char *urlstr;
+	char urlstr[200] = "";
+	char *start = strstr(buf, "AFFICHER SUR LE WEB\r\n<");
+	char *end;
+	if(start)
+		end = strstr(start, ">");
 
-	CURL *curl;
 	CURLcode res;
-	curl = curl_easy_init();
 
-	if(curl)
+
+	if(start)
+		GENERAL(LOG_LEVEL_GENERAL, "link to mila start found");
+	
+	if(end)
+		GENERAL(LOG_LEVEL_GENERAL, "link to mila end found");
+	
+	if(start && end)
 	{
-		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)retbuf);
+		start += 22;
+		end -= 3;
 
-		curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
-//				curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
-//		curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
-//		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+		strncpy(urlstr, start, end-start);
+// 		urlstr = curl_easy_unescape(curl, urltmp, 0, NULL);
+		str_replace(urlstr, strlen(urlstr), "=3D", "\x3D");
+printf("urlstr: %s\n", urlstr);
 
-//				struct curl_slist *chunk = NULL;
-//				chunk = curl_slist_append(chunk, "apns-topic: com.10-sor.silentclock.voip");
-//		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+		GENERAL(LOG_LEVEL_GENERAL, "link to mila found: %s", urlstr);
 
+/*
+Search for
+AFFICHER SUR LE WEB\r\n
+<
+>
+*/
+
+		CURL *curl = NULL;
 		int profile;
 		if(!getfromemail(to, &profile))
 		{
 			GENERAL(LOG_LEVEL_GENERAL, "mila credentials : %s", mila_profile[profile].credentials);
-			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[profile].credentials);
+// 				curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[profile].credentials);
+			curl = mila_profile[profile].curl;
+// 			curl_easy_setopt(curl, CURLOPT_COOKIEJAR, mila_profile[profile].cookiejar);
 		}
 		else
 		{
 			GENERAL(LOG_LEVEL_GENERAL, "using default credential");
 			GENERAL(LOG_LEVEL_GENERAL, "to: %s", to);
-			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[0].credentials);
+			curl = mila_profile[0].curl;
+// 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[0].credentials);
+// 			curl_easy_setopt(curl, CURLOPT_COOKIEJAR, mila_profile[0].cookiejar);
 			error = 5;
 		}
 
-		curl_easy_setopt(curl, CURLOPT_URL, urlstr);
-		clock_t end = clock();
-		time_processing = (double)(end - begin) / CLOCKS_PER_SEC;
-// 		printf("mila time_processing : %f\n", time_processing);
 
-		// todo: retry
-		extern int DRY_RUN;
-		if(!DRY_RUN)
-			res = curl_easy_perform(curl);
+		if(curl)
+		{
+			printf("curl\n");
+			GENERAL(LOG_LEVEL_GENERAL, "curl");
 
-		email_send("mila return", 2, retbuf->str, "mila.html", "text/html; charset=utf-8",
-									 buf, "message.eml", "message/rfc822; charset=utf-8");
+			///////////////////////////////////////////////////////////////
+			// Mutex lock
+			pthread_mutex_lock(&mutex);
+			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+			curl_easy_setopt(curl, CURLOPT_WRITEDATA, retbuf);
 
-		GString *lpchar = retbuf;
-		int r = mila_accept(lpchar, profile, return_accept);
-		if(r == 0 || r== 50)
-			error=0;
+			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
+			curl_easy_setopt(curl, CURLOPT_HEADERDATA, header);
 
-		time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
-// 		printf("mila time_accept : %f\n", time_accept);
+	//				curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
+	//		curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
+	//		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
-		curl_easy_cleanup(curl);
+
+
+			curl_easy_setopt(curl, CURLOPT_URL, urlstr);
+			clock_t end = clock();
+			time_processing = (double)(end - begin) / CLOCKS_PER_SEC;
+			GENERAL(LOG_LEVEL_GENERAL, "mila time_processing : %f\n", time_processing);
+
+			// todo: retry
+			extern int DRY_RUN;
+			if(!DRY_RUN)
+				res = curl_easy_perform(curl);
+
+			////////////////////////////////////////////////////////////////
+
+
+
+// 			printf("%d\n", res);
+
+			GString *lpchar = retbuf;
+			int r = mila_accept(curl, lpchar, profile, return_accept);
+			if(r == 0 || r== 50)
+				error=0;
+
+			curl_easy_setopt(curl, CURLOPT_WRITEDATA, retbuf);
+			curl_easy_setopt(curl, CURLOPT_HEADERDATA, header);
+
+			pthread_mutex_unlock(&mutex);
+
+
+			email_send("mila return", 2, retbuf->str, "mila.html", "text/html; charset=utf-8",
+										 buf, "message.eml", "message/rfc822; charset=utf-8");
+										 
+			time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+			GENERAL(LOG_LEVEL_GENERAL, "mila time_accept : %f\n", time_accept);
+
+//			curl_easy_cleanup(curl);
+		}
+		else
+			GENERAL(LOG_LEVEL_GENERAL, "invalid curl pointer");
+		
+		
 	}
+	else
+		GENERAL(LOG_LEVEL_GENERAL, "link to mila not found");
+	
 	
 	char str_time_processing[20];
 	sprintf(str_time_processing, "%f", time_processing);
@@ -642,11 +738,11 @@ int mila (char *buf, int buf_size, char *to)
 		strcat(cmd,"\n");
 		GENERAL(LOG_LEVEL_GENERAL, "Forwarding email");
 
-		pthread_mutex_lock(&mutex);
+// 		pthread_mutex_lock(&mutex);
 		int ret_cmd = system(cmd);
 		GENERAL(LOG_LEVEL_GENERAL, "system returned : %d", ret_cmd);
 // 		sleep(5);
-		pthread_mutex_unlock(&mutex);
+// 		pthread_mutex_unlock(&mutex);
 
 		if(cmd)
 			free(cmd);
@@ -656,11 +752,50 @@ int mila (char *buf, int buf_size, char *to)
 			error = 10;
 		}
 	}
+
 	if(retbuf)
 		g_string_free(retbuf, TRUE);
 	if(return_accept)
 		g_string_free(return_accept, TRUE);
+	g_string_free(header, TRUE);
 
 	GENERAL(LOG_LEVEL_GENERAL, "Mila end");
 	return error;
+}
+
+int mila_init(void)
+{
+	pthread_mutex_init(&mutex, NULL);
+	
+	int size = sizeof(mila_profile)/sizeof(s_mila_profile);
+//	printf("sizeof mila_profile: %d\n", size);
+	for(int c = 0; c < size; c++)
+	{
+		GENERAL(LOG_LEVEL_GENERAL, "mila_init profile %d", c);
+		mila_profile[c].curl = curl_easy_init();
+		CURL *curl = mila_profile[c].curl;
+		
+// 		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+	
+		struct curl_slist *list = NULL;
+		list = curl_slist_append(list, "Cache-Control: max-age=0");
+		list = curl_slist_append(list, "Origin: https://www.mila.com");
+		list = curl_slist_append(list, "Upgrade-Insecure-Requests: 1");
+		list = curl_slist_append(list, "Content-Type: application/x-www-form-urlencoded");
+		list = curl_slist_append(list, "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36");
+		list = curl_slist_append(list, "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
+		list = curl_slist_append(list, "Referer: https://www.mila.com/friendservicecalls");
+// 		list = curl_slist_append(list, "Accept-Encoding: gzip, deflate, br");
+		list = curl_slist_append(list, "Accept-Language: fr-CH,fr-FR;q=0.8,fr;q=0.6,en-US;q=0.4,en;q=0.2");
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
+
+		curl_easy_setopt(curl, CURLOPT_COOKIEJAR, mila_profile[c].cookiejar);
+
+// 		curl_slist_free_all(list);
+
+
+	}
+	
+	return 0;
 }

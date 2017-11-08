@@ -46,6 +46,7 @@ void GENERAL(unsigned int facilities, const char *format, ...)
 		va_end(args);
 		
 		FILE * pFile; 
+
 		pFile = fopen(hlog.logfile, "a");
 		if(pFile)
 		{
@@ -54,6 +55,7 @@ void GENERAL(unsigned int facilities, const char *format, ...)
 		}
 		else
 			printf("logfile open error\n");
+
 	}
 
 }

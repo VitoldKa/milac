@@ -15,10 +15,14 @@
 
 #include <pthread.h>
 
+#include <glib.h>
+
 #include "mila.h"
 #include "mila_tread.h"
 
 #include "log.h"
+
+
 
 #define STATE_WAIT_FOR_HELO 1
 #define STATE_WAIT_FOR_MAIL 2
@@ -126,20 +130,24 @@ void* doSomeThing(void *arg)
 	
 				if(strstr(buffer, "\r\n.\r\n"))
 				{
-//  					printf("end of body\n");
+//  				printf("end of body\n");
 					clock_t end = clock();
 					double time_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
-// 					printf("smtp time befor mila: %f\n\n", time_smtp);
+					GENERAL(LOG_LEVEL_GENERAL, "smtp time befor mila: %f\n\n", time_smtp);
 
 					mila(data, data_pointer-data, to+1);
 
 					end = clock();
 					time_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
-// 					printf("smtp time after mila: %f\n\n", time_smtp);
+					GENERAL(LOG_LEVEL_GENERAL, "smtp time after mila: %f\n\n", time_smtp);
 					const char loutbuf2[] = "250 Ok\r\n";
-					//printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf2);
-					ret = write(lmila->socket, loutbuf2, sizeof(loutbuf2)-1);															
-					state = STATE_WAIT_FOR_QUIT;				
+					GENERAL(LOG_LEVEL_GENERAL, "%x::<-%s", (unsigned int)lmila->tid, loutbuf2);
+					ret = write(lmila->socket, loutbuf2, sizeof(loutbuf2)-1);		
+					
+					// clear buffer
+					data[0] = 0;
+																		
+					state = STATE_WAIT_FOR_MAIL;				
 				}
 		}
 
@@ -156,7 +164,7 @@ void* doSomeThing(void *arg)
 	//			if(state = STATE_WAIT_FOR_HELO)
 	//			{
 					const char loutbuf[] = "250-mila7.xxx.com\r\n250-8BITMIME\r\n250 SIZE 157286400\r\n";
-// 					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+					GENERAL(LOG_LEVEL_GENERAL, "%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);
 
 	/*				char loutbuf2[] = "250-8BITMIME\r\n";
@@ -190,14 +198,15 @@ void* doSomeThing(void *arg)
 			if(strncmp(buffer, "rcpt to:", 8)==0)
 			{
 	// 			printf("->%s\n", buffer);
-				//printf("%x::->%s\n", (unsigned int)lmila->tid, buffer);
+				GENERAL(LOG_LEVEL_GENERAL, "%x::->%s\n", (unsigned int)lmila->tid, buffer);
+
 				if(state = STATE_WAIT_FOR_RCPT)
 				{
 					if( ( isemailexist(buffer+8+1))) // TODO: remove "\r\n"
 					{
 						strcpy(to, buffer+8);
 						static const char loutbuf[] = "250 Recipient ok.\r\n";
-// 						printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+						GENERAL(LOG_LEVEL_GENERAL, "%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 						ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);				
 						state = STATE_WAIT_FOR_DATA;
 					}
@@ -221,7 +230,7 @@ void* doSomeThing(void *arg)
 	//			if(state = STATE_WAIT_FOR_DATA)
 	//			{
 					static const char loutbuf[] = "354 Enter mail, end with \".\" on a line by itself\r\n";
-// 					printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+					GENERAL(LOG_LEVEL_GENERAL, "%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
 					state = STATE_WAIT_FOR_DOT;
 					// check for the dot
@@ -235,7 +244,7 @@ void* doSomeThing(void *arg)
 	//			if(state = STATE_WAIT_FOR_DOT)
 				{
 					static const char loutbuf[] = "250 Ok\r\n";
-					//printf("%x::<-%s", (unsigned int)lmila->tid, loutbuf);
+					GENERAL(LOG_LEVEL_GENERAL, "%x::<-%s", (unsigned int)lmila->tid, loutbuf);
 					ret = write(lmila->socket, loutbuf, sizeof(loutbuf)-1);															
 					state = STATE_WAIT_FOR_QUIT;
 				}
