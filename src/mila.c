@@ -685,7 +685,45 @@ AFFICHER SUR LE WEB\r\n
 			// todo: retry
 			extern int DRY_RUN;
 			if(!DRY_RUN)
+			{
+				int try = 5;
+				start1:
 				res = curl_easy_perform(curl);
+
+				if(strstr(header->str, "HTTP/1.1 500 Internal Server Error") && try > 0)
+				{
+					GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 500 Internal Server Error");
+					GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
+					try -= 1;
+					usleep(2000000);
+					goto start1;
+				}
+				if(strstr(header->str, "HTTP/1.1 502") && try > 0)
+				{
+					GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 502 Bad Gateway");
+					GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
+					try -= 1;
+					usleep(2000000);
+					goto start1;
+				}
+				if(strstr(header->str, "HTTP/1.1 503") && try > 0)
+				{
+					GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 503 Service Unavailable");
+					GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
+					try -= 1;
+					usleep(2000000);
+					goto start1;
+				}
+				if(strstr(header->str, "HTTP/1.1 504 GATEWAY_TIMEOUT") && try > 0)
+				{
+					GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 504 GATEWAY_TIMEOUT");
+					GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
+					try -= 1;
+					usleep(2000000);
+					goto start1;
+				}
+
+			}
 
 			////////////////////////////////////////////////////////////////
 
