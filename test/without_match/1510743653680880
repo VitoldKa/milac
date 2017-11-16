@@ -1,0 +1,305 @@
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=mandrill; d=mila.com;
+ h=From:Subject:Reply-To:To:Message-Id:Date:MIME-Version:Content-Type; i=no-reply@mila.com;
+ bh=1wIz9VR5W2+Pqg+l/eQY87zKDdMcJGqzMbMwuoXsCKM=;
+ b=hOAgWdAb7NeDzB5dyLNXf/M2B3sjtqOQPZEAOwSLGljFsPuZSMm5QM9qRZ8/YNpV7cHh9+OORdTT
+   vA9uzEu3UFVJX2wjy6FmBYBxZqtH5uA++6B8iDro6eIBlAf2/fxxrSvTPmd1OgCkp8hupCtDPwik
+   eVeaV2vfGgNH7+WIEQY=
+Received: from pmta02.mandrill.prod.suw01.rsglab.com (127.0.0.1) by mail186-3.suw21.mandrillapp.com id h1gf6a174bku for <vitold.ka@mila11.vitou.com>; Wed, 15 Nov 2017 11:00:52 +0000 (envelope-from <bounce-md_13102323.5a0c1e64.v1-ba9bfa900e7b4e9b8160799ef4eebdd4@mandrillapp.com>)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com; 
+ i=@mandrillapp.com; q=dns/txt; s=mandrill; t=1510743652; h=From : 
+ Subject : Reply-To : To : Message-Id : Date : MIME-Version : 
+ Content-Type : From : Subject : Date : X-Mandrill-User : 
+ List-Unsubscribe; bh=1wIz9VR5W2+Pqg+l/eQY87zKDdMcJGqzMbMwuoXsCKM=; 
+ b=pOS73yTcYZd5KW4unG6iwe6OGSjChZ3kF9KvOLFnmA1swJzh6Jq1rcuYR/7DGtcsiCavsz
+ Aj9Gicu6u4vq2XgvvbiNmi8iyiANU0RtMFHbbRftEmOFapZZrcYrGm9ArUEAqEAgrE4WD1wi
+ uR7lw40HWBD2xqeIkfg94cLy06sHQ=
+From: Mila <no-reply@mila.com>
+Subject: =?utf-8?Q?Confirmation=20de=20la=20t=C3=A2che?=
+Return-Path: <bounce-md_13102323.5a0c1e64.v1-ba9bfa900e7b4e9b8160799ef4eebdd4@mandrillapp.com>
+Received: from [34.251.241.230] by mandrillapp.com id ba9bfa900e7b4e9b8160799ef4eebdd4; Wed, 15 Nov 2017 11:00:52 +0000
+Reply-To: 
+To: <vitold.ka@mila11.vitou.com>
+X-Report-Abuse: Please forward a copy of this message, including all headers, to abuse@mandrill.com
+X-Report-Abuse: You can also report abuse here: http://mandrillapp.com/contact/abuse?id=13102323.ba9bfa900e7b4e9b8160799ef4eebdd4
+X-Mandrill-User: md_13102323
+Message-Id: <13102323.20171115110052.5a0c1e641a1d79.20713915@mail186-3.suw21.mandrillapp.com>
+Date: Wed, 15 Nov 2017 11:00:52 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-CVuEFKy6pLm7zuaQvLNkDQ"
+
+--_av-CVuEFKy6pLm7zuaQvLNkDQ
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+                 
+       =3D=3D   =3D=3D
+
+  
+
+  Confirmation de la t=C3=A2che 
+  =3D=3D=3D Rendez-vous et lieu =3D=3D=3D
+
+  =3D=3D 17.11.2017 =3D=3D
+
+  =3D=3D 09:00 =3D=3D
+
+  =3D=3D 1207 Carouge GE =3D=3D
+
+ 
+  Bonjour  Vous avez accept=C3=A9 la t=C3=A2che suivante. Le moment est bie=
+nt=C3=B4t
+arriv=C3=A9=C2=A0!
+
+ 
+ =3D=3D=3D Paquet =3D=3D=3D
+
+ Installation Swisscom (Internet, TV, T=C3=A9l=C3=A9phonie)
+
+ =3D=3D=3D Votre gain =3D=3D=3D
+
+ 81.60 CHF
+
+ Confirmez la t=C3=A2che *en l=E2=80=99espace de 6 heures* pour recevoir le=
+s
+coordonn=C3=A9es de votre client. *Votre confirmation est engageante.* 
+
+ Rendez la t=C3=A2che si vous ne pouvez pas vous y rendre =C3=A0 l=E2=80=99=
+heure/au jour
+pr=C3=A9vu. 
+
+ Les t=C3=A2ches non confirm=C3=A9es en temps voulu seront redistribu=C3=A9=
+es. 
+
+  Confirmer la t=C3=A2che
+<https://www.mila.com/loginWithPW/c6f77a0f?next=3D/friendservicecalls/11736=
+8>
+ Rendre la t=C3=A2che
+<https://www.mila.com/loginWithPW/c6f77a0f?next=3D/friendservicecalls/11736=
+8>
+ =3D=3D=3D Foire aux questions =3D=3D=3D
+
+ Pourquoi dois-je confirmer une demande de service ?
+<http://milahelpcenter.com/fr/2017/11/09/warum-muss-ich-einen-auftrag-zusae=
+tzlich-bestaetigen-2/>
+
+ Que se passe-t-il si je ne confirme pas la demande de service ?
+<http://milahelpcenter.com/fr/2017/11/09/welche-konsequenzen-hat-es-fuer-mi=
+ch-wenn-ich-den-auftrag-zurueckgebe/>
+<http://www.mila.com> 
+
+ Help Center <http://mila.com/faq> | CGV <http://www.mila.com/legal> 
+  Mila AG
+ Gutenbergstrasse 1, CH-8002 Z=C3=BCrich
+ Capital CHF 395 880
+ CHE-220.287.171
+
+--_av-CVuEFKy6pLm7zuaQvLNkDQ
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+    <head>
+               <style>
+@media only screen and (max-width: 300px) {
+  tr,
+table {
+    width: 100%;
+    font-family: Arial;
+  }
+
+  .txt-bold,
+..txt {
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .image {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+</style>
+
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Du=
+tf-8">
+        <!-- define viewport for mobile device -->
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+    </head>
+    <body style=3D"background-color: #f8f7f7; margin: 0; font-family: 'aria=
+l, helvetica, sans-serif'; color: #58585A;">
+        <table width=3D"100%" style=3D"line-height: 24px; font-size: 16px; =
+font-family: Arial;">
+            <!-- SWISSCOM HEADER -->
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td width=3D"100%" align=3D"center" class=3D"bg-lightgrey" =
+style=3D"line-height: 24px; font-size: 16px; font-family: Arial; background=
+-color: #EFEFEF;" bgcolor=3D"#EFEFEF">
+                    <div class=3D"header" style=3D"width: 80%; max-width: 6=
+50px; text-align: left; margin: 20px 0px 20px 0px;">
+                        <table style=3D"line-height: 24px; font-size: 16px;=
+ font-family: Arial;">
+                            <td style=3D"line-height: 24px; font-size: 16px=
+; font-family: Arial;"><img src=3D"https://www.mila.com/public/img/partner/=
+swisscom/logoEmail.png" border=3D"0" width=3D"100%"></td>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+<!-- END SWISSCOM HEADER -->
+
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td align=3D"center" style=3D"line-height: 24px; font-size:=
+ 16px; font-family: Arial;">
+                    <div class=3D"container" style=3D"width: 100%; max-widt=
+h: 650px; margin: 45px 0px 45px 0px; text-align: left; padding: 0px;">
+                        <h2 style=3D"text-decoration: none; font-size: 23px=
+; color: #58585A; margin: 0px;">
+                            
+                        </h2>
+                        <p style=3D"margin:0px;background-color:#ffffff;">
+                            
+                        </p>
+                        <div class=3D"bg-white-top" style=3D"background-col=
+or: #FFFFFF; border-radius: 15px 15px 0px 0px; padding: 21px 30px 10px 30px=
+;">
+  <h3 class=3D"mz" style=3D"text-decoration: none; font-size: 19px; color: =
+#58585A; margin: 0px;">Confirmation de la t=C3=A2che</h3>
+</div>
+<div class=3D"bg-darkblue-middle" style=3D"background-color: #56AFEA; color=
+: #FFFFFF; padding: 21px 30px 10px 30px;">
+  <h4>Rendez-vous et lieu</h4>
+  =09
+    <img src=3D"https://www.mila.com/public/icons/android-calendar.png" wid=
+th=3D"25px" class=3D"flo-l mrl" style=3D"margin-right: 20px; float: left;">
+    <h2 style=3D"text-decoration: none; font-size: 23px; color: white; font=
+-weight: lighter;">17.11.2017</h2>
+    <img src=3D"https://www.mila.com/public/icons/ion-android-time.png" wid=
+th=3D"25px" class=3D"flo-l mrl" style=3D"margin-right: 20px; float: left;">
+    <h2 style=3D"text-decoration: none; font-size: 23px; color: white; font=
+-weight: lighter;">09:00</h2>
+  
+  <img src=3D"https://www.mila.com/public/icons/ion-ios-location-outline.pn=
+g" width=3D"25px" class=3D"flo-l mrl" style=3D"margin-right: 20px; float: l=
+eft;">
+  <h2 style=3D"text-decoration: none; font-size: 23px; color: white; font-w=
+eight: lighter;">1207 Carouge GE</h2>
+</div>
+<div class=3D"bg-white-bottom" style=3D"background-color: #FFFFFF; border-r=
+adius: 0px 0px 15px 15px; padding: 10px 30px 0px 30px;">
+  <h3 style=3D"text-decoration: none; font-size: 19px; color: #58585A;">Bon=
+jour </h3>
+  <p>Vous avez accept=C3=A9 la t=C3=A2che suivante. Le moment est bient=C3=
+=B4t arriv=C3=A9=C2=A0!</p>
+  <br>
+  <h4 style=3D"margin-bottom:8px">Paquet</h4>
+  <p class=3D"mz" style=3D"margin: 0px;">Installation Swisscom (Internet, T=
+V, T=C3=A9l=C3=A9phonie)</p>
+  <h4 style=3D"margin-bottom:8px">Votre gain</h4>
+  <p class=3D"mz" style=3D"margin: 0px; margin-bottom: 40px;">81.60 CHF</p>
+  <p class=3D"mz" style=3D"margin: 0px; margin-bottom: 40px;">Confirmez la =
+t=C3=A2che <b>en l=E2=80=99espace de 6 heures</b> pour recevoir les coordon=
+n=C3=A9es de votre
+client. <b>Votre confirmation est engageante.</b>
+    <br><br>
+    Rendez la t=C3=A2che si vous ne pouvez pas vous y rendre =C3=A0 l=E2=80=
+=99heure/au jour pr=C3=A9vu.
+    <br><br>
+    Les t=C3=A2ches non confirm=C3=A9es en temps voulu seront redistribu=C3=
+=A9es.
+  </p>
+  <a href=3D"https://mandrillapp.com/track/click/13102323/www.mila.com?p=3D=
+eyJzIjoiREM2a21paGJfaUZkVGpmY0V6T0tnaEcyOXdvIiwidiI6MSwicCI6IntcInVcIjoxMzE=
+wMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5taWxhLmNvbVxcXC9sb2=
+dpbldpdGhQV1xcXC9jNmY3N2EwZj9uZXh0PVxcXC9mcmllbmRzZXJ2aWNlY2FsbHNcXFwvMTE3M=
+zY4XCIsXCJpZFwiOlwiYmE5YmZhOTAwZTdiNGU5YjgxNjA3OTllZjRlZWJkZDRcIixcInVybF9p=
+ZHNcIjpbXCJkM2QxZGExMTdhNjExYzRkYTlmODM1M2RhYzBhMWJmMmI1MWVkNDk2XCJdfSJ9" c=
+lass=3D"button-round" style=3D"background-color: #56AFEA; text-decoration: =
+none; color: #FFFFFF; padding-top: 7px; padding-bottom: 7px; border-radius:=
+ 20px; margin-top: 13px; display: block; text-align: center; max-width: 240=
+px; font-size: 14px; margin-bottom: 30px;"> Confirmer la t=C3=A2che </a>
+    <a href=3D"https://mandrillapp.com/track/click/13102323/www.mila.com?p=
+=3DeyJzIjoiREM2a21paGJfaUZkVGpmY0V6T0tnaEcyOXdvIiwidiI6MSwicCI6IntcInVcIjox=
+MzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5taWxhLmNvbVxcXC9=
+sb2dpbldpdGhQV1xcXC9jNmY3N2EwZj9uZXh0PVxcXC9mcmllbmRzZXJ2aWNlY2FsbHNcXFwvMT=
+E3MzY4XCIsXCJpZFwiOlwiYmE5YmZhOTAwZTdiNGU5YjgxNjA3OTllZjRlZWJkZDRcIixcInVyb=
+F9pZHNcIjpbXCJkM2QxZGExMTdhNjExYzRkYTlmODM1M2RhYzBhMWJmMmI1MWVkNDk2XCJdfSJ9=
+" class=3D"button-frame" style=3D"text-decoration: none; color: #4f8fce; pa=
+dding-top: 7px; padding-bottom: 7px; border-radius: 20px; margin-top: 13px;=
+ border: solid 2px; display: block; text-align: center; max-width: 240px; f=
+ont-size: 14px;"> Rendre la t=C3=A2che </a>
+  <div>
+    <h4 style=3D"margin-top:40px;margin-bottom:8px">Foire aux questions</h4=
+>
+    <a href=3D"https://mandrillapp.com/track/click/13102323/milahelpcenter.=
+com?p=3DeyJzIjoiYklBMjZIcXBuckNFNy05eDRSYnUwTTZnaWdBIiwidiI6MSwicCI6IntcInV=
+cIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvbWlsYWhlbHBjZW50ZX=
+IuY29tXFxcL2ZyXFxcLzIwMTdcXFwvMTFcXFwvMDlcXFwvd2FydW0tbXVzcy1pY2gtZWluZW4tY=
+XVmdHJhZy16dXNhZXR6bGljaC1iZXN0YWV0aWdlbi0yXFxcL1wiLFwiaWRcIjpcImJhOWJmYTkw=
+MGU3YjRlOWI4MTYwNzk5ZWY0ZWViZGQ0XCIsXCJ1cmxfaWRzXCI6W1wiZWYyMDhlMjNiMjg2YTh=
+mOWEyZTQwYWE0NTQ1YjIwN2UxYzZhOTEzN1wiXX0ifQ" style=3D"color: #56aFea; text-=
+decoration: none;">Pourquoi dois-je confirmer une demande de service ?</a>
+    <br>
+    <a href=3D"https://mandrillapp.com/track/click/13102323/milahelpcenter.=
+com?p=3DeyJzIjoiQjdoUnU3N3EtY05GaXZmNGg1bWM2T0ZILXpVIiwidiI6MSwicCI6IntcInV=
+cIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvbWlsYWhlbHBjZW50ZX=
+IuY29tXFxcL2ZyXFxcLzIwMTdcXFwvMTFcXFwvMDlcXFwvd2VsY2hlLWtvbnNlcXVlbnplbi1oY=
+XQtZXMtZnVlci1taWNoLXdlbm4taWNoLWRlbi1hdWZ0cmFnLXp1cnVlY2tnZWJlXFxcL1wiLFwi=
+aWRcIjpcImJhOWJmYTkwMGU3YjRlOWI4MTYwNzk5ZWY0ZWViZGQ0XCIsXCJ1cmxfaWRzXCI6W1w=
+iMDdjNDg5NDkzODk2OGM0ZTYzZjRlZmEwMDQ3ZTgyOTViNWI1YmY4NlwiXX0ifQ" style=3D"c=
+olor: #56aFea; text-decoration: none;">Que se passe-t-il si je ne confirme =
+pas la demande de service ?</a>
+  </div>
+  <br>
+  <br>
+</div>
+
+                        
+                    </div>
+                    <div class=3D"footer" style=3D"margin-top: 30px; margin=
+-bottom: 30px; border-top: 1px solid #D8D8D8; padding-top: 5px; text-align:=
+ center; color: #999999; font-size: 14px;">
+  <p>
+    <a href=3D"https://mandrillapp.com/track/click/13102323/www.mila.com?p=
+=3DeyJzIjoiRGFBNFhPekI4dFFHdlZsbF94ak55Mzd5Rkw4IiwidiI6MSwicCI6IntcInVcIjox=
+MzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvd3d3Lm1pbGEuY29tXCIsXCJ=
+pZFwiOlwiYmE5YmZhOTAwZTdiNGU5YjgxNjA3OTllZjRlZWJkZDRcIixcInVybF9pZHNcIjpbXC=
+I5NmZlZjFkOGU4ODU0NmIxODBmMmQ4YTEzNzRlMGQ0YmI2OGNhNGExXCJdfSJ9" target=3D"b=
+lank" style=3D"color: #999999;"><img src=3D"https://www.mila.com/public/img=
+/appMail/Mila_Logo_blau.png" width=3D"45px" class=3D"opacity-half"></a>
+  </p>
+  <a href=3D"https://mandrillapp.com/track/click/13102323/mila.com?p=3DeyJz=
+IjoiRFByeXduMERtNnF2ZkZod0M1MmJ1WkxpMEhrIiwidiI6MSwicCI6IntcInVcIjoxMzEwMjM=
+yMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvbWlsYS5jb21cXFwvZmFxXCIsXCJpZF=
+wiOlwiYmE5YmZhOTAwZTdiNGU5YjgxNjA3OTllZjRlZWJkZDRcIixcInVybF9pZHNcIjpbXCIzN=
+DczMzk4NzUwOWEzYjY0NDJkZTMyMmFjNzM5ZjA2ZjhhYmVkNTlhXCJdfSJ9" style=3D"color=
+: #999999;">Help Center</a> | <a href=3D"https://mandrillapp.com/track/clic=
+k/13102323/www.mila.com?p=3DeyJzIjoiNzZ1dGYyWWZMZ053dEl5WjBTSFJkNmtXamVVIiw=
+idiI6MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXF=
+wvd3d3Lm1pbGEuY29tXFxcL2xlZ2FsXCIsXCJpZFwiOlwiYmE5YmZhOTAwZTdiNGU5YjgxNjA3O=
+TllZjRlZWJkZDRcIixcInVybF9pZHNcIjpbXCIxYTg3MGQzMDMyYzM3MjI2NmI3ZTgwZGI2ZTE0=
+YTdhYWE2ZjRmZWIwXCJdfSJ9" style=3D"color: #999999;">CGV</a>
+</div>
+<p style=3D"font-size: 14px;color:#999999;">
+  Mila AG<br>
+  Gutenbergstrasse 1, CH-8002 Z=C3=BCrich<br>
+  Capital CHF 395 880<br>
+  CHE-220.287.171<br>
+</p>
+                </td>
+            </tr>
+        </table>
+    <img src=3D"https://mandrillapp.com/track/open.php?u=3D13102323&id=3Dba=
+9bfa900e7b4e9b8160799ef4eebdd4" height=3D"1" width=3D"1"></body>
+</html>
+
+--_av-CVuEFKy6pLm7zuaQvLNkDQ--
+
+.

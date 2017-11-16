@@ -1,0 +1,214 @@
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=mandrill; d=mila.com;
+ h=From:Subject:Reply-To:To:Message-Id:Date:MIME-Version:Content-Type; i=no-reply@mila.com;
+ bh=2TazdUeMrBZ1srJRWpQzHiIRc+6nbEp82X9rsnB+u68=;
+ b=SxWm1I2r2uk+/nxUNsdQSD8JcxBcHExMiTIfxe8cHGbnvd3vlMzpBg6aChzskCaa5YoFgPdM/i3D
+   oWDWPPt+l/GjLIQ3xoyiMay/vvOeFZ9Ax7LHv7dckp/sLlKlEIo8BV5rriZXRSrG5R1se43GO7zV
+   9icuVvezC1WUnqQAJOI=
+Received: from pmta04.mandrill.prod.atl01.rsglab.com (127.0.0.1) by mail136-10.atl41.mandrillapp.com id h1eq221sb1k7 for <vitold.ka@mila1-i1.vitou.com>; Wed, 15 Nov 2017 03:27:28 +0000 (envelope-from <bounce-md_13102323.5a0bb420.v1-f648e869257345efa6aca5e2bed562b4@mandrillapp.com>)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com; 
+ i=@mandrillapp.com; q=dns/txt; s=mandrill; t=1510716448; h=From : 
+ Subject : Reply-To : To : Message-Id : Date : MIME-Version : 
+ Content-Type : From : Subject : Date : X-Mandrill-User : 
+ List-Unsubscribe; bh=2TazdUeMrBZ1srJRWpQzHiIRc+6nbEp82X9rsnB+u68=; 
+ b=goLs74EAM132SOkVN3ZVe+EYxuz84vXj6hRAOrJDZh0p78azU1vWvvhveX5KUMlEc8lhio
+ AJc2Moaw6cQ1GVj4Xm74NmYZvtXShAKmiW4l6RKZGNnKcCn2jaFMKi3+inXboeD/vJWCuKZv
+ KAFH7/ztkkyCRTA4bAEqynn6Jn918=
+From: Mila <no-reply@mila.com>
+Subject: Ordre de paiement : Commission Mila
+Return-Path: <bounce-md_13102323.5a0bb420.v1-f648e869257345efa6aca5e2bed562b4@mandrillapp.com>
+Received: from [34.251.241.230] by mandrillapp.com id f648e869257345efa6aca5e2bed562b4; Wed, 15 Nov 2017 03:27:28 +0000
+Reply-To: 
+To: <vitold.ka@mila1-i1.vitou.com>
+X-Report-Abuse: Please forward a copy of this message, including all headers, to abuse@mandrill.com
+X-Report-Abuse: You can also report abuse here: http://mandrillapp.com/contact/abuse?id=13102323.f648e869257345efa6aca5e2bed562b4
+X-Mandrill-User: md_13102323
+Message-Id: <13102323.20171115032728.5a0bb420902af1.14193714@mail136-10.atl41.mandrillapp.com>
+Date: Wed, 15 Nov 2017 03:27:28 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-7gMKjhN2xBD7CdjcfAXPsg"
+
+--_av-7gMKjhN2xBD7CdjcfAXPsg
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+                     
+      =3D=3D  Bonjour Vitold,  =3D=3D
+
+  
+
+  Merci d=E2=80=99offrir ton savoir-faire et tes services via Mila. Pour te=
+s
+t=C3=A2ches cl=C3=B4tur=C3=A9es, nous te demandons de r=C3=A9gler la commis=
+sion Mila
+impay=C3=A9e dans un d=C3=A9lai de 10=C2=A0jours ici=C2=A0: 
+
+  Payer <https://www.mila.com/pay/fee> 
+
+  Ce lien te permet aussi de mettre en place le paiement automatique de la
+commission. Le versement de la commission non-pay=C3=A9e est ainsi d=C3=A9c=
+lench=C3=A9
+toutes les 2 semaines. Tu seras =C3=A9videmment notifi=C3=A9 par e-mail du =
+paiement
+r=C3=A9ussi. Tu peux aussi annuler le paiement automatique de la commission
+quand tu veux. 
+
+ 
+  Cordialement 
+ ton =C3=A9quipe Mila <http://www.mila.com> 
+
+ Help Center <http://mila.com/faq> | CGV <http://www.mila.com/legal> 
+  Mila AG
+ Gutenbergstrasse 1, CH-8002 Z=C3=BCrich
+ Capital CHF 395 880
+ CHE-220.287.171
+
+--_av-7gMKjhN2xBD7CdjcfAXPsg
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+    <head>
+               <style>
+@media only screen and (max-width: 300px) {
+  tr,
+table {
+    width: 100%;
+    font-family: Arial;
+  }
+
+  .txt-bold,
+..txt {
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .image {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+</style>
+
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Du=
+tf-8">
+        <!-- define viewport for mobile device -->
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+    </head>
+    <body style=3D"background-color: #f8f7f7; margin: 0; font-family: 'aria=
+l, helvetica, sans-serif'; color: #58585A;">
+        <table width=3D"100%" style=3D"line-height: 24px; font-size: 16px; =
+font-family: Arial;">
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+    <td width=3D"100%" align=3D"center" bgcolor=3D"#EFEFEF" style=3D"line-h=
+eight: 24px; font-size: 16px; font-family: Arial;">
+        <div class=3D"header" style=3D"width: 80%; max-width: 650px; text-a=
+lign: left; margin: 20px 0px 20px 0px;">
+            <table style=3D"line-height: 24px; font-size: 16px; font-family=
+: Arial;">
+                <td style=3D"line-height: 24px; font-size: 16px; font-famil=
+y: Arial;">
+                    <img src=3D"http://mila.com/public/img/_mila_logo_light=
+blue_icon.png" width=3D"auto" height=3D"45" border=3D"0">
+                </td>
+                <td style=3D"line-height: 24px; font-size: 16px; font-famil=
+y: Arial;">
+                    <img src=3D"http://mila.com/public/img/_mila_logo_light=
+blue_text.png" width=3D"auto" height=3D"30" border=3D"0">
+                </td>
+            </table>
+        </div>
+    </td>
+</tr>
+
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td align=3D"center" style=3D"line-height: 24px; font-size:=
+ 16px; font-family: Arial;">
+                    <div class=3D"container" style=3D"width: 80%; max-width=
+: 650px; margin: 25px 0px 25px 0px; text-align: left; padding: 20px;">
+                        <h2 style=3D"text-decoration: none; font-size: 23px=
+; color: #58585A;">
+                            Bonjour Vitold,
+                        </h2>
+                        <p class=3D"mth" style=3D"margin-top: 30px;">
+                            
+                        </p>
+                          <p class=3D"mtl" style=3D"margin-top: 15px;">
+      Merci d=E2=80=99offrir ton savoir-faire et tes services via Mila. Pou=
+r tes t=C3=A2ches cl=C3=B4tur=C3=A9es, nous te demandons de r=C3=A9gler la =
+commission Mila impay=C3=A9e dans un d=C3=A9lai de 10=C2=A0jours ici=C2=A0:
+  </p>
+  <p class=3D"mtl" style=3D"margin-top: 15px;">
+    <a class=3D"button" href=3D"https://mandrillapp.com/track/click/1310232=
+3/www.mila.com?p=3DeyJzIjoiMTdKeTZPYXJhR3BCZnAzM3RpX1lreGlFSXp3IiwidiI6MSwi=
+cCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5=
+taWxhLmNvbVxcXC9wYXlcXFwvZmVlXCIsXCJpZFwiOlwiZjY0OGU4NjkyNTczNDVlZmE2YWNhNW=
+UyYmVkNTYyYjRcIixcInVybF9pZHNcIjpbXCJkOGMwMDU4MjQ5ZGNkODE1ZGI0NDBmOWM1YzdjO=
+DAwZTZjZmY1MmY5XCJdfSJ9" style=3D"background-color: #42AAE6; text-decoratio=
+n: none; color: #FFFFFF; padding-top: 7px; padding-bottom: 7px; padding-lef=
+t: 15px; padding-right: 15px; border-radius: 3px; margin-top: 13px;">Payer =
+</a>
+  </p>
+ <p class=3D"mtl" style=3D"margin-top: 15px;">
+     Ce lien te permet aussi de mettre en place le paiement automatique de =
+la commission. Le versement de la commission non-pay=C3=A9e est ainsi d=C3=
+=A9clench=C3=A9 toutes les 2 semaines. Tu seras =C3=A9videmment notifi=C3=
+=A9 par e-mail du paiement r=C3=A9ussi. Tu peux aussi annuler le paiement a=
+utomatique de la commission quand tu veux.
+  </p>
+  <br>
+  <p>
+    Cordialement <br> ton =C3=A9quipe Mila
+  </p>
+  <br>
+  <br>
+
+                        
+                    </div>
+                    <div class=3D"footer" style=3D"margin-top: 30px; margin=
+-bottom: 30px; border-top: 1px solid #D8D8D8; padding-top: 5px; text-align:=
+ center; color: #999999; font-size: 14px;">
+  <p>
+    <a href=3D"https://mandrillapp.com/track/click/13102323/www.mila.com?p=
+=3DeyJzIjoiRnFDYWVIaS1qbUhTODJES0tXdldZRm1sZHlFIiwidiI6MSwicCI6IntcInVcIjox=
+MzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvd3d3Lm1pbGEuY29tXCIsXCJ=
+pZFwiOlwiZjY0OGU4NjkyNTczNDVlZmE2YWNhNWUyYmVkNTYyYjRcIixcInVybF9pZHNcIjpbXC=
+I5NmZlZjFkOGU4ODU0NmIxODBmMmQ4YTEzNzRlMGQ0YmI2OGNhNGExXCJdfSJ9" target=3D"b=
+lank" style=3D"color: #999999;"><img src=3D"https://www.mila.com/public/img=
+/appMail/Mila_Logo_blau.png" width=3D"45px" class=3D"opacity-half"></a>
+  </p>
+  <a href=3D"https://mandrillapp.com/track/click/13102323/mila.com?p=3DeyJz=
+IjoiRmlva0JTM0NoOTV3d2tfdVBXR0FFMF9oNV9zIiwidiI6MSwicCI6IntcInVcIjoxMzEwMjM=
+yMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvbWlsYS5jb21cXFwvZmFxXCIsXCJpZF=
+wiOlwiZjY0OGU4NjkyNTczNDVlZmE2YWNhNWUyYmVkNTYyYjRcIixcInVybF9pZHNcIjpbXCIzN=
+DczMzk4NzUwOWEzYjY0NDJkZTMyMmFjNzM5ZjA2ZjhhYmVkNTlhXCJdfSJ9" style=3D"color=
+: #999999;">Help Center</a> | <a href=3D"https://mandrillapp.com/track/clic=
+k/13102323/www.mila.com?p=3DeyJzIjoiSHFDT1JpaTdPOWpaOWZsN3pHNEF3c18tR0RnIiw=
+idiI6MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXF=
+wvd3d3Lm1pbGEuY29tXFxcL2xlZ2FsXCIsXCJpZFwiOlwiZjY0OGU4NjkyNTczNDVlZmE2YWNhN=
+WUyYmVkNTYyYjRcIixcInVybF9pZHNcIjpbXCIxYTg3MGQzMDMyYzM3MjI2NmI3ZTgwZGI2ZTE0=
+YTdhYWE2ZjRmZWIwXCJdfSJ9" style=3D"color: #999999;">CGV</a>
+</div>
+<p style=3D"font-size: 14px;color:#999999;">
+  Mila AG<br>
+  Gutenbergstrasse 1, CH-8002 Z=C3=BCrich<br>
+  Capital CHF 395 880<br>
+  CHE-220.287.171<br>
+</p>
+                </td>
+            </tr>
+        </table>
+    <img src=3D"https://mandrillapp.com/track/open.php?u=3D13102323&id=3Df6=
+48e869257345efa6aca5e2bed562b4" height=3D"1" width=3D"1"></body>
+</html>
+
+--_av-7gMKjhN2xBD7CdjcfAXPsg--
+
+.

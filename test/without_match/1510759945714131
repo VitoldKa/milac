@@ -1,0 +1,230 @@
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=mandrill; d=mila.com;
+ h=From:Subject:Reply-To:To:Message-Id:Date:MIME-Version:Content-Type; i=no-reply@mila.com;
+ bh=IA4nMDWiALQ0bK/pvTWQ5pcZcDNUWyKNJ7RXi0S8ldI=;
+ b=AYSlXQlgsQubzr2efDpyD1+Aq9fqy0JFMQkxocez9HtNZgs6XvZvhZ0nr8gEs33a1EfSpTUV73N2
+   UjaO+4O+Pqi3c+UvoIT79GayhuB43BUzn06t13gPLJRaL+yYRCJhfp3L0TquEbLwKXEQ5tF8tcuR
+   RPtbpFSGSKJiriqSE0c=
+Received: from pmta02.mandrill.prod.suw01.rsglab.com (127.0.0.1) by mail186-3.suw21.mandrillapp.com id h1hf0i174bk1 for <vitold.ka.4@mila11.vitou.com>; Wed, 15 Nov 2017 15:32:24 +0000 (envelope-from <bounce-md_13102323.5a0c5e08.v1-1113949023da43b18388c6b8ecd5b5fe@mandrillapp.com>)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com; 
+ i=@mandrillapp.com; q=dns/txt; s=mandrill; t=1510759944; h=From : 
+ Subject : Reply-To : To : Message-Id : Date : MIME-Version : 
+ Content-Type : From : Subject : Date : X-Mandrill-User : 
+ List-Unsubscribe; bh=IA4nMDWiALQ0bK/pvTWQ5pcZcDNUWyKNJ7RXi0S8ldI=; 
+ b=nI+UbJ1Lt9w0vNLWrla42TtJzalhB8lHfI9x4u+DrRCB3ja+uhg2FQXJWJ9d9ciiFqNxib
+ aInZSYNERyUQUs3swoIIGTFCwU7DMNvFKDQuMos9oOCTsFXLFlcAN0HEOXVqCIuTGSnd+y02
+ QrSd1mktFhPsLICXtPxU2Op6b7iQc=
+From: Mila <no-reply@mila.com>
+Subject: =?utf-8?Q?Vous=20avez=20recu=20une=20nouvelle=20=C3=A9valuation=20de=20Luigi=20Silvestrini?=
+Return-Path: <bounce-md_13102323.5a0c5e08.v1-1113949023da43b18388c6b8ecd5b5fe@mandrillapp.com>
+Received: from [34.240.7.111] by mandrillapp.com id 1113949023da43b18388c6b8ecd5b5fe; Wed, 15 Nov 2017 15:32:24 +0000
+Reply-To: 
+To: <vitold.ka.4@mila11.vitou.com>
+X-Report-Abuse: Please forward a copy of this message, including all headers, to abuse@mandrill.com
+X-Report-Abuse: You can also report abuse here: http://mandrillapp.com/contact/abuse?id=13102323.1113949023da43b18388c6b8ecd5b5fe
+X-Mandrill-User: md_13102323
+Message-Id: <13102323.20171115153224.5a0c5e087d6b44.86694441@mail186-3.suw21.mandrillapp.com>
+Date: Wed, 15 Nov 2017 15:32:24 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-AK_N50HuNDgpwUCeDgtXhg"
+
+--_av-AK_N50HuNDgpwUCeDgtXhg
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+                 
+       =3D=3D  Salut Vitold Kapshitzer,  =3D=3D
+
+  
+
+ Vous avez recu une nouvelle =C3=A9valuation de Luigi Silvestrini. 
+
+  Merci de votre aide! Veuillez =C3=A9crire un mail =C3=A0 l=E2=80=99adress=
+e
+www.mila.com/contactform <https://www.mila.com/contactform> pour vos
+feedbacks. 
+
+  Afficher la note <https://www.mila.com/p/vitoldkapshitzer4/reviews> 
+
+  Vous avez des questions par rapport =C3=A0 Mila, aux demandes et commande=
+s de
+clients? Cliquez sur ici <http://mila.com/faq>. 
+
+  Ceci est un mail g=C3=A9n=C3=A9r=C3=A9 automatiquement, merci de ne pas y=
+ r=C3=A9pondre.
+En cas de questions ou de probl=C3=A8mes, vous pouvez nous joindre sous
+l=E2=80=99adresse suivante: www.mila.com/contactform
+<https://www.mila.com/contactform> <http://www.mila.com>
+
+ Impressum <https://www.mila.com/impressum/> | www.mila.com
+<http://www.mila.com> | =C2=A9 2015 Mila AG. 
+  Mila AG
+ Gutenbergstrasse 1, CH-8002 Z=C3=BCrich
+ Capital CHF 395 880
+ CHE-220.287.171
+
+--_av-AK_N50HuNDgpwUCeDgtXhg
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+    <head>
+               <style>
+@media only screen and (max-width: 300px) {
+  tr,
+table {
+    width: 100%;
+    font-family: Arial;
+  }
+
+  .txt-bold,
+..txt {
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .image {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+</style>
+
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Du=
+tf-8">
+        <!-- define viewport for mobile device -->
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+    </head>
+    <body style=3D"background-color: #f8f7f7; margin: 0; font-family: 'aria=
+l, helvetica, sans-serif'; color: #58585A;">
+        <table width=3D"100%" style=3D"line-height: 24px; font-size: 16px; =
+font-family: Arial;">
+            
+=09<!-- SWISSCOM HEADER -->
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td width=3D"100%" align=3D"center" class=3D"bg-lightgrey" =
+style=3D"line-height: 24px; font-size: 16px; font-family: Arial; background=
+-color: #EFEFEF;" bgcolor=3D"#EFEFEF">
+                    <div class=3D"header" style=3D"width: 80%; max-width: 6=
+50px; text-align: left; margin: 20px 0px 20px 0px;">
+                        <table style=3D"line-height: 24px; font-size: 16px;=
+ font-family: Arial;">
+                            <td style=3D"line-height: 24px; font-size: 16px=
+; font-family: Arial;"><img src=3D"https://www.mila.com/public/img/partner/=
+swisscom/logoEmail.png" border=3D"0" width=3D"100%"></td>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+<!-- END SWISSCOM HEADER -->
+
+
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td align=3D"center" style=3D"line-height: 24px; font-size:=
+ 16px; font-family: Arial;">
+                    <div class=3D"container" style=3D"width: 80%; max-width=
+: 650px; margin: 25px 0px 25px 0px; text-align: left; padding: 20px;">
+                        <h2 style=3D"text-decoration: none; font-size: 23px=
+; color: #58585A;">
+                            Salut Vitold Kapshitzer,
+                        </h2>
+                        <p class=3D"mth" style=3D"margin-top: 30px;">
+                            
+                        </p>
+                         <p>Vous avez recu une nouvelle =C3=A9valuation de =
+Luigi Silvestrini. </p>
+    <p>
+        Merci de votre aide! Veuillez =C3=A9crire un mail =C3=A0 l=E2=80=99=
+adresse <a href=3D"https://mandrillapp.com/track/click/13102323/www.mila.co=
+m?p=3DeyJzIjoiWFNyRW9iQVphZVBabm5iRHpfOHFCNDVzS28wIiwidiI6MSwicCI6IntcInVcI=
+joxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5taWxhLmNvbVxc=
+XC9jb250YWN0Zm9ybVwiLFwiaWRcIjpcIjExMTM5NDkwMjNkYTQzYjE4Mzg4YzZiOGVjZDViNWZ=
+lXCIsXCJ1cmxfaWRzXCI6W1wiZDhjMDA1ODI0OWRjZDgxNWRiNDQwZjljNWM3YzgwMGU2Y2ZmNT=
+JmOVwiXX0ifQ" style=3D"color: #0D408E;">www.mila.com/contactform</a> pour v=
+os feedbacks.
+    </p>
+
+    <p class=3D"mth" style=3D"margin-top: 30px;">
+         <a href=3D"https://mandrillapp.com/track/click/13102323/www.mila.c=
+om?p=3DeyJzIjoiOXVicm5XNWFvV1h1cnFoazg2NnR6M0Qzb084IiwidiI6MSwicCI6IntcInVc=
+IjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5taWxhLmNvbVx=
+cXC9wXFxcL3ZpdG9sZGthcHNoaXR6ZXI0XFxcL3Jldmlld3NcIixcImlkXCI6XCIxMTEzOTQ5MD=
+IzZGE0M2IxODM4OGM2YjhlY2Q1YjVmZVwiLFwidXJsX2lkc1wiOltcImQ2MGU1YzI3MzU5YjNmN=
+Tg5YmU5MGFmYjNiOTIyMzcyODhjNDBkMGNcIl19In0" class=3D"button" style=3D"backg=
+round-color: #42AAE6; text-decoration: none; color: #FFFFFF; padding-top: 7=
+px; padding-bottom: 7px; padding-left: 15px; padding-right: 15px; border-ra=
+dius: 3px; margin-top: 13px;">Afficher la note</a>
+    </p>
+
+    <p class=3D"txt-info mth" style=3D"margin-top: 40px; font-size: 14px; c=
+olor: #7A7A7A; line-height: 20px;">
+        Vous avez des questions par rapport =C3=A0 Mila, aux demandes et co=
+mmandes de clients? Cliquez sur <a href=3D"https://mandrillapp.com/track/cl=
+ick/13102323/mila.com?p=3DeyJzIjoiLWp1Rl9QVWJ4UzcwR2NKa3VCNnBFcFJ2WGc4Iiwid=
+iI6MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwv=
+bWlsYS5jb21cXFwvZmFxXCIsXCJpZFwiOlwiMTExMzk0OTAyM2RhNDNiMTgzODhjNmI4ZWNkNWI=
+1ZmVcIixcInVybF9pZHNcIjpbXCIzNDczMzk4NzUwOWEzYjY0NDJkZTMyMmFjNzM5ZjA2ZjhhYm=
+VkNTlhXCJdfSJ9" style=3D"color: #0D408E;">ici</a>.
+    </p>
+    <p class=3D"txt-info mth" style=3D"margin-top: 40px; font-size: 14px; c=
+olor: #7A7A7A; line-height: 20px;">
+       Ceci est un mail g=C3=A9n=C3=A9r=C3=A9 automatiquement, merci de ne =
+pas y r=C3=A9pondre. En cas de questions ou de probl=C3=A8mes, vous pouvez =
+nous joindre sous l=E2=80=99adresse suivante: <a href=3D"https://mandrillap=
+p.com/track/click/13102323/www.mila.com?p=3DeyJzIjoiWFNyRW9iQVphZVBabm5iRHp=
+fOHFCNDVzS28wIiwidiI6MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XC=
+JodHRwczpcXFwvXFxcL3d3dy5taWxhLmNvbVxcXC9jb250YWN0Zm9ybVwiLFwiaWRcIjpcIjExM=
+TM5NDkwMjNkYTQzYjE4Mzg4YzZiOGVjZDViNWZlXCIsXCJ1cmxfaWRzXCI6W1wiZDhjMDA1ODI0=
+OWRjZDgxNWRiNDQwZjljNWM3YzgwMGU2Y2ZmNTJmOVwiXX0ifQ" style=3D"color: #0D408E=
+;">www.mila.com/contactform</a>
+    </p>
+
+                        
+                    </div>
+                                        <div class=3D"footer" style=3D"marg=
+in-top: 30px; margin-bottom: 30px; border-top: 1px solid #D8D8D8; padding-t=
+op: 5px; text-align: center; color: #999999; font-size: 14px;">
+                        <p><a href=3D"https://mandrillapp.com/track/click/1=
+3102323/www.mila.com?p=3DeyJzIjoib21seFc2OWxYSU9OXzNYMXM3U0V0ZHdZVWZvIiwidi=
+I6MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvd=
+3d3Lm1pbGEuY29tXCIsXCJpZFwiOlwiMTExMzk0OTAyM2RhNDNiMTgzODhjNmI4ZWNkNWI1ZmVc=
+IixcInVybF9pZHNcIjpbXCI5NmZlZjFkOGU4ODU0NmIxODBmMmQ4YTEzNzRlMGQ0YmI2OGNhNGE=
+xXCJdfSJ9" target=3D"blank" style=3D"color: #999999;"><img src=3D"https://w=
+ww.mila.com/public/img/logo_menu.png" width=3D"45px" class=3D"opacity-half"=
+></a></p>
+                         <a href=3D"https://mandrillapp.com/track/click/131=
+02323/www.mila.com?p=3DeyJzIjoiWWFoWXY5dkliOFFkWnhVYjJJRjdHRFVvMk93IiwidiI6=
+MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d=
+3dy5taWxhLmNvbVxcXC9pbXByZXNzdW1cXFwvXCIsXCJpZFwiOlwiMTExMzk0OTAyM2RhNDNiMT=
+gzODhjNmI4ZWNkNWI1ZmVcIixcInVybF9pZHNcIjpbXCJkOGMwMDU4MjQ5ZGNkODE1ZGI0NDBmO=
+WM1YzdjODAwZTZjZmY1MmY5XCJdfSJ9" style=3D"color: #999999;">Impressum</a> | =
+<a href=3D"https://mandrillapp.com/track/click/13102323/www.mila.com?p=3Dey=
+JzIjoib21seFc2OWxYSU9OXzNYMXM3U0V0ZHdZVWZvIiwidiI6MSwicCI6IntcInVcIjoxMzEwM=
+jMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvd3d3Lm1pbGEuY29tXCIsXCJpZFwi=
+OlwiMTExMzk0OTAyM2RhNDNiMTgzODhjNmI4ZWNkNWI1ZmVcIixcInVybF9pZHNcIjpbXCI5NmZ=
+lZjFkOGU4ODU0NmIxODBmMmQ4YTEzNzRlMGQ0YmI2OGNhNGExXCJdfSJ9" style=3D"color: =
+#999999;">www.mila.com</a> | &copy; 2015 Mila AG. 
+                    </div>
+<p style=3D"font-size: 14px;color:#999999;">
+  Mila AG<br>
+  Gutenbergstrasse 1, CH-8002 Z=C3=BCrich<br>
+  Capital CHF 395 880<br>
+  CHE-220.287.171<br>
+</p>
+                </td>
+            </tr>
+        </table>
+    <img src=3D"https://mandrillapp.com/track/open.php?u=3D13102323&id=3D11=
+13949023da43b18388c6b8ecd5b5fe" height=3D"1" width=3D"1"></body>
+</html>
+
+--_av-AK_N50HuNDgpwUCeDgtXhg--
+
+.

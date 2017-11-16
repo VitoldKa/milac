@@ -1,0 +1,347 @@
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=mandrill; d=mila.com;
+ h=From:Subject:Reply-To:To:Message-Id:Date:MIME-Version:Content-Type; i=no-reply@mila.com;
+ bh=NshLJPE/T3c3nQ5DkYQJ8cz8WY3RH5E/xIrI+k79wS4=;
+ b=oED3JnrG2pKalFS/2GD/IDR4P2Gk8lmJ69UJ88ZTGpcEpzWWxiX55vOCVURPNl+2lUzcyJ2nU2S1
+   643cTQxAhP6AVJvScr8gvnvWYQXSYmeLJU355l/UxLynVEUTjfHErZo+dVGnpVxmvx0ZejBPspYg
+   Cb3rViZqzYbTZ1L9fx0=
+Received: from pmta02.mandrill.prod.suw01.rsglab.com (127.0.0.1) by mail186-3.suw21.mandrillapp.com id h1f55u174bks for <vitold.ka@mila11.vitou.com>; Wed, 15 Nov 2017 05:02:20 +0000 (envelope-from <bounce-md_13102323.5a0bca5c.v1-135b23c243c5412294a0a85450dbb5a3@mandrillapp.com>)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com; 
+ i=@mandrillapp.com; q=dns/txt; s=mandrill; t=1510722140; h=From : 
+ Subject : Reply-To : To : Message-Id : Date : MIME-Version : 
+ Content-Type : From : Subject : Date : X-Mandrill-User : 
+ List-Unsubscribe; bh=NshLJPE/T3c3nQ5DkYQJ8cz8WY3RH5E/xIrI+k79wS4=; 
+ b=OdtbZr90d75lB/hfL4LzndFDmEyfAde1hA4/isW3LYPtgwXKhLbnTlJBy2AeXuVaKAg8Jd
+ DB1K7ZGA/6Fo2cowlzuXLBRsNr4ovF1dVO16TZKDh99hiJkezmz76AgsDqSiSXaKMwMwRt2O
+ C7a+c9nqAvHJpqIGTgYVKQwei0P6U=
+From: Mila <no-reply@mila.com>
+Subject: Votre commande ouverte au Swisscom Friends
+Return-Path: <bounce-md_13102323.5a0bca5c.v1-135b23c243c5412294a0a85450dbb5a3@mandrillapp.com>
+Received: from [34.251.241.230] by mandrillapp.com id 135b23c243c5412294a0a85450dbb5a3; Wed, 15 Nov 2017 05:02:20 +0000
+Reply-To: 
+To: <vitold.ka@mila11.vitou.com>
+X-Report-Abuse: Please forward a copy of this message, including all headers, to abuse@mandrill.com
+X-Report-Abuse: You can also report abuse here: http://mandrillapp.com/contact/abuse?id=13102323.135b23c243c5412294a0a85450dbb5a3
+X-Mandrill-User: md_13102323
+Message-Id: <13102323.20171115050220.5a0bca5cd19012.92870582@mail186-3.suw21.mandrillapp.com>
+Date: Wed, 15 Nov 2017 05:02:20 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-mRfTKv25hA05WJoUCIkOxg"
+
+--_av-mRfTKv25hA05WJoUCIkOxg
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+                 
+       =3D=3D  Salut Vitold Kapshitzer,  =3D=3D
+
+  
+
+  La demande ci-dessous a =C3=A9t=C3=A9 ouverte pendant un certain temps . =
+Si vous
+pouviez d=C3=A9j=C3=A0 aider votre client , s'il vous pla=C3=AEt fermer la =
+demande en
+cliquant sur le lien ci-dessous . Seulement alors vous serez en mesure de
+recevoir une note! 
+
+ Si vous n'avez pas d=C3=A9j=C3=A0 aider votre client nous vous demandons d=
+'entrer
+un date de rendez-vous entre Mila. Apr=C3=A8s vous ne recevez plus des mess=
+ages
+de rappel. 
+
+  Si vous ne pouvez pas aider le client ou que le probl=C3=A8me a =C3=A9t=
+=C3=A9 r=C3=A9solu
+entre temps, informez-nous par la fermeture de la demande. Vous pouvez
+utiliser le lien ci-dessous . 
+
+  *D=C3=A9tails de la demande:* 
+
+     Num=C3=A9ro de demande   104127     Cr=C3=A9=C3=A9 le   2017-10-03    =
+ Swisscom
+Customer Number: 46993845
+
+-0223464382 (si pas de rep. merci de laisser un message en indiquant votre
+n=C2=B0 de t=C3=A9l=C3=A9phone et mme vous rappelera)
+-0798119808 (si pas de rep. envoyer sms en indiquant SwisscomFriend avec
+votre n=C2=B0 de portable et mme vous rappelera)
+
+Installation Swisscom (Internet, TV, T=C3=A9l=C3=A9phonie) - Installation d=
+u
+modem/routeur
+ - Configuration de l'acc=C3=A8s internet sur les appareils externes
+ - Configuration du Swisscom Login
+ - Mise en service de la Swisscom TV Box
+ - Mise en service de la t=C3=A9l=C3=A9phonie fixe (IP - si souhait=C3=A9e)
+
+ 
+ 
+  *D=C3=A9tails du client:* 
+
+    Nom :       Num=C3=A9ro de t=C3=A9l=C3=A9phone :   0223464382     E-mai=
+l :  
+0223464382@mila.com <mailto:>    
+  Voir votre demande
+<https://www.mila.com/loginWithPW/50360217?next=3D/friendservicecalls#sc104=
+127>
+
+
+  Merci beaucoup pour votre aide! 
+
+  Vous avez des questions par rapport =C3=A0 Mila, aux demandes et commande=
+s de
+clients? Cliquez sur ici <http://mila.com/faq>. 
+
+  Ceci est un mail g=C3=A9n=C3=A9r=C3=A9 automatiquement, merci de ne pas y=
+ r=C3=A9pondre.
+En cas de questions ou de probl=C3=A8mes, vous pouvez nous joindre sous
+l=E2=80=99adresse suivante: www.mila.com/contactform
+<https://www.mila.com/contactform> <http://www.mila.com>
+
+ Impressum <https://www.mila.com/impressum/> | www.mila.com
+<http://www.mila.com> | =C2=A9 2015 Mila AG. 
+  Mila AG
+ Gutenbergstrasse 1, CH-8002 Z=C3=BCrich
+ Capital CHF 395 880
+ CHE-220.287.171
+
+--_av-mRfTKv25hA05WJoUCIkOxg
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+    <head>
+               <style>
+@media only screen and (max-width: 300px) {
+  tr,
+table {
+    width: 100%;
+    font-family: Arial;
+  }
+
+  .txt-bold,
+..txt {
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .image {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+</style>
+
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Du=
+tf-8">
+        <!-- define viewport for mobile device -->
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+    </head>
+    <body style=3D"background-color: #f8f7f7; margin: 0; font-family: 'aria=
+l, helvetica, sans-serif'; color: #58585A;">
+        <table width=3D"100%" style=3D"line-height: 24px; font-size: 16px; =
+font-family: Arial;">
+            
+=09<!-- SWISSCOM HEADER -->
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td width=3D"100%" align=3D"center" class=3D"bg-lightgrey" =
+style=3D"line-height: 24px; font-size: 16px; font-family: Arial; background=
+-color: #EFEFEF;" bgcolor=3D"#EFEFEF">
+                    <div class=3D"header" style=3D"width: 80%; max-width: 6=
+50px; text-align: left; margin: 20px 0px 20px 0px;">
+                        <table style=3D"line-height: 24px; font-size: 16px;=
+ font-family: Arial;">
+                            <td style=3D"line-height: 24px; font-size: 16px=
+; font-family: Arial;"><img src=3D"https://www.mila.com/public/img/partner/=
+swisscom/logoEmail.png" border=3D"0" width=3D"100%"></td>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+<!-- END SWISSCOM HEADER -->
+
+
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td align=3D"center" style=3D"line-height: 24px; font-size:=
+ 16px; font-family: Arial;">
+                    <div class=3D"container" style=3D"width: 80%; max-width=
+: 650px; margin: 25px 0px 25px 0px; text-align: left; padding: 20px;">
+                        <h2 style=3D"text-decoration: none; font-size: 23px=
+; color: #58585A;">
+                            Salut Vitold Kapshitzer,
+                        </h2>
+                        <p class=3D"mth" style=3D"margin-top: 30px;">
+                            
+                        </p>
+                        <p>
+La demande ci-dessous a =C3=A9t=C3=A9 ouverte pendant un certain temps . Si=
+ vous pouviez d=C3=A9j=C3=A0 aider votre client , s'il vous pla=C3=AEt ferm=
+er la demande en cliquant sur le lien ci-dessous . Seulement alors vous ser=
+ez en mesure de recevoir une note! <br><br> Si vous n'avez pas d=C3=A9j=C3=
+=A0 aider votre client nous vous demandons d'entrer un date de rendez-vous =
+entre Mila. Apr=C3=A8s vous ne recevez plus des messages de rappel.
+</p>
+<p>
+Si vous ne pouvez pas aider le client ou que le probl=C3=A8me a =C3=A9t=C3=
+=A9 r=C3=A9solu entre temps, informez-nous par la fermeture de la demande. =
+Vous pouvez utiliser le lien ci-dessous .
+</p>
+
+    <p class=3D"mth" style=3D"margin-top: 30px;">
+        <b>D=C3=A9tails de la demande:</b>
+    </p>
+    <div class=3D"bg-white" style=3D"background-color: #FFFFFF; padding: 15=
+px; border-radius: 3px;">
+        <table width=3D"98%" cellpadding=3D"3" cellspacing=3D"3" style=3D"l=
+ine-height: 24px; font-size: 16px; font-family: Arial;">
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td width=3D"30%" class=3D"txt-bold" style=3D"line-height: =
+24px; font-size: 16px; font-family: Arial; font-weight: bold;"> Num=C3=A9ro=
+ de demande </td> <td style=3D"line-height: 24px; font-size: 16px; font-fam=
+ily: Arial;"> 104127 </td>
+            </tr>
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td width=3D"30%" class=3D"txt-bold" style=3D"line-height: =
+24px; font-size: 16px; font-family: Arial; font-weight: bold;"> Cr=C3=A9=C3=
+=A9 le </td> <td style=3D"line-height: 24px; font-size: 16px; font-family: =
+Arial;"> 2017-10-03 </td>
+            </tr>
+        </table>
+        <div class=3D"box" style=3D"background-color: #FFFFFF; border: 1px =
+solid #D8D8D8; padding: 10px; border-radius: 3px; max-width: 500px;">
+            <div>Swisscom Customer Number: 46993845</div><br><div>-02234643=
+82 (si pas de rep. merci de laisser un message en indiquant votre n=C2=B0 d=
+e t=C3=A9l=C3=A9phone et mme vous rappelera)<br>-0798119808 (si pas de rep.=
+ envoyer sms en indiquant SwisscomFriend avec votre n=C2=B0 de portable et =
+mme vous rappelera)</div><br><h3 style=3D"text-decoration: none; font-size:=
+ 19px; color: #58585A;">Installation Swisscom (Internet, TV, T=C3=A9l=C3=A9=
+phonie)</h3><ul><li>Installation du modem/routeur</li><li>Configuration de =
+l&#39;acc=C3=A8s internet sur les appareils externes</li><li>Configuration =
+du Swisscom Login</li><li>Mise en service de la Swisscom TV Box</li><li>Mis=
+e en service de la t=C3=A9l=C3=A9phonie fixe (IP - si souhait=C3=A9e)</li><=
+/ul>
+        </div>
+    </div>
+
+    <p class=3D"mth" style=3D"margin-top: 30px;">
+        <b>D=C3=A9tails du client:</b>
+    </p>
+    <div class=3D"bg-white" style=3D"background-color: #FFFFFF; padding: 15=
+px; border-radius: 3px;">
+        <table width=3D"98%" cellpadding=3D"3" cellspacing=3D"3" style=3D"l=
+ine-height: 24px; font-size: 16px; font-family: Arial;">
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td width=3D"30%" class=3D"txt-bold" style=3D"line-height: =
+24px; font-size: 16px; font-family: Arial; font-weight: bold;">Nom : </td> =
+<td style=3D"line-height: 24px; font-size: 16px; font-family: Arial;"> </td=
+>
+            </tr>
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td width=3D"30%" class=3D"txt-bold" style=3D"line-height: =
+24px; font-size: 16px; font-family: Arial; font-weight: bold;"> Num=C3=A9ro=
+ de t=C3=A9l=C3=A9phone : </td> <td style=3D"line-height: 24px; font-size: =
+16px; font-family: Arial;"> 0223464382 </td>
+            </tr>
+            <tr style=3D"line-height: 24px; font-size: 16px; font-family: A=
+rial;">
+                <td width=3D"30%" class=3D"txt-bold" style=3D"line-height: =
+24px; font-size: 16px; font-family: Arial; font-weight: bold;"> E-mail : </=
+td> <td style=3D"line-height: 24px; font-size: 16px; font-family: Arial;"> =
+<a href=3D"mailto:" style=3D"color: #0D408E;">0223464382@mila.com</a> </td>
+            </tr>
+        </table>
+    </div>
+
+    <p style=3D"margin-top: 25px; margin-bottom: 25px;">
+        <a href=3D"https://mandrillapp.com/track/click/13102323/www.mila.co=
+m?p=3DeyJzIjoiUlNoMjNjalpxcHllY3dDRUluRUoyT3pjbGdRIiwidiI6MSwicCI6IntcInVcI=
+joxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5taWxhLmNvbVxc=
+XC9sb2dpbldpdGhQV1xcXC81MDM2MDIxNz9uZXh0PVxcXC9mcmllbmRzZXJ2aWNlY2FsbHMjc2M=
+xMDQxMjdcIixcImlkXCI6XCIxMzViMjNjMjQzYzU0MTIyOTRhMGE4NTQ1MGRiYjVhM1wiLFwidX=
+JsX2lkc1wiOltcImQzZDFkYTExN2E2MTFjNGRhOWY4MzUzZGFjMGExYmYyYjUxZWQ0OTZcIl19I=
+n0" class=3D"button" style=3D"background-color: #42AAE6; text-decoration: n=
+one; color: #FFFFFF; padding-top: 7px; padding-bottom: 7px; padding-left: 1=
+5px; padding-right: 15px; border-radius: 3px; margin-top: 13px;">Voir votre=
+ demande</a>
+    </p>
+
+    <p>
+        Merci beaucoup pour votre aide!
+    </p>
+
+    <p class=3D"txt-info mth" style=3D"margin-top: 40px; font-size: 14px; c=
+olor: #7A7A7A; line-height: 20px;">
+        Vous avez des questions par rapport =C3=A0 Mila, aux demandes et co=
+mmandes de clients? Cliquez sur <a href=3D"https://mandrillapp.com/track/cl=
+ick/13102323/mila.com?p=3DeyJzIjoiX0RYXzdYeG5CaXpOaE5EdUp5NnAySW4xWmxjIiwid=
+iI6MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwv=
+bWlsYS5jb21cXFwvZmFxXCIsXCJpZFwiOlwiMTM1YjIzYzI0M2M1NDEyMjk0YTBhODU0NTBkYmI=
+1YTNcIixcInVybF9pZHNcIjpbXCIzNDczMzk4NzUwOWEzYjY0NDJkZTMyMmFjNzM5ZjA2ZjhhYm=
+VkNTlhXCJdfSJ9" style=3D"color: #0D408E;">ici</a>.
+    </p>
+    <p class=3D"txt-info mth" style=3D"margin-top: 40px; font-size: 14px; c=
+olor: #7A7A7A; line-height: 20px;">
+      Ceci est un mail g=C3=A9n=C3=A9r=C3=A9 automatiquement, merci de ne p=
+as y r=C3=A9pondre. En cas de questions ou de probl=C3=A8mes, vous pouvez n=
+ous joindre sous l=E2=80=99adresse suivante: <a href=3D"https://mandrillapp=
+..com/track/click/13102323/www.mila.com?p=3DeyJzIjoiZGVGMXlOd01UUVczNXMwdWpB=
+TmYtVWRRalFvIiwidiI6MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJ=
+odHRwczpcXFwvXFxcL3d3dy5taWxhLmNvbVxcXC9jb250YWN0Zm9ybVwiLFwiaWRcIjpcIjEzNW=
+IyM2MyNDNjNTQxMjI5NGEwYTg1NDUwZGJiNWEzXCIsXCJ1cmxfaWRzXCI6W1wiZDhjMDA1ODI0O=
+WRjZDgxNWRiNDQwZjljNWM3YzgwMGU2Y2ZmNTJmOVwiXX0ifQ" style=3D"color: #0D408E;=
+">www.mila.com/contactform</a>
+    </p>
+
+                        
+                    </div>
+                                        <div class=3D"footer" style=3D"marg=
+in-top: 30px; margin-bottom: 30px; border-top: 1px solid #D8D8D8; padding-t=
+op: 5px; text-align: center; color: #999999; font-size: 14px;">
+                        <p><a href=3D"https://mandrillapp.com/track/click/1=
+3102323/www.mila.com?p=3DeyJzIjoidl9qdGgtOWV3REFSRk40d25mOG5yVkJuRnVNIiwidi=
+I6MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvd=
+3d3Lm1pbGEuY29tXCIsXCJpZFwiOlwiMTM1YjIzYzI0M2M1NDEyMjk0YTBhODU0NTBkYmI1YTNc=
+IixcInVybF9pZHNcIjpbXCI5NmZlZjFkOGU4ODU0NmIxODBmMmQ4YTEzNzRlMGQ0YmI2OGNhNGE=
+xXCJdfSJ9" target=3D"blank" style=3D"color: #999999;"><img src=3D"https://w=
+ww.mila.com/public/img/logo_menu.png" width=3D"45px" class=3D"opacity-half"=
+></a></p>
+                         <a href=3D"https://mandrillapp.com/track/click/131=
+02323/www.mila.com?p=3DeyJzIjoiaURqZjRnN041Y2FNdmpmOHh4QTMxNkI2OXd3IiwidiI6=
+MSwicCI6IntcInVcIjoxMzEwMjMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d=
+3dy5taWxhLmNvbVxcXC9pbXByZXNzdW1cXFwvXCIsXCJpZFwiOlwiMTM1YjIzYzI0M2M1NDEyMj=
+k0YTBhODU0NTBkYmI1YTNcIixcInVybF9pZHNcIjpbXCJkOGMwMDU4MjQ5ZGNkODE1ZGI0NDBmO=
+WM1YzdjODAwZTZjZmY1MmY5XCJdfSJ9" style=3D"color: #999999;">Impressum</a> | =
+<a href=3D"https://mandrillapp.com/track/click/13102323/www.mila.com?p=3Dey=
+JzIjoidl9qdGgtOWV3REFSRk40d25mOG5yVkJuRnVNIiwidiI6MSwicCI6IntcInVcIjoxMzEwM=
+jMyMyxcInZcIjoxLFwidXJsXCI6XCJodHRwOlxcXC9cXFwvd3d3Lm1pbGEuY29tXCIsXCJpZFwi=
+OlwiMTM1YjIzYzI0M2M1NDEyMjk0YTBhODU0NTBkYmI1YTNcIixcInVybF9pZHNcIjpbXCI5NmZ=
+lZjFkOGU4ODU0NmIxODBmMmQ4YTEzNzRlMGQ0YmI2OGNhNGExXCJdfSJ9" style=3D"color: =
+#999999;">www.mila.com</a> | &copy; 2015 Mila AG. 
+                    </div>
+<p style=3D"font-size: 14px;color:#999999;">
+  Mila AG<br>
+  Gutenbergstrasse 1, CH-8002 Z=C3=BCrich<br>
+  Capital CHF 395 880<br>
+  CHE-220.287.171<br>
+</p>
+                </td>
+            </tr>
+        </table>
+    <img src=3D"https://mandrillapp.com/track/open.php?u=3D13102323&id=3D13=
+5b23c243c5412294a0a85450dbb5a3" height=3D"1" width=3D"1"></body>
+</html>
+
+--_av-mRfTKv25hA05WJoUCIkOxg--
+
+.
