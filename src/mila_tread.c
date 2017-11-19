@@ -144,9 +144,10 @@ void* doSomeThing(void *arg)
 					GENERAL(LOG_LEVEL_GENERAL, "%x::<-%s", (unsigned int)lmila->tid, loutbuf2);
 					ret = write(lmila->socket, loutbuf2, sizeof(loutbuf2)-1);		
 					
-					// clear buffer
+					// clear buffer for new message on this connection
 					data[0] = 0;
-																		
+					data_pointer = data;
+									
 					state = STATE_WAIT_FOR_MAIL;				
 				}
 		}

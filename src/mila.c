@@ -40,7 +40,19 @@ s_mila_profile mila_profile[] = {
 	
 	{ "xxx@xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_1.txt" },	
 	{ "xxx@xxx.com" , "logintoken=5c74ba85e68c51a9b06b71d3359bfd3ab79fd322fb25630ec1be6df549e6267def2d564f; connect1.sid=s%3A4Yuaw7tcX1DtQsO3mXqy4HLlWFl1aBNS.aIAOJes8FNRDIgFnKbF5Fixh9RhHekZGJdb5MT5gmiw; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_4.txt" },		
-	{ "xxx@xxx.com" ,    "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_2.txt" }
+	{ "xxx@xxx.com" ,    "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_2.txt" },
+
+	{ "xxx@xxx.com" , "logintoken=5c74ba85e68c51a9b06b71d3359bfd3ab79fd322fb25630ec1be6df549e6267def2d564f; connect1.sid=s%3A4Yuaw7tcX1DtQsO3mXqy4HLlWFl1aBNS.aIAOJes8FNRDIgFnKbF5Fixh9RhHekZGJdb5MT5gmiw; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_4.txt" },	
+	{ "xxx@xxx.com" ,    "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_2.txt" },
+	{ "xxx@xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_1.txt" },	
+
+
+
+
+
+
+
+
 
 	};
 
@@ -338,7 +350,7 @@ int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 	}
 	int error = 1;
 
-	char *start = strstr(buf->str+15000, "Nouvelles demandes");
+	char *start = strstr(buf->str+15000, "Nouvelles demandes</h2>");
 
 	char *end;
 	if(start)
@@ -395,7 +407,10 @@ int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 // 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[lprofile].credentials);
 
 			if(!g_match_info_matches(matchInfo))
+			{
 				GENERAL(LOG_LEVEL_GENERAL, "match not found");
+				return 30;
+			}
 		
 			while (g_match_info_matches (matchInfo))
 			{
@@ -494,7 +509,8 @@ int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 		GENERAL(LOG_LEVEL_GENERAL, "No new order pending");
 		return 50;
 	}
-	GENERAL(LOG_LEVEL_GENERAL, "mila_accept() error");
+	if(error)
+		GENERAL(LOG_LEVEL_GENERAL, "mila_accept() error");
 	return error;
 }
 
@@ -628,7 +644,9 @@ int mila (char *buf, int buf_size, char *to)
 //			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
 
-			curl_easy_setopt(curl, CURLOPT_URL, urlstr);
+// 			curl_easy_setopt(curl, CURLOPT_URL, urlstr);
+			curl_easy_setopt(curl, CURLOPT_URL, "https://www.mila.com/friendservicecalls");
+
 			clock_t end = clock();
 			time_processing = (double)(end - begin) / CLOCKS_PER_SEC;
 			GENERAL(LOG_LEVEL_GENERAL, "mila time_processing : %f\n", time_processing);
@@ -771,6 +789,7 @@ int mila_init(void)
 		list = curl_slist_append(list, "Accept-Language: fr-CH,fr-FR;q=0.8,fr;q=0.6,en-US;q=0.4,en;q=0.2");
 		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
 
+		curl_easy_setopt(curl, CURLOPT_COOKIEFILE, mila_profile[c].cookiejar);
 		curl_easy_setopt(curl, CURLOPT_COOKIEJAR, mila_profile[c].cookiejar);
 
 // 		curl_slist_free_all(list);
