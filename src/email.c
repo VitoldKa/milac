@@ -72,7 +72,9 @@ int email_send(const char *body, int n, ...)
 //			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
 //			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
-		res = curl_easy_perform(curl);
+		extern int DRY_RUN;
+		if(!DRY_RUN)
+			res = curl_easy_perform(curl);
 
 		if(res != CURLE_OK)
 			printf("curl_easy_perform() failed: %s\n",

@@ -44,26 +44,27 @@ int main(int argc, char *argv[])
 	
 	
 	
-/*	
+
 	/////////////////////////////////////////////////////////////////
 	// mila_find_emaillink ok
 	printf("mila_find_emaillink ok\n");
 
 	{
-	DIR *d = opendir("test/match");
+	DIR *d = opendir("test/web_match/");
 	struct dirent *dir;
 	
 	if (d)
 	{
 		while ((dir = readdir(d)) != NULL)
 		{
-			if(!strstr(dir->d_name, ".") && !strstr(dir->d_name, ".."))
+			printf("file: %s\n", dir->d_name);
+			if(strcmp(dir->d_name, ".") && strcmp(dir->d_name, ".."))
 			{
 				GENERAL(LOG_LEVEL_GENERAL, "file: %s", dir->d_name);
 
 				char *filebuf;
 				char filename[255] = "";
-				strcat(filename, "test/match/");
+				strcat(filename, "test/web_match/");
 				strcat(filename, dir->d_name);
 
 				if(!fill_buffer_from_file(filename, &filebuf))
@@ -82,7 +83,7 @@ int main(int argc, char *argv[])
 		}
 	}
 	}
-
+/*	
 	/////////////////////////////////////////////////////////////////
 	// mila_find_emaillink nok
 	printf("mila_find_emaillink nok\n");
@@ -122,7 +123,7 @@ int main(int argc, char *argv[])
 */
 
 
-
+/*
 
 	
 	/////////////////////////////////////////////////////////////////
@@ -251,6 +252,7 @@ int main(int argc, char *argv[])
 	}
 	free(filebuf);
 
+*/
 	g_string_free(buf, TRUE);
 	curl_easy_cleanup(curl);
 	

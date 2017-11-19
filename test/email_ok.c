@@ -8,7 +8,7 @@
 
 #include "log.h"
 
-int DRY_RUN = 1;
+int DRY_RUN = 0;
 
 
 int main(int argc, char *argv[])
