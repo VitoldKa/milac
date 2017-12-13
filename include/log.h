@@ -26,6 +26,7 @@ tlogging hlog;
 #define LOG_GENERAL         1
 
 
+void logging_Init(void);
 void logging_SetLogFile(char*);
 void logging_SetLevel(unsigned int);
 void logging_SetFacilities(unsigned int);
