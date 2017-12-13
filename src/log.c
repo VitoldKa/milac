@@ -1,18 +1,23 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdarg.h>
+#include <errno.h>
 
 #include <glib.h>
 
 #include "log.h"
 
+static 	pthread_mutex_t mutex;
 
 void logging_SetLogFile(char* buf)
 {
 	strcpy(hlog.logfile, buf);
 }
 
-
+void logging_Init()
+{
+	pthread_mutex_init(&mutex, NULL);
+}
 
 void logging_SetLevel(unsigned int level)
 {
@@ -45,6 +50,7 @@ void GENERAL(unsigned int facilities, const char *format, ...)
 
 		va_end(args);
 		
+		pthread_mutex_lock(&mutex);
 		FILE * pFile; 
 
 		pFile = fopen(hlog.logfile, "a");
@@ -54,8 +60,13 @@ void GENERAL(unsigned int facilities, const char *format, ...)
 			fclose(pFile);
 		}
 		else
-			printf("logfile open error\n");
-
+		{
+			int errsv = errno;
+			printf("logfile open error: %d: %s\n", errsv, strerror(errsv));
+		}
+		g_free(time);
+		g_string_free(buff, TRUE);
+		pthread_mutex_unlock(&mutex);
 	}
 
 }
