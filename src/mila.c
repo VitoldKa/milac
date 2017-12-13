@@ -23,31 +23,50 @@
 
 #define MAX_BUF 1024*1024*5
 
+
 s_mila_profile mila_profile[] = {
-	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com" ,    "logintoken=e589264ab5f6cfee2d8dd907b1c3bfc4f523f6e97f9a811f2bc21204f43c71a4a84b3c39; connect1.sid=s%3AD-FLCyWr3KEh8PmEcsT5OEHxbIaam8-h.mDiYc9k2X25xEFvk6R%2F1MI%2B7cKQ%2BusMnPa8uF7%2BTaoo; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" , 
+	"",   "" , "", "xxx@xxx.com" },
+	{ "xxx@xxx.com" ,  
+	"",   "" , "", "xxx@xxx.com"  },
+	{ "xxx@xxx.com" ,  
+	"",   "" , "", "xxx@xxx.com"  },
+	{ "xxx@xxx.com" ,  
+	"",   "" , "", "xxx@xxx.com"  },
 	
-	{ "xxx@xxx.com" ,  "logintoken=a5c67079e196c0e601c047dfb0b0b4b78ae9e90e6cf16f983d06ff99273932ff68500762; connect1.sid=s%3A3fSQILoYmHQFKWkT0yJjzzP17j4sRom6.GpAtjWgfnGWMXbR5Ne2h9tn5MNpW4sSkz9%2FWtqqJJ4I; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com" , "logintoken=4f833d252fe5e8b1b412b8cf9a5c15bbf72e50e369025aa2196ed902a770f568aac8b980; connect1.sid=s%3A_XeBOun-gsftcTYb5KvoOda0Ef6IAz3a.igtssQM4L47NuPB6994hczXS%2BZe%2FgXOL%2FcAqMsDLvKc; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
-	{ "xxx@xxx.com" , "logintoken=4f833d252fe5e8b1b412b8cf9a5c15bbf72e50e369025aa2196ed902a770f568aac8b980; connect1.sid=s%3A_XeBOun-gsftcTYb5KvoOda0Ef6IAz3a.igtssQM4L47NuPB6994hczXS%2BZe%2FgXOL%2FcAqMsDLvKc; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" ,  
+	"", "" , "", "xxx@xxx.com"  },
+	{ "xxx@xxx.com" , 
+	"", "" , "", "xxx@xxx.com"  },
+	{ "xxx@xxx.com" , 
+	"", "" , "", "xxx@xxx.com"  },
 
-	{ "xxx@xxx.com" , "logintoken=4f833d252fe5e8b1b412b8cf9a5c15bbf72e50e369025aa2196ed902a770f568aac8b980; connect1.sid=s%3A_XeBOun-gsftcTYb5KvoOda0Ef6IAz3a.igtssQM4L47NuPB6994hczXS%2BZe%2FgXOL%2FcAqMsDLvKc; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;" },
+	{ "xxx@xxx.com" , 
+	"", "" , "", "xxx@xxx.com"  },
 	
 	
 	
 	
-	{ "xxx@xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_1.txt" },	
-	{ "xxx@xxx.com" , "logintoken=5c74ba85e68c51a9b06b71d3359bfd3ab79fd322fb25630ec1be6df549e6267def2d564f; connect1.sid=s%3A4Yuaw7tcX1DtQsO3mXqy4HLlWFl1aBNS.aIAOJes8FNRDIgFnKbF5Fixh9RhHekZGJdb5MT5gmiw; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_4.txt" },		
-	{ "xxx@xxx.com" ,    "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_2.txt" },
-
-	{ "xxx@xxx.com" , "logintoken=5c74ba85e68c51a9b06b71d3359bfd3ab79fd322fb25630ec1be6df549e6267def2d564f; connect1.sid=s%3A4Yuaw7tcX1DtQsO3mXqy4HLlWFl1aBNS.aIAOJes8FNRDIgFnKbF5Fixh9RhHekZGJdb5MT5gmiw; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_4.txt" },	
-	{ "xxx@xxx.com" ,    "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_2.txt" },
-	{ "xxx@xxx.com" , "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_1.txt" },	
-
+	{ "xxx@xxx.com" , "3363c092c0fd4c886b3ba3d5893bfcca406316d72510c5250367026cdc4a3ffb6e25696d", "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", 
+	"/var/cache/mila_accept/cookies_1.txt", "xxx@xxx.com" },	
+	{ "xxx@xxx.com" , "8221bce39daca1d7b2cbd7f9431f655d5a451b9cefb8e92ed22cad44c9b0aff0150358a6", "logintoken=5c74ba85e68c51a9b06b71d3359bfd3ab79fd322fb25630ec1be6df549e6267def2d564f; connect1.sid=s%3A4Yuaw7tcX1DtQsO3mXqy4HLlWFl1aBNS.aIAOJes8FNRDIgFnKbF5Fixh9RhHekZGJdb5MT5gmiw; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", 
+	"/var/cache/mila_accept/cookies_4.txt", "xxx@xxx.com" },		
+	{ "xxx@xxx.com" , "1bc665ad3bab1870cfe9813f31714a3fb64f8001912ece8893b8bdeeea7adbc5377b056b",   "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", 
+"/var/cache/mila_accept/cookies_2.txt", "xxx@xxx.com" },
 
 
+
+	{ "xxx@xxx.com" , 
+	"8221bce39daca1d7b2cbd7f9431f655d5a451b9cefb8e92ed22cad44c9b0aff0150358a6", "logintoken=5c74ba85e68c51a9b06b71d3359bfd3ab79fd322fb25630ec1be6df549e6267def2d564f; connect1.sid=s%3A4Yuaw7tcX1DtQsO3mXqy4HLlWFl1aBNS.aIAOJes8FNRDIgFnKbF5Fixh9RhHekZGJdb5MT5gmiw; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_4.txt", "xxx@xxx.com" },	
+	{ "xxx@xxx.com" , 
+	"72126eb7f883f1449cdcdb5ad82daf933df50dde451cc0e8c4eb17a19d8e5aeb538127bf",    "logintoken=9dab61878ead7d41e820565b624257646dde0bc00ccd9f34486f2d346a246dc9d1785adb; connect1.sid=s%3AYVkeceWhppaW2fpA_mgtk1LB-FMxjGi0.FNQ%2FSTe3RlS8hjlArkLYJmHCzeTb55X5mgMTRM3CGOk; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_2.txt", "xxx@xxx.com" },
+	{ "xxx@xxx.com" , 
+	"7355dcd1252a34882566bf64718f6bceaa67be5217690afaf6e686eaa4cdf576e9940606", "logintoken=e3c7655bef03b90fff8db3c9db69f2a7a3438ee0a62adcbe3bafe99ae7758d1ced668088; connect1.sid=s%3Ax20TkL1Xd2c5WHZ_dU-RLewaguYN-GgT.v6eb%2FaIFqWbzQTAGAkJKBNNffL3KJHKaT7Ry1ZFleuM; language=fr; _dc_gtm_UA-29191003-1=1; _we_wk_ss_lsf_=true; _ga=GA1.2.1769302580.1489595889; optimizelyBuckets=%7B%222178270511%22%3A%222151040487%22%7D; optimizelyEndUserId=oeu1489596031683r0.06039701592998992; optimizelySegments=%7B%22700475046%22%3A%22ff%22%2C%22702591331%22%3A%22false%22%2C%22707443264%22%3A%22direct%22%7D;", "/var/cache/mila_accept/cookies_1.txt", "xxx@xxx.com" },	
+
+
+
+	{ "xxx@xxx.com" , 
+	"79bc5ac6948053dc75cc6757c5689a68ecc67b25a511eede0a201d2fb63780db2c7d5cca", "" , "", "xxx@xxx.com"  },
 
 
 
@@ -57,10 +76,10 @@ s_mila_profile mila_profile[] = {
 	};
 
 
-pthread_mutex_t mutex;
+// pthread_mutex_t mutex;
 	
-double time_accept;
-double time_processing;
+// double time_accept;
+// double time_processing;
 
 // true if found
 int isemailexist(char *email)
@@ -81,6 +100,7 @@ int getfromemail(char *email, int *profile)
 		if(strncmp(mila_profile[c].email, email, len)==0)
 		{
 			GENERAL(LOG_LEVEL_GENERAL, "credential found");
+			GENERAL(LOG_LEVEL_GENERAL, "credential %s", mila_profile[c].email);
 			*profile = c;
 			return 0;
 		}
@@ -261,18 +281,30 @@ int my_trace(CURL *handle, curl_infotype type,
 
 size_t header_callback(char *buffer,   size_t size,   size_t nitems,   void *userdata)
 {
+	GENERAL(LOG_LEVEL_GENERAL, "hsize: %ld", size*nitems);
 	GString *lpbuf = userdata;
-	GENERAL(LOG_LEVEL_GENERAL, "header: %s", buffer);
-	g_string_append_len(lpbuf, buffer, size*nitems);
+	if(size*nitems > 0)
+	{
+// 		GENERAL(LOG_LEVEL_GENERAL, "header: %s", buffer);
+		g_string_append_len(lpbuf, buffer, size*nitems);
+	}
 	return nitems * size;
 }
 
 
 size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
 {
+	GENERAL(LOG_LEVEL_GENERAL, "hsize: %ld", size*nmemb);
 	GString *lpbuf = userdata;
-	g_string_append_len(lpbuf, ptr, size*nmemb);
+	if(size*nmemb > 0)
+		g_string_append_len(lpbuf, ptr, size*nmemb);
 	return nmemb * size;
+}
+
+int progress_callback(void *clientp, curl_off_t dltotal, curl_off_t dlnow, curl_off_t ultotal,   curl_off_t ulnow)
+{
+	GENERAL(LOG_LEVEL_GENERAL, "dltotal: %ld, dlnow: %ld, , ultotal: %ld, , ulnow: %ld", dltotal, dlnow, ultotal, ulnow);
+	return 0;
 }
 
 #define HTTP_METHOD_GET 2^0
@@ -442,7 +474,7 @@ int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 				extern int DRY_RUN;
 				if(!DRY_RUN)
 				{
-					int try = 5;
+					int try = 20;
 					start:
 					res = curl_easy_perform(curl);
 					if(strstr(header->str, "HTTP/1.1 500 Internal Server Error") && try > 0)
@@ -450,7 +482,7 @@ int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 						GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 500 Internal Server Error");
 						GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
 						try -= 1;
-						usleep(2000000);
+						usleep(200000);
 						goto start;
 					}
 					if(strstr(header->str, "HTTP/1.1 502") && try > 0)
@@ -458,7 +490,7 @@ int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 						GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 502 Bad Gateway");
 						GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
 						try -= 1;
-						usleep(2000000);
+						usleep(200000);
 						goto start;
 					}
 					if(strstr(header->str, "HTTP/1.1 503") && try > 0)
@@ -466,7 +498,7 @@ int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 						GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 503 Service Unavailable");
 						GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
 						try -= 1;
-						usleep(2000000);
+						usleep(200000);
 						goto start;
 					}
 					if(strstr(header->str, "HTTP/1.1 504 GATEWAY_TIMEOUT") && try > 0)
@@ -474,7 +506,7 @@ int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 						GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 504 GATEWAY_TIMEOUT");
 						GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
 						try -= 1;
-						usleep(2000000);
+						usleep(200000);
 						goto start;
 					}
 				}
@@ -588,8 +620,8 @@ int mila (char *buf, int buf_size, char *to)
 		fclose(eml);
 	}
 
-	time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
-	printf("mila time_accept : %f\n", time_accept);
+// 	time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+// 	printf("mila time_accept : %f\n", time_accept);
 
 	GString *retbuf = g_string_new(NULL);
 	GString *header = g_string_new(NULL);
@@ -602,43 +634,92 @@ int mila (char *buf, int buf_size, char *to)
 
 	CURLcode res;
 
+	int profile = 0;
 	
+	CURL *curl = NULL;
+	CURL *curl_api = NULL;
+	if(!getfromemail(to, &profile))
+	{
+		GENERAL(LOG_LEVEL_GENERAL, "mila credentials : %s", mila_profile[profile].credentials);
+// 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[profile].credentials);
+		curl = mila_profile[profile].curl;
+		curl_api = mila_profile[profile].curl_api;
+// 			curl_easy_setopt(curl, CURLOPT_COOKIEJAR, mila_profile[profile].cookiejar);
+	}
+	else
+	{
+		GENERAL(LOG_LEVEL_GENERAL, "using default credential");
+		GENERAL(LOG_LEVEL_GENERAL, "to: %s", to);
+		curl = mila_profile[0].curl;
+		curl_api = mila_profile[0].curl_api;
+// 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[0].credentials);
+// 			curl_easy_setopt(curl, CURLOPT_COOKIEJAR, mila_profile[0].cookiejar);
+		error = 5;
+	}
+
 	if(!mila_find_emaillink(buf, urlstr))
 	{
 
-		CURL *curl = NULL;
-		int profile;
-		if(!getfromemail(to, &profile))
+
+		if(curl_api)
 		{
-			GENERAL(LOG_LEVEL_GENERAL, "mila credentials : %s", mila_profile[profile].credentials);
-// 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[profile].credentials);
-			curl = mila_profile[profile].curl;
-// 			curl_easy_setopt(curl, CURLOPT_COOKIEJAR, mila_profile[profile].cookiejar);
-		}
-		else
-		{
-			GENERAL(LOG_LEVEL_GENERAL, "using default credential");
-			GENERAL(LOG_LEVEL_GENERAL, "to: %s", to);
-			curl = mila_profile[0].curl;
-// 			curl_easy_setopt(curl, CURLOPT_COOKIE, mila_profile[0].credentials);
-// 			curl_easy_setopt(curl, CURLOPT_COOKIEJAR, mila_profile[0].cookiejar);
-			error = 5;
+			pthread_mutex_lock(&mila_profile[profile].mutex);
+			CURL *lcurl = curl_easy_duphandle(curl_api);
+			pthread_mutex_unlock(&mila_profile[profile].mutex);
+			
+			if(lcurl)
+			{
+				curl_easy_setopt(lcurl, CURLOPT_WRITEFUNCTION, write_callback);
+				curl_easy_setopt(lcurl, CURLOPT_WRITEDATA, retbuf);
+
+	// 			curl_easy_setopt(curl_api, CURLOPT_HEADERFUNCTION, header_callback);
+	// 			curl_easy_setopt(curl_api, CURLOPT_HEADERDATA, header);
+
+				curl_easy_setopt(lcurl, CURLOPT_XFERINFOFUNCTION, progress_callback);
+				curl_easy_setopt(lcurl, CURLOPT_NOPROGRESS, 0L);
+
+	//			char api_url[1024] = "http://www.xxx.com/v3/servicecalls/";
+				char api_url[1024] = "https://api.mila.com/v3/servicecalls/";
+				strcat(api_url, urlstr + (strlen(urlstr) - 6));
+				strcat(api_url, "/actions/ACCEPT");
+				curl_easy_setopt(lcurl, CURLOPT_POST, 1L);
+				curl_easy_setopt(lcurl, CURLOPT_URL, api_url);
+
+				GENERAL(LOG_LEVEL_GENERAL, "api:accept : %s", api_url);
+
+				extern int DRY_RUN;
+				if(!DRY_RUN)
+				{
+					res = curl_easy_perform(lcurl);
+					GENERAL(LOG_LEVEL_GENERAL, "header: %s", header->str);
+					GENERAL(LOG_LEVEL_GENERAL, "api:accept : %s", retbuf->str);
+				}
+				else
+					usleep(500000);
+			
+				curl_easy_cleanup(lcurl);
+			}
 		}
 
-
-		if(curl)
+		if(curl && 0)
 		{
 			GENERAL(LOG_LEVEL_GENERAL, "curl");
 
 			///////////////////////////////////////////////////////////////
 			// Mutex lock
-			pthread_mutex_lock(&mutex);
+			pthread_mutex_lock(&mila_profile[profile].mutex);
 			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
 			curl_easy_setopt(curl, CURLOPT_WRITEDATA, retbuf);
 
 			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
 			curl_easy_setopt(curl, CURLOPT_HEADERDATA, header);
 
+
+
+			///////////////////////////////////////////////////////////////
+
+			
+			
 //			curl_easy_setopt(curl, CURLOPT_HEADERDATA, llhapns_worker);
 //			curl_easy_setopt(curl, CURLOPT_DEBUGFUNCTION, my_trace);
 //			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
@@ -647,15 +728,16 @@ int mila (char *buf, int buf_size, char *to)
 // 			curl_easy_setopt(curl, CURLOPT_URL, urlstr);
 			curl_easy_setopt(curl, CURLOPT_URL, "https://www.mila.com/friendservicecalls");
 
-			clock_t end = clock();
-			time_processing = (double)(end - begin) / CLOCKS_PER_SEC;
-			GENERAL(LOG_LEVEL_GENERAL, "mila time_processing : %f\n", time_processing);
+// 			clock_t end = clock();
+// 			time_processing = (double)(end - begin) / CLOCKS_PER_SEC;
+// 			GENERAL(LOG_LEVEL_GENERAL, "mila time_processing : %f\n", time_processing);
 
 			// todo: retry
+
 			extern int DRY_RUN;
 			if(!DRY_RUN)
 			{
-				int try = 5;
+				int try = 20;
 				start1:
 				res = curl_easy_perform(curl);
 
@@ -664,7 +746,7 @@ int mila (char *buf, int buf_size, char *to)
 					GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 500 Internal Server Error");
 					GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
 					try -= 1;
-					usleep(2000000);
+					usleep(200000);
 					goto start1;
 				}
 				if(strstr(header->str, "HTTP/1.1 502") && try > 0)
@@ -672,7 +754,7 @@ int mila (char *buf, int buf_size, char *to)
 					GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 502 Bad Gateway");
 					GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
 					try -= 1;
-					usleep(2000000);
+					usleep(200000);
 					goto start1;
 				}
 				if(strstr(header->str, "HTTP/1.1 503") && try > 0)
@@ -680,7 +762,7 @@ int mila (char *buf, int buf_size, char *to)
 					GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 503 Service Unavailable");
 					GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
 					try -= 1;
-					usleep(2000000);
+					usleep(200000);
 					goto start1;
 				}
 				if(strstr(header->str, "HTTP/1.1 504 GATEWAY_TIMEOUT") && try > 0)
@@ -688,11 +770,14 @@ int mila (char *buf, int buf_size, char *to)
 					GENERAL(LOG_LEVEL_GENERAL, "HTTP/1.1 504 GATEWAY_TIMEOUT");
 					GENERAL(LOG_LEVEL_GENERAL, "retry: %d", try);
 					try -= 1;
-					usleep(2000000);
+					usleep(200000);
 					goto start1;
 				}
 
 			}
+			else
+				usleep(50000);
+
 
 			////////////////////////////////////////////////////////////////
 
@@ -705,14 +790,26 @@ int mila (char *buf, int buf_size, char *to)
 			curl_easy_setopt(curl, CURLOPT_WRITEDATA, retbuf);
 			curl_easy_setopt(curl, CURLOPT_HEADERDATA, header);
 
-			pthread_mutex_unlock(&mutex);
+			// TODO: autologin here
+			if(!DRY_RUN)
+			{
+// 				curl_easy_setopt(curl, CURLOPT_COOKIEFILE, NULL);
+				curl_easy_setopt(curl, CURLOPT_URL, urlstr);
+				printf("%s\n", mila_profile[profile].cookiejar);
+				res = curl_easy_perform(curl);
+// 				curl_easy_setopt(curl, CURLOPT_COOKIEFILE, mila_profile[c].cookiejar);
+			}
+			else
+				usleep(50000);
+
+			pthread_mutex_unlock(&mila_profile[profile].mutex);
 
 			email_send("mila return", 2, retbuf->str, "mila.html", "text/html; charset=utf-8",
 										 buf, "message.eml", "message/rfc822; charset=utf-8");
 										 
-			time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
-			GENERAL(LOG_LEVEL_GENERAL, "mila time_accept : %f\n", time_accept);
-
+// 			time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+// 			GENERAL(LOG_LEVEL_GENERAL, "mila time_accept : %f\n", time_accept);
+			
 //			curl_easy_cleanup(curl);
 		}
 		else
@@ -722,24 +819,31 @@ int mila (char *buf, int buf_size, char *to)
 	else
 		GENERAL(LOG_LEVEL_GENERAL, "link to mila not found");
 	
-	char str_time_processing[20];
-	sprintf(str_time_processing, "%f", time_processing);
+	char str_time_processing[20]="";
+// 	sprintf(str_time_processing, "%f", time_processing);
 
-	char str_time_accept[20];
-	sprintf(str_time_accept, "%f", time_accept);
+	char str_time_accept[20]="";
+// 	sprintf(str_time_accept, "%f", time_accept);
 	
 	// email
 	char *cmd = malloc(buf_size+sizeof(retbuf)+sizeof(buf)+5000000);
 	if(cmd)
 	{
 		cmd[0] = 0;
-		strcat(cmd,"/usr/sbin/sendmail xxx@xxx.com < ");
+		strcat(cmd,"/usr/sbin/sendmail ");
+// 		strcat(cmd,"xxx@xxx.com");
+		strcat(cmd,mila_profile[profile].forward);
+		strcat(cmd," < ");
 		strcat(cmd,filename);
 		strcat(cmd,"\n");
-		GENERAL(LOG_LEVEL_GENERAL, "Forwarding email");
+		GENERAL(LOG_LEVEL_GENERAL, "Forwarding email to [%d] %s", profile, mila_profile[profile].forward);
 
 // 		pthread_mutex_lock(&mutex);
-		int ret_cmd = system(cmd);
+		int ret_cmd = 0;
+		extern int DRY_RUN;
+		if(!DRY_RUN)
+			ret_cmd = system(cmd);
+			
 		GENERAL(LOG_LEVEL_GENERAL, "system returned : %d", ret_cmd);
 // 		sleep(5);
 // 		pthread_mutex_unlock(&mutex);
@@ -765,37 +869,73 @@ int mila (char *buf, int buf_size, char *to)
 
 int mila_init(void)
 {
-	pthread_mutex_init(&mutex, NULL);
+// 	pthread_mutex_init(&mutex, NULL);
 	
 	int size = sizeof(mila_profile)/sizeof(s_mila_profile);
 	for(int c = 0; c < size; c++)
 	{
 		GENERAL(LOG_LEVEL_GENERAL, "mila_init profile %d", c);
+		pthread_mutex_init(&mila_profile[c].mutex, NULL);
 		mila_profile[c].curl = curl_easy_init();
 		CURL *curl = mila_profile[c].curl;
 		
 // 		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 	
-		struct curl_slist *list = NULL;
-		list = curl_slist_append(list, "Cache-Control: max-age=0");
-		list = curl_slist_append(list, "Origin: https://www.mila.com");
-		list = curl_slist_append(list, "Upgrade-Insecure-Requests: 1");
-		list = curl_slist_append(list, "Content-Type: application/x-www-form-urlencoded");
-		list = curl_slist_append(list, "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36");
-		list = curl_slist_append(list, "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
-		list = curl_slist_append(list, "Referer: https://www.mila.com/friendservicecalls");
-// 		list = curl_slist_append(list, "Accept-Encoding: gzip, deflate, br");
-		list = curl_slist_append(list, "Accept-Language: fr-CH,fr-FR;q=0.8,fr;q=0.6,en-US;q=0.4,en;q=0.2");
-		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
+		mila_profile[c].list = NULL;
+		mila_profile[c].list = curl_slist_append(mila_profile[c].list, "Cache-Control: max-age=0");
+		mila_profile[c].list = curl_slist_append(mila_profile[c].list, "Origin: https://www.mila.com");
+		mila_profile[c].list = curl_slist_append(mila_profile[c].list, "Upgrade-Insecure-Requests: 1");
+		mila_profile[c].list = curl_slist_append(mila_profile[c].list, "Content-Type: application/x-www-form-urlencoded");
+		mila_profile[c].list = curl_slist_append(mila_profile[c].list, "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36");
+		mila_profile[c].list = curl_slist_append(mila_profile[c].list, "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
+		mila_profile[c].list = curl_slist_append(mila_profile[c].list, "Referer: https://www.mila.com/friendservicecalls");
+// 		mila_profile[c].list = curl_slist_append(list, "Accept-Encoding: gzip, deflate, br");
+		mila_profile[c].list = curl_slist_append(mila_profile[c].list, "Accept-Language: fr-CH,fr-FR;q=0.8,fr;q=0.6,en-US;q=0.4,en;q=0.2");
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, mila_profile[c].list);
 
 		curl_easy_setopt(curl, CURLOPT_COOKIEFILE, mila_profile[c].cookiejar);
 		curl_easy_setopt(curl, CURLOPT_COOKIEJAR, mila_profile[c].cookiejar);
+ 		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5L);
+ 		curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1L);
 
 // 		curl_slist_free_all(list);
 
 
+
+//////////////////////////////////////////////
+// curl api
+
+		mila_profile[c].curl_api = curl_easy_init();
+		mila_profile[c].header_api_list = NULL;
+		mila_profile[c].header_api_list = curl_slist_append(mila_profile[c].header_api_list, "Accept: application/json, text/plain, */*");
+		mila_profile[c].header_api_list = curl_slist_append(mila_profile[c].header_api_list, "Content-Type: application/json");
+		mila_profile[c].header_api_list = curl_slist_append(mila_profile[c].header_api_list, "'x-Origin': 'MILA_APP'");
+
+		char bearer[255] = "Authorization: Bearer ";
+		strcat(bearer, mila_profile[c].bearer_key);
+		mila_profile[c].header_api_list = curl_slist_append(mila_profile[c].header_api_list, bearer);
+
+		curl_easy_setopt(mila_profile[c].curl_api, CURLOPT_HTTPHEADER, mila_profile[c].header_api_list);
+ 		curl_easy_setopt(mila_profile[c].curl_api, CURLOPT_VERBOSE, 1L);
+ 		curl_easy_setopt(mila_profile[c].curl_api, CURLOPT_TIMEOUT, 5L);
+ 		curl_easy_setopt(mila_profile[c].curl_api, CURLOPT_NOSIGNAL, 1L);
+
 	}
 	
+	return 0;
+}
+
+int mila_free(void)
+{
+	int size = sizeof(mila_profile)/sizeof(s_mila_profile);
+	for(int c = 0; c < size; c++)
+	{
+		curl_easy_cleanup(mila_profile[c].curl);
+		curl_easy_cleanup(mila_profile[c].curl_api);
+		curl_slist_free_all(mila_profile[c].list);
+		curl_slist_free_all(mila_profile[c].header_api_list);
+		
+	}
 	return 0;
 }

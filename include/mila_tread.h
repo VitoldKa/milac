@@ -4,9 +4,11 @@
 typedef  struct {
 	int socket;
 	pthread_t tid;
-	char *inbuf;
+//	char *inbuf;
 } smila;
 
-int mila_parce(smila *mila);
 
+
+int mila_parce(smila *mila);
+int main_srv(void);
 #endif
