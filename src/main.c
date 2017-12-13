@@ -36,23 +36,6 @@ int DRY_RUN = 0;
 
 
 
-// adresse OVH
-//#define INADDRESS "147.135.182.245"
-//#define INADDRESS "178.33.43.38"
-// adresse amazon AWS
-#define INADDRESS "172.31.40.44"
-
-int sfd;
-
-int run;
-
-void sig_handler(int signum)
-{
-	GENERAL(LOG_LEVEL_GENERAL, "Received signal %d", signum);
-    run = 0;
-	close(sfd);
-	GENERAL(LOG_LEVEL_GENERAL, "Stoping Mila_accept");
-}
 
 
 int main2 (int argc, char *argv[])
@@ -88,19 +71,19 @@ int main2 (int argc, char *argv[])
 	return 0;
 }
 
+
 int main (int argc, char *argv[])
 {
 
-
+	logging_Init();
 	logging_SetLogFile("/var/log/mila_accept.log");
 	logging_SetLevel(-1);
 	logging_SetFacilities(-1);
 
-	signal(SIGINT, sig_handler);
 	GENERAL(LOG_LEVEL_GENERAL, "Starting Mila_accept");
 
 
-	pthread_mutex_init(&mutex, NULL);
+// 	pthread_mutex_init(&mutex, NULL);
 	
 	/*	struct addrinfo hints;
 		struct addrinfo *result, *rp;
@@ -110,63 +93,7 @@ int main (int argc, char *argv[])
 		ssize_t nread;
 		char buf[BUF_SIZE];
 	*/
-	int s, clilen, newsockfd;
-	struct sockaddr_in serv_addr, cli_addr;
-	bzero((char *) &serv_addr, sizeof(serv_addr));
-	serv_addr.sin_family = AF_INET;
-	serv_addr.sin_port = htons(25);
-	serv_addr.sin_addr.s_addr = INADDR_ANY;
-	inet_aton(INADDRESS, &serv_addr.sin_addr);
-
-	if((sfd = socket(AF_INET, SOCK_STREAM, 0))==-1)
-	{
-		//error
-		GENERAL(LOG_LEVEL_GENERAL, "socket() failed: %m");
-		close(sfd);
-	}
-	int option = 1;
-	setsockopt(sfd, SOL_SOCKET, SO_REUSEADDR, &option, sizeof(option));
-	if (bind(sfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0)
-	{
-		// error
-		GENERAL(LOG_LEVEL_GENERAL, "socket() failed: %m");
-		close(sfd);
-		return 1;
-	}
-
-	if(listen(sfd, 1000)==-1)
-	{
-		GENERAL(LOG_LEVEL_GENERAL, "listen error");
-		close(sfd);
-			// error
-	}
-
-	clilen = sizeof(cli_addr);
-	run = 1;
-
-	GENERAL(LOG_LEVEL_GENERAL, "listening on %s", INADDRESS);
-
-	mila_init();
-
-	while(run)
-	{
-		usleep(10);
-//		printf("listen\n");
-		if((newsockfd = accept(sfd, (struct sockaddr *) &cli_addr, (socklen_t*)&clilen)))
-		{
-			GENERAL(LOG_LEVEL_GENERAL, "Connection from %s", inet_ntoa(cli_addr.sin_addr));
-			
-			// create thread
-			smila *lsmila = malloc(sizeof(smila));
-			lsmila->socket = newsockfd;
-			mila_parce(lsmila);
-//			printf("accept\n");
-		}
-	}
-	// wait for all tread to terminate
-//	unlink(sfd);
-//	unlink(sfd);
-	close(sfd);
 	
+	main_srv();
 	return 0;
 }

@@ -1,6 +1,7 @@
 cmake_minimum_required (VERSION 3.5.2)
 project (mila_accept)
 
+#set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
@@ -26,10 +27,10 @@ add_definitions(-DETC_DIR=${ETC_DIR})
 SET(CPACK_GENERATOR "DEB")
 SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Vitold Kapshitzer") #required
 set(CPACK_PACKAGE_VENDOR "easy-tech.ch")
-set(CPACK_PACKAGE_VERSION "0.0.0")
-set(CPACK_PACKAGE_VERSION_MAJOR "0")
-set(CPACK_PACKAGE_VERSION_MINOR "0")
-set(CPACK_PACKAGE_VERSION_PATCH "0")
+set(CPACK_PACKAGE_VERSION "1.3.3")
+set(CPACK_PACKAGE_VERSION_MAJOR "1")
+set(CPACK_PACKAGE_VERSION_MINOR "3")
+set(CPACK_PACKAGE_VERSION_PATCH "3")
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
 
 
@@ -189,6 +190,7 @@ IF($ENV{TEST_ENABLE})
     TEST(getfromemail_nok)
     TEST(mila_accept_ok)
     TEST(mila_find_emaillink_ok)
+   TEST(smtp_ok)
    TEST(mila_ok)
 #    TEST(mail_ok)
 
