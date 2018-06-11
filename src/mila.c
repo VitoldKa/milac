@@ -549,8 +549,29 @@ int mila_accept(CURL *curl, GString *buf, int lprofile, GString *retbuf)
 int mila_find_emaillink(char *inbuf, char *url)
 {
 //printf("%s", inbuf);
+
+
+
+/*
+
+  SHOW IN APP
+<https://www.mila.com/loginMobile?url=3Dmila://loginWithPW/aaaa6aa6/150501>=
+
+Show in browser
+<https://www.mila.com/loginWithPW/aaaa6aa6?next=3D/friendservicecalls/15050=
+1>
+
+
+*/
 	inbuf += 10;
 	char *start = strstr(inbuf, "afficher sur le web");
+	if(!start)
+		start = strstr(inbuf, "Show in browser");
+	if(!start)
+		start = strstr(inbuf, "\n\n");
+	if(!start)
+		start = strstr(inbuf, "\r\n\r\n");
+		
 	if(start)
 		start = strstr(start, "<");
 	else
@@ -577,7 +598,12 @@ int mila_find_emaillink(char *inbuf, char *url)
 		GENERAL(LOG_LEVEL_GENERAL, "link to mila end not found");
 		return 2;
 	}
-
+	if( 100 < abs(strstr(start, "/friendservicecalls/") - start))
+	{
+		GENERAL(LOG_LEVEL_GENERAL, "friendservicecalls not found");
+		return 1;
+	}
+	
 	start += 1;
 // 	end -= 2;
 
