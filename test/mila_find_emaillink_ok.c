@@ -42,88 +42,73 @@ int main(int argc, char *argv[])
 	time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
 	printf("mila time_accept : %f\n", time_accept);
 
-	
-
-
-
-
 	/////////////////////////////////////////////////////////////////
 	// mila_find_emaillink ok
 	printf("mila_find_emaillink ok\n");
-
 	{
-	DIR *d = opendir("test/match");
-	struct dirent *dir;
+		DIR *d = opendir("test/match");
+		struct dirent *dir;
 	
-	if (d)
-	{
-		while ((dir = readdir(d)) != NULL)
+		if (d)
 		{
-			if(!strstr(dir->d_name, ".") && !strstr(dir->d_name, ".."))
+			while ((dir = readdir(d)) != NULL)
 			{
-				GENERAL(LOG_LEVEL_GENERAL, "file: %s", dir->d_name);
-
-				char *filebuf;
-				char filename[255] = "";
-				strcat(filename, "test/match/");
-				strcat(filename, dir->d_name);
-
-				if(!fill_buffer_from_file(filename, &filebuf))
+				if(!strstr(dir->d_name, ".") && !strstr(dir->d_name, ".."))
 				{
-					clock_t begin = clock();
-					char url[255] = "";
-					TEST_EQUAL(mila_find_emaillink(filebuf, url), 0);
+					GENERAL(LOG_LEVEL_GENERAL, "file: %s", dir->d_name);
 
-					time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
-					free(filebuf);
+					char *filebuf;
+					char filename[255] = "";
+					strcat(filename, "test/match/");
+					strcat(filename, dir->d_name);
+
+					if(!fill_buffer_from_file(filename, &filebuf))
+					{
+						clock_t begin = clock();
+						char url[255] = "";
+						TEST_EQUAL(mila_find_emaillink(filebuf, url), 0);
+
+						time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+						free(filebuf);
+					}
 				}
 			}
 		}
-	}
 	}
 
 	/////////////////////////////////////////////////////////////////
 	// mila_find_emaillink nok
 	printf("mila_find_emaillink nok\n");
-
 	{
-	DIR *d = opendir("test/without_match");
-	struct dirent *dir;
+		DIR *d = opendir("test/without_match");
+		struct dirent *dir;
 	
-	if (d)
-	{
-		while ((dir = readdir(d)) != NULL)
+		if (d)
 		{
-			if(!strstr(dir->d_name, ".") && !strstr(dir->d_name, ".."))
+			while ((dir = readdir(d)) != NULL)
 			{
-				GENERAL(LOG_LEVEL_GENERAL, "file: %s", dir->d_name);
-
-				char *filebuf;
-				char filename[255] = "";
-				strcat(filename, "test/without_match/");
-				strcat(filename, dir->d_name);
-
-				if(!fill_buffer_from_file(filename, &filebuf))
+				if(!strstr(dir->d_name, ".") && !strstr(dir->d_name, ".."))
 				{
-					clock_t begin = clock();
-					char url[255] = "";
-					TEST_NEQUAL(mila_find_emaillink(filebuf, url), 0);
+					GENERAL(LOG_LEVEL_GENERAL, "file: %s", dir->d_name);
 
-					time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
-					free(filebuf);
+					char *filebuf;
+					char filename[255] = "";
+					strcat(filename, "test/without_match/");
+					strcat(filename, dir->d_name);
+
+					if(!fill_buffer_from_file(filename, &filebuf))
+					{
+						clock_t begin = clock();
+						char url[255] = "";
+						TEST_NEQUAL(mila_find_emaillink(filebuf, url), 0);
+
+						time_accept = (double)(clock() - begin) / CLOCKS_PER_SEC;
+						free(filebuf);
+					}
 				}
 			}
 		}
 	}
-	}
-
-
-
-
-
-
-
-
 
 	g_string_free(buf, TRUE);
 	curl_easy_cleanup(curl);
