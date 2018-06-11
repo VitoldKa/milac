@@ -86,12 +86,12 @@ char *strlwr(char *str)
 
 void* doSomeThing(void *arg)
 {
+	smila *lmila = arg;
 	clock_t begin = clock();
 	time_t rawtime; struct tm * timeinfo;
 	time ( &rawtime );
 	timeinfo = localtime ( &rawtime );
 // 	printf("%s\n", asctime (timeinfo));
-	smila *lmila = arg;
 	
 	char *inbuffer = (char*) malloc(EMAIL_SIZE+1);
 		if(!inbuffer)
@@ -183,17 +183,20 @@ void* doSomeThing(void *arg)
  				
 				char *dot = data_pointer;
  				search_dot:
- 				dot = strstr(buffer, "\x2e");
+ 				dot = buffer;
+ 				int len = strlen(buffer);
 // 				GENERAL(LOG_LEVEL_GENERAL, "smtp time befor mila: %f\n\n", time_smtp);
-				if(dot) {
- 				GENERAL(LOG_LEVEL_GENERAL, "%x\n", dot[-1]);
- 				GENERAL(LOG_LEVEL_GENERAL, "%c\n", dot[0]);
- 				GENERAL(LOG_LEVEL_GENERAL, "%x\n", dot[1]);
- 				GENERAL(LOG_LEVEL_GENERAL, "%x\n", dot[2]);
-				 GENERAL(LOG_LEVEL_GENERAL, "dot\n");
+				dot = buffer + (len - 3);
+				if(dot = strstr(dot, "\x2e")) {
+ 					GENERAL(LOG_LEVEL_GENERAL, "%x\n", dot[-1]);
+ 					GENERAL(LOG_LEVEL_GENERAL, "%c\n", dot[0]);
+ 					GENERAL(LOG_LEVEL_GENERAL, "%x\n", dot[1]);
+ 					GENERAL(LOG_LEVEL_GENERAL, "%x\n", dot[2]);
+					GENERAL(LOG_LEVEL_GENERAL, "dot\n");
+					dot++;
 				}
-				else
-				 printf("not dot\n");
+//				else
+//					GENERAL(LOG_LEVEL_GENERAL, "not dot\n");
 				
 // 				if(dot = strchr(dot, '.'))
 // 				{
@@ -206,12 +209,13 @@ void* doSomeThing(void *arg)
 				if(strstr(buffer, "\n.\r\n") || 
 				   strstr(buffer, "\n.\n\r") || 
 				   strstr(buffer, "\n.\n") || 
+				   strstr(buffer, "\n.\r") || 
 				   (n == 2 && strstr(buffer, ".\n")) || 
 				   (n == 3 && strstr(buffer, ".\r\n")) 
-				
 				)
 						{
-							GENERAL(LOG_LEVEL_GENERAL, "c+1%c", dot[1]);
+							GENERAL(LOG_LEVEL_GENERAL, "%s\n", buffer	);
+//							GENERAL(LOG_LEVEL_GENERAL, "c+1%x", dot[1]);
 		// 					GENERAL(LOG_LEVEL_GENERAL, "%x::->%s\n", (unsigned int)lmila->tid, buffer);
 // 							printf("end of body\n");
 							clock_t end = clock();
@@ -228,6 +232,7 @@ void* doSomeThing(void *arg)
 							ret = write(lmila->socket, loutbuf2, sizeof(loutbuf2)-1);		
 				
 							// clear buffer for new message on this connection
+							// TODO: have we still a command (QUIT) in the buffer due to piplining 
 							data[0] = 0;
 							data_pointer = data;
 								
@@ -338,6 +343,7 @@ void* doSomeThing(void *arg)
 		}
 
 	}
+	GENERAL(LOG_LEVEL_GENERAL, "thread_exit()");													
 
 // 	printf("%x::stop thread\n", (unsigned int)lmila->tid);
 	close(lmila->socket);
@@ -368,7 +374,7 @@ void* doSomeThing(void *arg)
 int mila_parce(smila *mila)
 {
 //	clock_t begin = clock();
-	//printf("start thread\n");
+	GENERAL(LOG_LEVEL_GENERAL, "start thread\n");
    	pthread_create(&mila->tid, NULL, &doSomeThing, mila);
 //	clock_t end = clock();
 //	double time_smtp = (double)(end - begin) / CLOCKS_PER_SEC;
@@ -404,7 +410,7 @@ int main_srv()
 		return 1;
 	}
 
-	if(listen(sfd, 1000)==-1)
+	if(listen(sfd, 128)==-1)
 	{
 		GENERAL(LOG_LEVEL_GENERAL, "listen error");
 		close(sfd);
@@ -414,7 +420,7 @@ int main_srv()
 	clilen = sizeof(cli_addr);
 	run = 1;
 
-	GENERAL(LOG_LEVEL_GENERAL, "listening on %s", INADDRESS);
+	GENERAL(LOG_LEVEL_GENERAL, "listening on %s:25", INADDRESS);
 
 	mila_init();
 
@@ -424,7 +430,7 @@ int main_srv()
 //		printf("listen\n");
 		if((newsockfd = accept(sfd, (struct sockaddr *) &cli_addr, (socklen_t*)&clilen)))
 		{
-			GENERAL(LOG_LEVEL_GENERAL, "Connection from %s", inet_ntoa(cli_addr.sin_addr));
+			GENERAL(LOG_LEVEL_GENERAL, "%d::Connection from %s", newsockfd, inet_ntoa(cli_addr.sin_addr));
 
 			if(newsockfd == -1)
 			{
