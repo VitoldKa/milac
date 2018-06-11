@@ -34,7 +34,7 @@ set(CPACK_PACKAGE_VERSION_PATCH "3")
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
 
 
-SET(CPACK_DEBIAN_PACKAGE_DEPENDS "curl (>= 7.56.1), libglib2.0-0 (>= 2.48.1-1), openssl (>= 1.0.2g-1), libjson-glib-1.0-0 (>= 1.1.2-0) ")
+SET(CPACK_DEBIAN_PACKAGE_DEPENDS "curl (>= 7.58.0), libglib2.0-0 (>= 2.48.1-1), openssl (>= 1.0.2g-1), libjson-glib-1.0-0 (>= 1.1.2-0) ")
 
 INCLUDE(CPack)
 ############################################################
@@ -121,11 +121,17 @@ IF(GLIB_FOUND)
     TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${GLIB_LIBRARIES})
 ENDIF(GLIB_FOUND)
 
-#FIND_PACKAGE(OpenSSL)
-#IF(OPENSSL_FOUND)
-#    INCLUDE_DIRECTORIES(${OPENSSL_INCLUDE_DIRS})
-#    TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${OPENSSL_LIBRARIES})
-#ENDIF(OPENSSL_FOUND)
+FIND_PACKAGE(OpenSSL)
+IF(OPENSSL_FOUND)
+    INCLUDE_DIRECTORIES(${OPENSSL_INCLUDE_DIRS})
+    TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${OPENSSL_LIBRARIES})
+ENDIF(OPENSSL_FOUND)
+
+FIND_PACKAGE(GnuTLS)
+IF(GnuTLS_FOUND)
+    INCLUDE_DIRECTORIES(${GNUTLS_INCLUDE_DIR})
+    TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${GNUTLS_LIBRARIES})
+ENDIF(GnuTLS_FOUND)
 
 #FIND_PACKAGE(json-GLIB)
 #IF(json-GLIB_FOUND)
@@ -140,15 +146,17 @@ IF(APPLE)
     FIND_LIBRARY(SECURITY_LIBRARY Security )
     SET(EXTRA_LIBS ${SECURITY_LIBRARY} ${FOUNDATION_LIBRARY} libmicrohttpd.a c++)
     SET(CURL_INCLUDE_DIR /opt/local/include/curl)
-    SET(CURL_LIBRARIES curl.a nghttp2.a z.a ssl.a )
+    SET(CURL_LIBRARIES curl.a z.a ssl.a )
 
 ELSE(APPLE)
 #        target_link_libraries(${CMAKE_PROJECT_NAME} libmicrohttpd.so)
     FIND_PACKAGE(CURL)
         IF(CURL_FOUND)
             INCLUDE_DIRECTORIES(${CURL_INCLUDE_DIR})
+            TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${CURL_LIBRARIES})
+            message(${CURL_INCLUDE_DIR})
         ENDIF(CURL_FOUND)
-        set(CURL_LIBRARIES /usr/local/lib/libcurl.a /usr/lib/x86_64-linux-gnu/libz.a /usr/lib/x86_64-linux-gnu/libssl.so libcrypto.so)
+#        set(CURL_LIBRARIES /usr/lib/x86_64-linux-gnu/libnettle.so.6.4 /usr/lib/x86_64-linux-gnu/libidn2.so.0 /usr/lib/x86_64-linux-gnu/libz.a /usr/lib/x86_64-linux-gnu/libssl.so libcrypto.so)
 ENDIF (APPLE)
 
 

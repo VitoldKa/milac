@@ -285,7 +285,7 @@ size_t header_callback(char *buffer,   size_t size,   size_t nitems,   void *use
 	GString *lpbuf = userdata;
 	if(size*nitems > 0)
 	{
-// 		GENERAL(LOG_LEVEL_GENERAL, "header: %s", buffer);
+//  		GENERAL(LOG_LEVEL_GENERAL, "header: %s", buffer);
 		g_string_append_len(lpbuf, buffer, size*nitems);
 	}
 	return nitems * size;
@@ -672,8 +672,8 @@ int mila (char *buf, int buf_size, char *to)
 				curl_easy_setopt(lcurl, CURLOPT_WRITEFUNCTION, write_callback);
 				curl_easy_setopt(lcurl, CURLOPT_WRITEDATA, retbuf);
 
-	// 			curl_easy_setopt(curl_api, CURLOPT_HEADERFUNCTION, header_callback);
-	// 			curl_easy_setopt(curl_api, CURLOPT_HEADERDATA, header);
+	 			curl_easy_setopt(lcurl, CURLOPT_HEADERFUNCTION, header_callback);
+	 			curl_easy_setopt(lcurl, CURLOPT_HEADERDATA, header);
 
 				curl_easy_setopt(lcurl, CURLOPT_XFERINFOFUNCTION, progress_callback);
 				curl_easy_setopt(lcurl, CURLOPT_NOPROGRESS, 0L);
@@ -695,8 +695,10 @@ int mila (char *buf, int buf_size, char *to)
 					GENERAL(LOG_LEVEL_GENERAL, "api:accept : %s", retbuf->str);
 				}
 				else
+				{
+					GENERAL(LOG_LEVEL_GENERAL, "api:accept : %s", retbuf->str);
 					usleep(500000);
-			
+				}
 				curl_easy_cleanup(lcurl);
 			}
 		}
@@ -874,7 +876,7 @@ int mila_init(void)
 	int size = sizeof(mila_profile)/sizeof(s_mila_profile);
 	for(int c = 0; c < size; c++)
 	{
-		GENERAL(LOG_LEVEL_GENERAL, "mila_init profile %d", c);
+		GENERAL(LOG_LEVEL_GENERAL, "mila_init profile %d: %s %s", c, mila_profile[c].email, mila_profile[c].bearer_key);
 		pthread_mutex_init(&mila_profile[c].mutex, NULL);
 		mila_profile[c].curl = curl_easy_init();
 		CURL *curl = mila_profile[c].curl;

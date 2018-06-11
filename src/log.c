@@ -51,24 +51,31 @@ void GENERAL(unsigned int facilities, const char *format, ...)
 		va_end(args);
 		
 		pthread_mutex_lock(&mutex);
-		FILE * pFile; 
-
-		pFile = fopen(hlog.logfile, "a");
-		if(pFile)
+		extern int DRY_RUN;
+		if(!DRY_RUN)
 		{
-			fwrite(buff->str, sizeof(char), buff->len, pFile);
-			fclose(pFile);
+			FILE * pFile; 
+
+			pFile = fopen(hlog.logfile, "a");
+			if(pFile)
+			{
+				fwrite(buff->str, sizeof(char), buff->len, pFile);
+				fclose(pFile);
+			}
+			else
+			{
+				int errsv = errno;
+				printf("logfile open error: %d: %s\n", errsv, strerror(errsv));
+			}
 		}
 		else
 		{
-			int errsv = errno;
-			printf("logfile open error: %d: %s\n", errsv, strerror(errsv));
+			printf("%s", buff->str);
 		}
 		g_free(time);
 		g_string_free(buff, TRUE);
 		pthread_mutex_unlock(&mutex);
 	}
-
 }
 
 
